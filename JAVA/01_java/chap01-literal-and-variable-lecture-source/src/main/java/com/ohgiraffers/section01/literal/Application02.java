@@ -21,7 +21,7 @@ public class Application02 {
         System.out.println(1.23%1.0);
 
         /* 목차 2. 문자의 연산 */
-        
+
 
         /* 목차 3. 문자열의 연산 */
 
