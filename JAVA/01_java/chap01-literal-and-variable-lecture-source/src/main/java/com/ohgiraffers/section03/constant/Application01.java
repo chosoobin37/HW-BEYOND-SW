@@ -12,7 +12,9 @@ public class Application01 {
 
         /* 목차. 3) 필요한 위치에 상수 호출 및 이용 */
         System.out.println("AGE의 값: " + AGE);
-        /* */
+
+        /* 설명. 상수값도 리터럴로 치환 */
+        int mayAge = AGE;
 
 
 
