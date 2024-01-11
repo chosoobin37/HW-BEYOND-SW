@@ -54,7 +54,7 @@ public class Application03 {
         /* 목차. 2-6) boolean 자료형 -> 긍정의문문 형태 */
         boolean isTrue;
 
-
+        final int ABC;
 
     }
 }
