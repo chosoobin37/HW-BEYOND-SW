@@ -35,6 +35,18 @@ public class Application01 {
         System.out.println("firstNum: "+ firstNum++);
         System.out.println("firstNum: "+ ++firstNum);
 
+        /*
+         * int result1=firstNum++ * 3; -> ++ 지우고 생각
+         *
+         * int result1=firstNum * 3;
+         * firstNum ++;
+         *
+         * int result1=++firstNum * 3;
+         *
+         * ++ firstNum;
+         * int result1=firstNum * 3;
+        * */
+
 
 
 
