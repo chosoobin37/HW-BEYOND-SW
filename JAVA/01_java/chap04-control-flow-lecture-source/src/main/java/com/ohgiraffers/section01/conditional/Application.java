@@ -9,6 +9,10 @@ public class Application {
 //        aClass.testSimpleIfStatement();
 
         /* 필기. 중첩 if문 흐름 확인용 메소드 호출 */
-        aClass.testNestedIfStatement();
+//        aClass.testNestedIfStatement();
+
+        B_ifElse bClass = new B_ifElse();
+        bClass.testSimpleIfElseStatement();
+
     }
 }
