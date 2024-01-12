@@ -17,7 +17,7 @@ public class Calculator {
     public int minTwoNumbers(int first, int second) {
         return (first > second) ? second : first;
     }
-    public int maxTwoNumbers(int first, int second) {
+    public static int maxTwoNumbers(int first, int second) {
         return (first < second) ? second : first;
     }
 
