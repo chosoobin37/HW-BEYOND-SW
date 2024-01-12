@@ -36,7 +36,8 @@ public class Application01 {
         /* 목차. 5) 문자형 입력 받기 */
         System.out.print("아무 알파벳 하나를 입력하세요: ");
         char answer= sc.nextLine().charAt(0);           // 0번째를 character형으로 입력 받음, method chaining
-                                                    // enter를 buffer에 저장X
+                                                        // 사용자의 입력값에서 인덱스 n번째의 문자를 char형으로 반환
+                                                        // enter를 buffer에 저장
         System.out.println("입력하신 문자는: "+answer+"입니다.");
 
 
