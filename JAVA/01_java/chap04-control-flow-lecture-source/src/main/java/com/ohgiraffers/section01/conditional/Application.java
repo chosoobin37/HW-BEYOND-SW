@@ -22,10 +22,10 @@ public class Application {
         C_ifElseIf cClass = new C_ifElseIf();
 
         /* 필기. 단독 if-else-if문 흐름 확인용 메소드 호출 */
-        cClass.testSimpleIfElseIfStatement();
+//        cClass.testSimpleIfElseIfStatement();
 
         /* 필기. 중첩 if-else-if문 흐름 확인용 메소드 호출 */
-
+        cClass.testNestedIfElseIfStatement();
 
         /* 필기. 중첩 if-else-if문 로직 개선 */
 
