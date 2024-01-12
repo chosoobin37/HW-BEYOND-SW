@@ -14,7 +14,7 @@ public class Calculator {
     public int divideTwoNumbers(int first, int second) {
         return first/second;
     }
-    public int minTwoNumbers(int first, int second) {
+    private int minTwoNumbers(int first, int second) {
         return (first > second) ? second : first;
     }
     public static int maxTwoNumbers(int first, int second) {

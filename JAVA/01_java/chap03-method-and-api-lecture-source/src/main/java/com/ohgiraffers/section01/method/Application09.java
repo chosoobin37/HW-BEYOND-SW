@@ -11,7 +11,9 @@ public class Application09 {
         /* 설명. non-static 메소드 호출  */
         Calculator cal = new Calculator();
         System.out.println("두 수의 합은: " + cal.plusTwoNumbers(first, second));
-        System.out.println("두 수 중 더 작은 수는 : " + cal.minTwoNumbers(first, second));
+
+        /* 설명. private와 같이 접근 제어자에 따라 다른 클래스에서 접근 불가능한 메소드 有  */
+        // System.out.println("두 수 중 더 작은 수는 : " + cal.minTwoNumbers(first, second));
 
         /* 설명. static 메소드 -> 클래스명을 붙여서 호출  */
         System.out.println("두 수 중 더 큰 수는 : " + Calculator.maxTwoNumbers(first, second));
