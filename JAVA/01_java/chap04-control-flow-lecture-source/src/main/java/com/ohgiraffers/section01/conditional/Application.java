@@ -19,10 +19,10 @@ public class Application {
         /* 필기. 중첩 if-else문 흐름 확인용 메소드 호출 */
 //        bClass.testNestedIfElseStatement();
 
-        C_ifElseIf cCLass = new C_ifElseIf();
+        C_ifElseIf cClass = new C_ifElseIf();
 
         /* 필기. 단독 if-else-if문 흐름 확인용 메소드 호출 */
-
+        cClass.testSimpleIfElseIfStatement();
 
         /* 필기. 중첩 if-else-if문 흐름 확인용 메소드 호출 */
 
