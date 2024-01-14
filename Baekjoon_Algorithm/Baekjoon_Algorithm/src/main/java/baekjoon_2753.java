@@ -8,6 +8,9 @@ public class baekjoon_2753 {
     }
 
     public static int checkYear(int year) {
-        return (year % 4 == 0) ? 1 : 2;
+        if (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) {
+            return 1;
+        }
+        else return 0;
     }
 }
