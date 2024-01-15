@@ -25,7 +25,15 @@ public class Application {
 //        cClass.testSimpleWhileStatement();
 
         /* 필기. while문 사용 예제*/
-        cClass.testWhileExample();
+//        cClass.testWhileExample();
+
+        D_doWhile dClass = new D_doWhile();
+
+        /* 필기. do-while문 흐름 확인용 메소드 호출 */
+//        dClass.TestSimpleDoWhileStatement();
+
+        /* 필기. do-while문 사용 예제*/
+        dClass.TestDoWhileExample();
 
     }
 }
