@@ -19,8 +19,13 @@ public class Application {
         /* 필기. 중첩 반복문을 활용한 별찍기 예제 */
 //        bClass.printStars();
 
-        /* 필기. 중첩 반복문을 활용한 별찍기 예제 */
-        C_while cClass = new C_while()
+        C_while cClass = new C_while();
+
+        /* 필기. 단독 while문 흐름 확인용 메소드 호출 */
+//        cClass.testSimpleWhileStatement();
+
+        /* 필기. while문 사용 예제*/
+        cClass.testWhileExample();
 
     }
 }
