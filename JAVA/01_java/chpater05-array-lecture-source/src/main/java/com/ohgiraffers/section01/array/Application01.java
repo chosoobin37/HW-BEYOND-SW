@@ -39,6 +39,7 @@ public class Application01 {
 
         /* 설명. 각 배열에 접근해 각각 값 대입 */
         for (int i = 0; i < 5; i++) {
+
             arr[i] += 10*(i+1);
             System.out.println(arr[i]);
         }

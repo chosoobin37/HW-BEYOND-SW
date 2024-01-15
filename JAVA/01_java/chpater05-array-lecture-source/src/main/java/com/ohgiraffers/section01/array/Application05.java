@@ -1,7 +1,5 @@
 package com.ohgiraffers.section01.array;
 
-import java.sql.SQLOutput;
-
 public class Application05 {
     public static void main(String[] args) {
         /* 수업목표. 배열을 사용하는 예시를 통한 카드게임 */
