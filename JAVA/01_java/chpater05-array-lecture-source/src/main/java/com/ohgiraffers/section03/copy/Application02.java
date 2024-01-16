@@ -29,10 +29,10 @@ public class Application02 {
         print(copyArr2, "clone을 사용한 사본");
 
         /* 목차. 3) arraycopy()를 이용한 복사 */
-        int[] copyArr3 = new int[originArr.length];
-        System.arraycopy(originArr, 0, copyArr3, 3, originArr.length );
+        int[] copyArr3 = new int[originArr.length + 3];
+        System.arraycopy(originArr, 0, copyArr3, 3, originArr.length);
+        print(copyArr3, "arraycopy()를 사용한 사본");
                         // 원본 array의 0번째부터 원본배열의 길이만큼 복사
-        print(copyArr3, "arraycopy()를 사용한 복사");
         
         /* 목차. 4) copyOf()를 이용한 복사 */
         int[] copyArr4 = Arrays.copyOf(originArr, 2);
