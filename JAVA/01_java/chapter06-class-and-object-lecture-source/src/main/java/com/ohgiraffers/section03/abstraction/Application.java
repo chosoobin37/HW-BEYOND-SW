@@ -1,5 +1,7 @@
 package com.ohgiraffers.section03.abstraction;
 
+import java.util.Scanner;
+
 public class Application {
     public static void main(String[] args) {
         /* 수업목표. 객체지향 프로그래밍에 대한 이해 및 객체와 클래스 설계 후 프로그래밍 */
@@ -21,5 +23,40 @@ public class Application {
          *  8. 카레이서가 시동을 끄면 더 이상 자동차는 움직이지 않음
          *  9. 자동차가 달리는 중에는 시동 끌 수 없음
         * */
+
+        /* 설명. 카레이서 한 명 등장 */ 
+        CarRacer racer = new CarRacer();
+
+        Scanner sc = new Scanner(System.in);
+
+        /* 설명. 카레이서에게 명령을 하기 위한 메뉴 출력 */
+        while (true) {
+            System.out.println("===== 카레이싱 프로그램 =====");
+            System.out.println("1. 시동 걸기");
+            System.out.println("2. 전진");
+            System.out.println("3. 정지");
+            System.out.println("4. 시동 끄기");
+            System.out.println("9. 프로그램 종료");
+            System.out.print("메뉴 선택:");
+            int input = sc.nextInt();
+
+            switch (input) {
+                case 1: racer.startUp();
+                    break;
+                case 2: racer.stepAccelator();
+                    break;
+                case 3: racer.stepBreak();
+                    break;
+                case 4: racer.turnOff();
+                    break;
+                case 9:
+                    System.out.println("프로그램을 이용해주셔서 감사합니다.");
+                    break;
+                default:
+                    System.out.println("잘못된 번호를 입력하셨습니다.");
+            }
+
+            if (input == 9) break;
+        }
     }
 }
