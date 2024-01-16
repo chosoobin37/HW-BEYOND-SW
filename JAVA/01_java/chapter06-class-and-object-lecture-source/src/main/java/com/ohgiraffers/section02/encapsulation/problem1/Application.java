@@ -22,9 +22,19 @@ public class Application {
         System.out.println("monster2의 이름: " + monster2.name);
         System.out.println("monster2의 체력: " + monster2.hp);
 
-        /* 설명. 3번 몬스터 생성(문제점 확인) */
+        /* 설명. 3번 몬스터 생성(setter를 통한 접근) */
         Monster monster3 = new Monster();
         monster3.name = "드라큘라";
         monster3.setHP(100);        // monster3의 hp 공간에 100 할당
+        System.out.println("monster3의 이름: " + monster3.name);
+        System.out.println("monster3의 체력: " + monster3.hp);
+
+        /* 설명. 4번 몬스터 생성(setter를 통한 접근) */
+        Monster monster4 = new Monster();
+        monster4.name = "프랑켄슈타인";
+        monster4.setHP(-100);
+
+        System.out.println("monster4의 이름: " + monster4.name);
+        System.out.println("monster4의 체력: " + monster4.hp);
     }
 }
