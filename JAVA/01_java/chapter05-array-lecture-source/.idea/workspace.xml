@@ -58,7 +58,10 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -148,7 +151,8 @@
       <updated>1705295162303</updated>
       <workItem from="1705295163502" duration="25000" />
       <workItem from="1705295734072" duration="16036000" />
-      <workItem from="1705389389745" duration="17000" />
+      <workItem from="1705389389745" duration="476000" />
+      <workItem from="1705389875485" duration="33000" />
     </task>
     <servers />
   </component>
