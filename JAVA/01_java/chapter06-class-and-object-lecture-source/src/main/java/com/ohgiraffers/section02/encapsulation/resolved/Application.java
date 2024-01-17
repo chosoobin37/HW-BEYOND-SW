@@ -9,7 +9,7 @@ public class Application {
      *    1. 추상화 (제외하면 3대 특징) -> Abstraction
      *    2. 캡슐화 (정보은닉 -> 필드 및 메소드 은닉, 타입 은닉, 구현 은닉) -> Encapsulation
      *    3. 상속 -> Inheritance
-     *    4. 다형성 -< polymorphism
+     *    4. 다형성 -< Polymorphism
     * */
     public static void main(String[] args) {
         /* 수업목표. 접근제어자와 캡슐화에 대한 이해 및 직접 밀드 접근을 막는 이유 이해 */
