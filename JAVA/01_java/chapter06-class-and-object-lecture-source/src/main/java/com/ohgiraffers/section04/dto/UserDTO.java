@@ -18,12 +18,15 @@ import java.util.Date;
  *  5. 직렬화(Serializable 구현) 고려 -> 선택사항
 * */
 
-public class UserDTO {
+public class UserDTO {          // DataTransportObject
+
+    /* 필기. 1) 필드 (멤버 변수) */
     private String id;
     private String pwd;
     private String name;
     private java.util.Date enrollDate;
 
+    /* 필기. 2) 생성자 (기본 생성자 필수로 명시적 작성) */
     public UserDTO() {
 
     }
@@ -35,6 +38,7 @@ public class UserDTO {
         this.enrollDate = enrollDate;
     }
 
+    /* 필기. 3) 설정자(setter)와 접근자(getter) */
     public void setId(String id) {
         this.id = id;
     }
@@ -69,7 +73,20 @@ public class UserDTO {
         this.enrollDate = enrollDate;
     }
 
-    public String forInformation() {
-        return id + ", " + pwd + ", " + name + ", " + enrollDate;
+//    public String forInformation() {
+//        return id + ", " + pwd + ", " + name + ", " + enrollDate;
+//    }
+
+    /* 필기. 4) 모든 멤버 변수를 String으로 반환하는 toString() */
+
+    @Override
+    public String toString() {
+        return "UserDTO{" +
+                "id='" + id + '\'' +
+                ", pwd='" + pwd + '\'' +
+                ", name='" + name + '\'' +
+                ", enrollDate=" + enrollDate +
+                '}';
     }
 }
+
