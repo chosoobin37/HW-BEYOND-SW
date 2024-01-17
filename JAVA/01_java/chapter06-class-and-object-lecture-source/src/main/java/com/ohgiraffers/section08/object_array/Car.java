@@ -6,12 +6,12 @@ public class Car {
     public int maxSpeed;
 
     public Car() {
-        this.moduleName = moduleName;
-        this.maxSpeed = maxSpeed;
 
     }
 
     public Car(String moduleName, int maxSpeed) {
+        this.moduleName = moduleName;
+        this.maxSpeed = maxSpeed;
     }
 
     public void driveMaxSpeed() {
