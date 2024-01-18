@@ -45,13 +45,18 @@ public class Application01 {
         an2.cry();
 
         /* 설명. 오버라이딩 되지 않은(추가한 메소드) 메소드 호출 -> 다운캐스팅 필요 */
-        if(an1 instanceof Tiger) {
+        /* 필기.     
+         *  instanceof -> 해당 객체의 타입을 런타임 시점에 확인하기 위한 연산자
+        * */
+        if(an1 instanceof Tiger) {          // an1은 Tiger 타입의 instance인가?
             ((Tiger)an1).bite();
         }
         if (an1 instanceof Rabbit) {
             ((Rabbit)an1).jump();
         }
-
-
+    
+        /* 설명. 다형성은 상속관계의 객체들 간에 형변환 */
+        Animal animal2 = new Animal();          // 자동 형변환 (auto up-casting) 다형성 O, 묵시적 형변환
+        Rabbit rabbit2 = (Rabbit) an2;          // 강제 형변환 (down casting), 다형성 X, 명시적 형변환
     }
 }
