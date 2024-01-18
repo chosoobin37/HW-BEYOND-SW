@@ -16,6 +16,6 @@ public class Product {
         System.out.println("Product 클래스의 nonStaticMethod 호출 ...");
     }
 
-    public abstract void abstractMethod();
-    }
+//    public void abstractMethod();
+//    }
 }
