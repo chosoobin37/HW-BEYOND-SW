@@ -1,5 +1,7 @@
 package com.ohgiraffers.section01.object.dto;
 
+import java.util.Objects;
+
 public class BookDTO {
     private int number;
     private String title;
@@ -49,6 +51,7 @@ public class BookDTO {
         this.price = price;
     }
 
+    /* 목차. 1) toString() 오버라이딩 */
     @Override
     public String toString() {
         return "BookDTO{" +
@@ -57,5 +60,28 @@ public class BookDTO {
                 ", author='" + author + '\'' +
                 ", price=" + price +
                 '}';
+    }
+
+    /* 목차. 2) equals() 오버라이딩 */
+//    @Override
+//    public boolean equals(Object obj) {             // 동등의 기준 정의
+//        return this.author.equals(((BookDTO) obj).getAuthor())
+//                && this.price == (((BookDTO) obj).getPrice());
+
+//        return false;
+//    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        BookDTO bookDTO = (BookDTO) o;
+        return number == bookDTO.number && price == bookDTO.price
+                && Objects.equals(title, bookDTO.title) && Objects.equals(author, bookDTO.author);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(number, title, author, price);
     }
 }
