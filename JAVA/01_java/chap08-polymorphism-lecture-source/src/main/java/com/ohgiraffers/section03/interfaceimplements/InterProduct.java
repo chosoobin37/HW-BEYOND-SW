@@ -27,5 +27,10 @@ public interface InterProduct extends ParentInterProduct, AnotherParentInterProd
     public default void defaultMethod() {
         System.out.println("InterProduct 클래스의 defaultMethod 호출 ...");
     }
+    
+    /* 설명. private도 abstract가 아닌 온전한 메소드로 사용은 가능 (default도 없이) */ 
+        private void privateMethod( ) {
+            /* 설명. 다른 public default 메소드에서 활용할 수만 있는 메소드 */ 
+        }
 
 }
