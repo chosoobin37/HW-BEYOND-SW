@@ -20,7 +20,7 @@ public class Application01 {
         anythingMethod(10);
         
         /* 설명. Wrapper 클래스 값 비교 */
-        /* 설명. Wrapper 클래스들도 literal 값으로 오토박싱 할 경우 -> 동일한 객체 하나만 관리 */ 
+        /* 설명. Wrapper 클래스들도 literal 값으로 오토박싱 할 경우 -> 동일한 객체 하나만 관리 */
         Integer integerTest = (Integer) 30;
         Integer integerTest2 = (Integer) 30;
         System.out.println("== 비교: " + (integerTest == integerTest2));
