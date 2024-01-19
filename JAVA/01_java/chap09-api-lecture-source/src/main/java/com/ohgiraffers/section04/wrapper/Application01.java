@@ -18,6 +18,16 @@ public class Application01 {
         int autoboxingValue = autoBoxingInt;
 
         anythingMethod(10);
+        
+        /* 설명. Wrapper 클래스 값 비교 */
+        /* 설명. Wrapper 클래스들도 literal 값으로 오토박싱 할 경우 -> 동일한 객체 하나만 관리 */ 
+        Integer integerTest = (Integer) 30;
+        Integer integerTest2 = (Integer) 30;
+        System.out.println("== 비교: " + (integerTest == integerTest2));
+        System.out.println("equals() 비교: " + (integerTest.equals(integerTest2)));
+        System.out.println("integerTest 주소: "+System.identityHashCode(integerTest));
+        System.out.println("integerTest2 주소: "+System.identityHashCode(integerTest2));
+
     }
 
     /* 설명. 매개변수가 Object인 메소드 (어떤 자료형의 전달인자이든 받아낼 수 있는 메소드) */
