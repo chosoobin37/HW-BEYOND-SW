@@ -71,6 +71,7 @@ public class BookDTO {
 //        return false;
 //    }
 
+    /* 설명. 우리가 BookDTO 타입의 객체가 동등하다라는 것에 대한 기분을 정하기 위해 오버라이딩 */ 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -80,6 +81,7 @@ public class BookDTO {
                 && Objects.equals(title, bookDTO.title) && Objects.equals(author, bookDTO.author);
     }
 
+    /* 목차. 3) hashCode() 오버라이딩 */ 
 //    @Override
 //    public int hashCode() {
 //        return Objects.hash(number, title, author, price);
