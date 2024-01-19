@@ -27,6 +27,7 @@ public class Application03 {
         System.out.println(Arrays.toString(empArr3));
         System.out.println();
 
+        /* 설명. StringTokenizer를 통해 문자열에서 구분자를 통해 토큰 단위로 구분해 활용*/
         String colors = "red, yellow, green, purple, blue";
         StringTokenizer colorStringTokenizer = new StringTokenizer(colors, ",");
         while(colorStringTokenizer.hasMoreElements()) {
