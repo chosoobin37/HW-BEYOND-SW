@@ -10,5 +10,8 @@ public class Application {
         * */
 
         /* 설명. 추상클래스의 인터페이스 차이 -> 면접 단골 질문 (잘 정리해둘 것) */
+
+//        InterProduct ip =new InterProduct();        // 생성자 없어서 안 됨
+        InterProduct ip2 = new Product();             // but 타입으로는 활용이 가능 (다형성 가능)
+        }
     }
-}

@@ -1,6 +1,8 @@
 package com.ohgiraffers.section03.interfaceimplements;
 
-public interface InterProduct {
+    /* 설명. 인터페이스 간에는 다중 상속 가능 (implements 대신 extends 사용) */
+public interface InterProduct extends ParentInterProduct, AnotherParentInterProduct {
+
     //    public static final int MAX_NUM = 100;
 
     /* 설명. 상수 필드만 가질 수 있기 때문에 모든 필드는 묵시적으로 public static final
