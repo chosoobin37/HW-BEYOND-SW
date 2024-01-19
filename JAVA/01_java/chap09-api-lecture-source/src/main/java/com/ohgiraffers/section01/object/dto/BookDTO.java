@@ -80,8 +80,8 @@ public class BookDTO {
                 && Objects.equals(title, bookDTO.title) && Objects.equals(author, bookDTO.author);
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(number, title, author, price);
-    }
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(number, title, author, price);
+//    }
 }
