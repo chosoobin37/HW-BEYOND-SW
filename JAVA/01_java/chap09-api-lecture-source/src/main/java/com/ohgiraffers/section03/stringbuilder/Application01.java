@@ -22,9 +22,9 @@ public class Application01 {
             testSb.append(i);
 
             /* 필기. 
-             *  String은 hashCode() 메소드가 동등 비교를 위해 오버라이딩이 되어 있어 주소값 확인 어려움
-             *  -> System.identifyHashCode() 메소드를 통해  String.으로 관리되는 문자열과
-             *  StringBuilder로 관리되는 문자열이 각각 변화를 줄 때 새로운 객체를 생성하는지 확인
+                 *  String은 hashCode() 메소드가 동등 비교를 위해 오버라이딩이 되어 있어 주소값 확인 어려움
+                 *  -> System.identifyHashCode() 메소드를 통해  String.으로 관리되는 문자열과
+                 *  StringBuilder로 관리되는 문자열이 각각 변화를 줄 때 새로운 객체를 생성하는지 확인
             * */
             System.out.println("String의 경우: " + System.identityHashCode(testStr));
             System.out.println("StringBuilder의 경우: " + System.identityHashCode(testSb));
