@@ -14,7 +14,7 @@ public class Application {
 
         GenericTest<String> gt2 = new GenericTest<>();
 
-        gt2.setValue("피카츄");
+        gt2.setValue("Generic Practice");
         System.out.println(gt2.getValue());
         System.out.println(gt2.getValue() instanceof String);
         

@@ -7,7 +7,7 @@ import com.ohgiraffers.section02.extend.vo.RabbitFarm;
  *  와일드카드 (Wildcard) -> generic class 타입의 객체를 메소드의 매개변수로 받을 때 타입 변수 제한 가능
  *  <?> 제한 없음
  *  <? extends Type> 와일드카드의 상한 제한 (Type과 Type의 후손을 이용해 생성된 제네릭 인스턴스만 가능)
- *  <? super Type> 와일드카드의 gk한 제한 (Type과 Type의 부모를 이용해 생성된 제네릭 인스턴스만 가능)
+ *  <? super Type> 와일드카드의 하한 제한 (Type과 Type의 부모를 이용해 생성된 제네릭 인스턴스만 가능)
 * */
 
 public class WildCardFarm {
