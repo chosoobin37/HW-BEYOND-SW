@@ -23,6 +23,7 @@ public class Application05 {
         System.out.println(localDateTime);
 
         /* 설명. 기본 패턴이 아닌 경우 */
+        /* 설명. 기본 패턴이 아닌 문자열을 time 패키지 자료형에 인식 시키기 */
         String timeNow2 = "14-05-10";
         String dateNow2 = "221005";
 
@@ -32,7 +33,7 @@ public class Application05 {
         System.out.println(localTime2);
         System.out.println(localDate2);
 
-        /* 설명. time 패키지가 인식한 날짜 및 시간을 원하는 문자열로 반환 */ 
+        /* 설명. time 패키지가 인식한 날짜 및 시간을 원하는 문자열로 반환 */
         String dateFormat = localDate2.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         String timeFormat = localTime2.format(DateTimeFormatter.ofPattern("HH-mm"));
 
