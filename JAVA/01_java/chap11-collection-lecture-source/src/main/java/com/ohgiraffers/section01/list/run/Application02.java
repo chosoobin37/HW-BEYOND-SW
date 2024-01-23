@@ -1,11 +1,9 @@
 package com.ohgiraffers.section01.list.run;
 
-import com.ohgiraffers.section01.list.comparator.AscendingPrice;
-import com.ohgiraffers.section01.list.comparator.DescendignAuthor;
+import com.ohgiraffers.section01.list.comparator.DescendingAuthor;
 import com.ohgiraffers.section01.list.dto.BookDTO;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -28,10 +26,10 @@ public class Application02 {
         /* 설명. Collections가 제공하는 sort 사용 시 */ 
 //        Collections.sort(bookList);
 //        Collections.sort(bookList, new AscendingPrice());
-        Collections.sort(bookList, new DescendignAuthor());
+        Collections.sort(bookList, new DescendingAuthor());
 
         /* 설명. ArrayList기 제공하는 sort 사용 시 -> Comparator 기준만 가능 */ 
-        bookList.sort(new DescendignAuthor());
+        bookList.sort(new DescendingAuthor());
 
         for (BookDTO book : bookList) {
             System.out.println(book);

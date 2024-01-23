@@ -18,8 +18,8 @@ public class Application02 {
 
         prop.setProperty("driver", "oracle.jdbc.driver.OracleDriver");
         prop.setProperty("url", "jdbc.:oracle:thin:@127.0.0.1.1521:xe");
-        prop.setProperty("user", "swcamp");
-        prop.setProperty("password", "swcamp");
+        prop.setProperty("user", "sw camp");
+        prop.setProperty("password", "sw camp");
 
         System.out.println(prop);
 
