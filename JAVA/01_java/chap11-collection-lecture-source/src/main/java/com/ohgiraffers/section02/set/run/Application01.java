@@ -35,6 +35,7 @@ public class Application01 {
         for (Object obj : objArr) {
             System.out.println((String) obj);
         }
+        System.out.println();
 
         System.out.println("size(): " + hset.size());
         hset.clear();

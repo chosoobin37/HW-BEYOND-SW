@@ -16,9 +16,10 @@ public class Application03 {
         tSet.add("soup");
 
         System.out.println("tSet = " + tSet);
+        System.out.println();
 
         /* 설명.
-        *   과제 -> 중복되지 않는 번호를 발생시켜 로또 번호 발생기 만들기 (TreeSet 없이) */
+        *   과제 -> 중복되지 않는 번호를 `발생시켜 로또 번호 발생기 만들기 (TreeSet 없이) */
 
         Set<Integer> lotto = new TreeSet<>();
 
@@ -27,7 +28,7 @@ public class Application03 {
             lotto.add((int) (Math.random() * 45) + 1);
         }
 
-        /* 설명. 출력 시에는 오름차순으로 출력되도록 작성 */ 
+        /* 설명. 출력 시에는 오름차순으로 출력되도록 작성 */
         System.out.println("lotto: " + lotto);
 
     }

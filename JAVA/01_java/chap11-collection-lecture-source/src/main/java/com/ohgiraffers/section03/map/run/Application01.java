@@ -13,10 +13,12 @@ public class Application01 {
 
         System.out.println("키가 \"one\"인 value 값: " + hmap.get("one"));
         System.out.println("Map의 toSring(): " + hmap);
+        System.out.println();
 
         /* 설명. 키 값은 중복되면 이후 put 되는 key와 value가 덮어씌워짐 (주의) */
         hmap.put(12, "purple banana");
         System.out.println(hmap.get(12));
+        System.out.println();
 
         /* 설명. value는 중복이어도 무관 */
         hmap.put(77, "purple banana");

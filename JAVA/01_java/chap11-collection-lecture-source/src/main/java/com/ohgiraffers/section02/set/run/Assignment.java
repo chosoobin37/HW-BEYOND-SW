@@ -29,3 +29,6 @@ public class Assignment {
         System.out.println("Lotto 번호는 " + Arrays.toString(lotto));
     }
 }
+
+
+

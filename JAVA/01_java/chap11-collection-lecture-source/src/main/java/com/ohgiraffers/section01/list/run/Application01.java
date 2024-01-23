@@ -37,7 +37,7 @@ public class Application01 {
 
         /* 설명. 배열과 ArrayList를 활용해 각각 원하는 인덱스에 값 추가 */
         int[] intArr = new int[5];
-        int num=0;
+        int num = 0;
 
         for (int i = 0; i < intArr.length; i++) {
             intArr[i] = ++num;
@@ -50,7 +50,7 @@ public class Application01 {
         System.out.println(Arrays.toString(newArr));
         System.out.println();
 
-        /* 설명. 2번 인덱스 자리에 2 끼워넣기 */
+        /* 설명. 2번 인덱스 자리에 7 끼워넣기 */
 //        for (int 1 = newArr.length - 2; i > 1; i--)
         for (int i = newArr.length - 2; i > 1; i--) {
             newArr[i + 1] = newArr[i];
