@@ -1,6 +1,7 @@
 package com.ohgiraffers.section01.list.run;
 
 import com.ohgiraffers.section01.list.comparator.AscendingPrice;
+import com.ohgiraffers.section01.list.comparator.DescendignAuthor;
 import com.ohgiraffers.section01.list.dto.BookDTO;
 
 import java.util.ArrayList;
@@ -24,7 +25,8 @@ public class Application02 {
 //        }
 
 //        Collections.sort(bookList);
-        Collections.sort(bookList, new AscendingPrice());
+//        Collections.sort(bookList, new AscendingPrice());
+        Collections.sort(bookList, new DescendignAuthor());
 
         for (BookDTO book : bookList) {
             System.out.println(book);
