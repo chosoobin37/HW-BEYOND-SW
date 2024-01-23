@@ -26,9 +26,10 @@ public class Application01 {
 
         System.out.println("77번 키와 관련된 entry 삭제: " + hmap.remove(77));
         System.out.println("삭제 후 entry 수: " + hmap.size());
+        System.out.println();
 
         /* 필기. Map을 반복하여 각 entry들(key와 value) 활용 */
-        HashMap<String>
+        HashMap<String, String> hmap2 = new HashMap<>();
 
         hmap2.put("one", "java 17");
         hmap2.put("two", "mariaDB 10");
@@ -37,11 +38,21 @@ public class Application01 {
         hmap2.put("five", "vue.js");
 
         /* 목차. 1) keySet() 활용한 iterator 활용*/
-        Set<String> keys = hmap.keySet();
+        Set<String> keys = hmap2.keySet();
         Iterator<String> iter = keys.iterator();
         while (iter.hasNext()) {
-            System.out.println(iter.next());
+            String key = iter.next();
+            System.out.println("key값: " + key + ", value값: " + hmap2.get(key));
         }
-        /* 목차. 1) entrySet() 활용한 iterator 활용*/
+        System.out.println();
+
+        /* 목차. 2) entrySet() 활용한 iterator 활용*/
+        Set<Map.Entry<String, String>> set = hmap2.entrySet();
+        Iterator<Map.Entry<String, String>> iterEntry = set.iterator();
+        while (iterEntry.hasNext()) {
+            Map.Entry<String, String> entry = iterEntry.next();
+
+            System.out.println("key값: " + entry.getKey() + ", value값: " + entry.getValue());
+        }
     }
 }
