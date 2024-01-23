@@ -1,4 +1,4 @@
-package com.ohgiraffers.section01.list;
+package com.ohgiraffers.section01.list.run;
 
 import java.util.*;
 
@@ -81,5 +81,38 @@ public class Application01 {
         /* 설명. remove() 메소드로 원하는 인덱스의 값 삭제  */
         aList.remove(1);
         System.out.println(aList);
+
+        /* 설명. ArrayList를 활용해 정렬 진행 */
+        List<String> stringList = new ArrayList<>();
+        stringList.add("apple");
+        stringList.add("orange");
+        stringList.add("banana");
+        stringList.add("mango");
+        stringList.add("grape");
+
+        System.out.println("stringList = " + stringList);
+
+        /* 설명. Collections의 sort() 메소드를 활용한 정렬 */
+        Collections.sort(stringList);
+        System.out.println("stringList = " + stringList);
+
+        List<Integer> integerList = new ArrayList<>();
+        integerList.add(412);
+        integerList.add(37);
+        integerList.add(125);
+        integerList.add(58);
+        integerList.add(40);
+
+        System.out.println("integerList = " + integerList);
+
+        Collections.sort(integerList);
+        System.out.println("integerList = " + integerList);
+
+        /* 설명. 내림차순으로 바꾸기 위해 ArrayList -> LinkedList로 교체 */
+        stringList = new LinkedList<>(stringList);
+        Iterator<String>iter = ((LinkedList<String>)stringList).descendingIterator();
+        while (iter.hasNext()) {
+            System.out.println(iter.next());
+        }
     }
 }
