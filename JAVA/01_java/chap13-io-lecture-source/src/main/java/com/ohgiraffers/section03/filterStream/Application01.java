@@ -1,7 +1,6 @@
-package com.ohgiraffers.section03.fileStream;
+package com.ohgiraffers.section03.filterStream;
 
 import java.io.*;
-import java.nio.Buffer;
 
 public class Application01 {
     public static void main(String[] args) {

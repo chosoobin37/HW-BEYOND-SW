@@ -1,4 +1,4 @@
-package com.ohgiraffers.section03.fileStream;
+package com.ohgiraffers.section03.filterStream;
 
 import java.io.*;
 
