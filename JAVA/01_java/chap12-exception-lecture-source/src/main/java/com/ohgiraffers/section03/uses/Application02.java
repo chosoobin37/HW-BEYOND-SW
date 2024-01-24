@@ -8,17 +8,15 @@ public class Application02 {
 
         /* 수업목표. try-with-resource 구문 문법 이해 및 활용 */
         try (BufferedReader br = new BufferedReader(new FileReader("test.dat"))) {
-            String s=;
+            String s;
 
             while ((s = br.readLine()) != null) {
                 System.out.println(s);
             }
         } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        } catch (InvalidObjectException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
 }
