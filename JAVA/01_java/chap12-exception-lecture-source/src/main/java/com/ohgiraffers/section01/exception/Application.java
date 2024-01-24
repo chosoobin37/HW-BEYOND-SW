@@ -1,9 +1,14 @@
 package com.ohgiraffers.section01.exception;
 
-public class Application01 {
+public class Application {
     public static void main(String[] args) throws Exception {
         
         /* 수업목표. 예외 이해 및 처립 문법 활용 */
+
+        /* 필기. 예외처리 방법
+         *  1. throws를 통한 위임
+         *  2. try-catch를 통한 처리
+        * */
         ExceptionTest et = new ExceptionTest();
 
         /* 설명. try-catch 구문을 통해 프로그램이 종료되지 않게 처리 가능 */ 
