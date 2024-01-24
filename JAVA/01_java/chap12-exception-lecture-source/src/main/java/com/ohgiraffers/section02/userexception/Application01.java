@@ -13,7 +13,8 @@ public class Application01 {
         try {
 //            et.checkEnoughMoney(-30000, 50000);
 //            et.checkEnoughMoney(30000, -50000);
-            et.checkEnoughMoney(300000, 50000);
+//            et.checkEnoughMoney(300000, 50000);
+            et.checkEnoughMoney(30000, 50000);
 //        } catch (PriceNegativeException e) {
 //            System.out.println(e.getMessage());
 //        } catch (NotEnoughMoneyException e) {
