@@ -16,7 +16,7 @@ public class Application04 {
         /* 설명.
          *  1. 기존에 파일이 해당 위치에 없다면, 기존 ObjectOutputStream으로 처음 데이터 넣기
          *  2. 기존에 파일이 해당 위치에 있다면, 우리가 만든 MyOutput으로 데이터 이어서 넣기
-         * */
+        * */
 
         File file = new File("src/main/java/com/ohgiraffers/section03/filterstream/testObject.txt");
         System.out.println("파일 있나? " + file.exists());
@@ -86,3 +86,10 @@ public class Application04 {
         }
     }
 }
+
+
+
+
+
+
+
