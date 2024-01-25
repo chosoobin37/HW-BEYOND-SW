@@ -6,7 +6,8 @@ import java.io.Serializable;
 
 public class MemberDTO implements Serializable {
     private String id;
-    private String pwd;
+    /* 설명. transient 키워드가 붙은 필드 -> 직렬화 제외 */
+    private /* transient */ String pwd;
     private String name;
     private String email;
     private int age;
