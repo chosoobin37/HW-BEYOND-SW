@@ -1,6 +1,5 @@
 package com.ohgiraffers.section04.assignment.run;
 
-
 import com.ohgiraffers.section04.assignment.aggregate.BloodType;
 import com.ohgiraffers.section04.assignment.aggregate.Member;
 import com.ohgiraffers.section04.assignment.service.MemberService;
