@@ -14,9 +14,12 @@ public class MemberRepository {
     public MemberRepository() {
 
         ArrayList<Member> members = new ArrayList<>();
-        members.add(new Member(1, "user01", "pass01", 20, new String[]{"발레", "수영"}, Blood_Type.A));
-        members.add(new Member(2, "user02", "pass02", 20, new String[]{"발레", "수영"}, Blood_Type.A));
-        members.add(new Member(3, "user03", "pass03", 20, new String[]{"발레", "수영"}, Blood_Type.A));
+        members.add(new Member
+                (1, "user01", "pass01", 20, new String[]{"발레", "수영"}, Blood_Type.A));
+        members.add(new Member
+                (2, "user02", "pass02", 15, new String[]{"게임", "영화시청"}, Blood_Type.O));
+        members.add(new Member
+                (3, "user03", "pass03", 25, new String[]{"발레", "수영"}, Blood_Type.AB));
 
         saveMembers(members);
         loadMembers();
@@ -77,7 +80,7 @@ public class MemberRepository {
             }
         }
     }
-    public ArrayList<Member> selectMembers() {
+    public ArrayList<Member> selectAllMembers() {
         return memberList;
     }
 
