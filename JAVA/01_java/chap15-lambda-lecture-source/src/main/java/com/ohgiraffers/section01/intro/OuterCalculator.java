@@ -7,14 +7,14 @@ public interface OuterCalculator {
     }
     @FunctionalInterface
     public interface Minus {
-        int sumTwoNumber(int a, int b);
+        int minusTwoNumber(int a, int b);
     }
     @FunctionalInterface
     public interface Multiply {
-        int sumTwoNumber(int a, int b);
+        int multiplyTwoNumber(int a, int b);
     }
     @FunctionalInterface
     public interface Divide {
-        int sumTwoNumber(int a, int b);
+        int divideTwoNumber(int a, int b);
     }
 }
