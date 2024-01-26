@@ -30,7 +30,7 @@ public class Application {
                     break;
                 case 3: mm.registMember(signUp());
                     break;
-                case 4:
+                case 4: mm.deleteMember(chooseMemberNo());
                     break;
                 case 9: System.out.println("프로그램을 종료합니다.");
                     return;
