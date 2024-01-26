@@ -1,4 +1,4 @@
-package com.ohgiraffers.section04.assignment.aggergate;
+package com.ohgiraffers.section04.assignment.aggregate;
 
 import java.io.Serializable;
 import java.util.Arrays;
@@ -11,20 +11,27 @@ public class Member implements Serializable {
     private String pwd;             // 회원 password
     private int age;                // 회원 나이
     private String[] hobbies;       // 회원 취미
-    private Blood_Type bloodType;   // 회원 혈액형
+    private BloodType bloodType;   // 회원 혈액형
 
     /* 설명. 엔티티 클래스는 setter를 꼭 필요한 것만 생성 */
 
-    public Member(int i, String user01, String pass01, int memNo, String[] strings) {
+    public Member() {
     }
 
-    public Member(int memNo, String id, String pwd, int age, String[] hobbies, Blood_Type bloodType) {
+    public Member(int memNo, String id, String pwd, int age, String[] hobbies, BloodType bloodType) {
         this.memNo = memNo;
         this.id = id;
         this.pwd = pwd;
         this.age = age;
         this.hobbies = hobbies;
         this.bloodType = bloodType;
+    }
+
+    public Member(String id, String pwd, int age, String[] hobbies) {
+        this.id = id;
+        this.pwd = pwd;
+        this.age = age;
+        this.hobbies = hobbies;
     }
 
     @Override
@@ -39,6 +46,14 @@ public class Member implements Serializable {
                 '}';
     }
 
+    public void setMemNo(int memNo) {
+        this.memNo = memNo;
+    }
+
+    public void setBloodType(BloodType bloodType) {
+        this.bloodType = bloodType;
+
+    }
     public int getMemNo() {
         return memNo;
     }
@@ -59,7 +74,9 @@ public class Member implements Serializable {
         return hobbies;
     }
 
-    public Blood_Type getBloodType() {
+    public BloodType getBloodType() {
         return bloodType;
     }
+
+
 }
