@@ -11,8 +11,8 @@ public class Application {
 
         /* 수업목표. Enum 문법 이해 및 활용(클래스적 면모) */
         /* 필기.
-         *  enum 타입의 필드를 최초 사용 시에만 열거 타입의 인스턴스를 최초 하나만 생성하고 이후에는 생성자 호출 X 
-         *  또한, enum 타입 -> set으로 바꿔 반복시키며 필드들을 한 번에 확인 및 활용 가능
+         *  enum 타입의 필드를 최초 사용 시에만 열거 타입의 인스턴스 -> 한 번만 생성, 이후에는 생성자 호출 X
+         *  enum 타입 -> set으로 바꿔 반복시키며 필드들을 한 번에 확인 및 활용 가능
         * */
         UserRole1 admin = UserRole1.Admin;
         System.out.println(admin.toString());

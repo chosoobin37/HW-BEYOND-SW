@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Application {
     public static void main(String[] args) {
 
-        /* 수업목표. 정수 열거 패턴과 단점 이해(열거형 enum 아닐 때) */
+        /* 수업목표. 정수 열거 패턴과 단점 이해 (열거형 enum 아닐 때) */
         int subject1 = Subjects.JAVA;
         int subject2 = Subjects.HTML;
 

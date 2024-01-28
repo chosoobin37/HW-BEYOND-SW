@@ -10,8 +10,8 @@ public enum UserRole1 {
     private String name;
 
     /* 필기.
-    *   생성자를 가질 수 있다. 다만, 생성자는 외부에서 사용하지 못하도록(싱글톤 패턴) default
-    *   또는 private 접근 제어자만 사용 가능
+    *   생성자를 가질 수 있지만, 생성자 -> 외부에서 사용하지 못하도록(싱글톤 패턴) default
+    *   private 접근 제어자만 사용 가능
     *   (enum 타입은 고정된 상수들의 집합, 한 번 할당된 객체는 불변)  */
     private UserRole1() {
         System.out.println("기본 생성자 호출 확인");

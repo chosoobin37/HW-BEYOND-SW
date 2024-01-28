@@ -6,7 +6,7 @@ public enum Subjects {
     JDBC,               // 2
     HTML,               // 3
     CSS,                // 4
-    JAVASCRIPT,
+    JAVASCRIPT
     ;      // 5
 
     Subjects() {
