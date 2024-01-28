@@ -1,13 +1,14 @@
 package com.ohgiraffers.section04.assignment.repository;
 
 import com.ohgiraffers.section04.assignment.aggregate.BloodType;
+import com.ohgiraffers.section04.assignment.aggregate.MBTI;
 import com.ohgiraffers.section04.assignment.aggregate.Member;
 import com.ohgiraffers.section04.assignment.stream.MyObjectOutput;
 
 import java.io.*;
 import java.util.ArrayList;
 
-/* 설명. 데이터와 입출력을 위해 만들어지며 성공 실패 결과를 반환하는 클래스 */
+/* 설명. 데이터와 입출력을 위해 만들어지며 성공 및 실패 결과를 반환하는 클래스 */
 public class MemberRepository {
 
     private ArrayList<Member> memberList = new ArrayList<>();
@@ -19,18 +20,17 @@ public class MemberRepository {
         File file = new File("src/main/java/com/ohgiraffers/section04/assignment/db/memberDB.dat");
         if(!file.exists()) {
             ArrayList<Member> members = new ArrayList<>();
-            members.add(new Member(1, "user01", "pass01", 20,
-                    new String[]{"발레", "수영"}, BloodType.A));
-            members.add(new Member(2, "user02", "pass02", 10,
-                    new String[]{"게임", "영화시청"}, BloodType.B));
-            members.add(new Member(3, "user03", "pass03", 15,
-                    new String[]{"음악감상", "독서", "명상"}, BloodType.O));
+            members.add(new Member(1, "user01", "pass01", 20, new String[]{"발레", "수영"}, BloodType.A,
+                    MBTI.INFP, "01012345678", "000101-1234567", "나성범", "namail@naver.com"));
+            members.add(new Member(2, "user02", "pass02", 10, new String[]{"게임", "영화시청"}, BloodType.B,
+                    MBTI.ENTP, "010-5621-6495", "000125-2236416", "양현종", "yang54@naver.com"));
+            members.add(new Member(3, "user03", "pass03", 15, new String[]{"음악감상", "독서", "명상"}, BloodType.O,
+                    MBTI.ISTJ, "010-5687-4666", "001125-3215698", "김도영", "doyoung@gmail.com"));
 
             saveMembers(members);
         }
 
         loadMembers();
-
 //        System.out.println("==== repository에서 회원정보 다 읽어왔는지 확인 ====");
 //        for(Member m: memberList) {
 //            System.out.println(m);
@@ -44,7 +44,8 @@ public class MemberRepository {
         try {
             oos = new ObjectOutputStream(
                     new BufferedOutputStream(
-                            new FileOutputStream("src/main/java/com/ohgiraffers/section04/assignment/db/memberDB.dat")));
+                            new FileOutputStream
+                                    ("src/main/java/com/ohgiraffers/section04/assignment/db/memberDB.dat")));
 
             /* 설명. 넘어온 회원 수만큼 객체 출력하기 */
             for(Member m: members) {
@@ -69,7 +70,8 @@ public class MemberRepository {
         try {
             ois = new ObjectInputStream(
                     new BufferedInputStream(
-                       new FileInputStream("src/main/java/com/ohgiraffers/section04/assignment/db/memberDB.dat")));
+                       new FileInputStream
+                               ("src/main/java/com/ohgiraffers/section04/assignment/db/memberDB.dat")));
 
             /* 설명. 파일로부터 모든 회원 정보를 읽어 memberList에 추가(add) */
             while(true) {
@@ -114,13 +116,15 @@ public class MemberRepository {
         return saveMember(member);
     }
 
-    /* 설명. 객체 출력을 할 예정인데 기존 ObjectOutputStream 대신 새로 정의한 스트림으로 회원 한명 파일 출력해서 int 반환하기(feat.이어쓰기) */
+    /* 설명. 객체 출력을 할 예정인데 기존 ObjectOutputStream 대신
+        새로 정의한 스트림으로 회원 한명 파일 출력해서 int 반환하기(feat.이어쓰기) */
     private int saveMember(Member member) {
         MyObjectOutput moo = null;
         try {
             moo = new MyObjectOutput(
                     new BufferedOutputStream(
-                            new FileOutputStream("src/main/java/com/ohgiraffers/section04/assignment/db/memberDB.dat", true)));
+                            new FileOutputStream
+                                    ("src/main/java/com/ohgiraffers/section04/assignment/db/memberDB.dat", true)));
             
             /* 설명. 파일로 객체 하나 출력하기 */
             moo.writeObject(member);
@@ -143,9 +147,8 @@ public class MemberRepository {
 
     public int deleteMember(int memNo) {
         for (int i = 0; i < memberList.size(); i++) {
-            if (memberList.get(i).getMemNo() == memNo) {
-                // 지우려는 회원과 같은 회원 번호인 index 찾기
-                
+            if (memberList.get(i).getMemNo() == memNo) {        // 지우려는 회원과 같은 회원 번호인 index 찾기
+
                 /* 설명. 프로그램 상에서 회원을 관리하는 memberList 뿐 아니라 DB(회원 파일)도 같이 적용되게 함 */ 
                 memberList.remove(i);
                 saveMembers(memberList);
@@ -155,13 +158,3 @@ public class MemberRepository {
         return 0;
     }
 }
-
-
-
-
-
-
-
-
-
-
