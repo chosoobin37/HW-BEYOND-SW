@@ -9,7 +9,8 @@ public class Application03 {
         DataOutputStream dos = null;
         try {
             dos = new DataOutputStream(
-                    new FileOutputStream("src/main/java/com/ohgiraffers/section03/filterstream/testData.txt"));
+                    new FileOutputStream
+                            ("src/main/java/com/ohgiraffers/section03/filterstream/testData.txt"));
 
             /* 설명. data 타입 별로 해당 데이터 타입에 만즌 출력 메소드를 활용하여 파일에 출력하기 (순서 중요) */
 
@@ -41,7 +42,8 @@ public class Application03 {
 
         try {
             dis = new DataInputStream(
-                    new FileInputStream("src/main/java/com/ohgiraffers/section03/filterstream/testData.txt"));
+                    new FileInputStream
+                            ("src/main/java/com/ohgiraffers/section03/filterstream/testData.txt"));
 
             /* 설명. 입력받을 때도 출력 순서 지켜서 입력 */ 
             while(true) {
@@ -53,7 +55,7 @@ public class Application03 {
         } catch (EOFException e) {
             
             /* 설명. data 입출력 -> EOFEException 활용하여 파일의 끝까지 입력받는 것 처리 가능 */
-            System.out.println("파일 다 읽어냄");
+            System.out.println("파일 읽기 완료 ...");
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {

@@ -9,31 +9,36 @@ public class Application04 {
 
         /* 수업목표. 객체단위 입출력 보조스트림을 이해하고 활용할 수 있다. */
         MemberDTO[] memArr = new MemberDTO[100];
-        memArr[0] = new MemberDTO("user01", "pass01", "홍길동", "hong777@ohgiraffers.com", 25, '남');
-        memArr[1] = new MemberDTO("user02", "pass02", "유관순", "korea31@ohgiraffers.com", 16, '여');
-        memArr[2] = new MemberDTO("user03", "pass03", "이순신", "leesoonsin@ohgiraffers.com", 22, '남');
+        memArr[0] = new MemberDTO
+                ("user01", "pass01", "홍길동", "hong777@ohgiraffers.com", 25, '남');
+        memArr[1] = new MemberDTO
+                ("user02", "pass02", "유관순", "korea31@ohgiraffers.com", 16, '여');
+        memArr[2] = new MemberDTO
+                ("user03", "pass03", "이순신", "leesoonsin@ohgiraffers.com", 22, '남');
 
         /* 설명.
-         *  1. 기존에 파일이 해당 위치에 없다면, 기존 ObjectOutputStream으로 처음 데이터 넣기
-         *  2. 기존에 파일이 해당 위치에 있다면, 우리가 만든 MyOutput으로 데이터 이어서 넣기
+         *  1. 기존에 파일이 해당 위치에 없는 경우 -> 기존 ObjectOutputStream으로 처음 데이터 넣기
+         *  2. 기존에 파일이 해당 위치에 있는 경우 -> 직접 만든 MyOutput으로 데이터 이어서 넣기
         * */
 
-        File file = new File("src/main/java/com/ohgiraffers/section03/filterstream/testObject.txt");
-        System.out.println("파일 있나? " + file.exists());
+        File file = new File
+                ("src/main/java/com/ohgiraffers/section03/filterstream/testObject.txt");
+        System.out.println("파일 유무: " + file.exists());
 
         ObjectOutputStream objOut = null;
 
         try {
-            if(!file.exists()) {                // 해당 위치에 파일이 존재하지 않는다면(처음)
+            if(!file.exists()) {                    // 해당 위치에 파일이 존재하지 않는다면(처음)
                 objOut = new ObjectOutputStream(
                         new BufferedOutputStream(
-                                new FileOutputStream(
-                                        "src/main/java/com/ohgiraffers/section03/filterstream/testObject.txt")));
-            } else {                            // 해당 위치에 파일이 존재한다면(처음 이후)
+                                new FileOutputStream
+                                        ("src/main/java/com/ohgiraffers/section03/filterstream/testObject.txt")));
+            } else {                                // 해당 위치에 파일이 존재한다면(처음 이후)
                 objOut = new MyOutput(
                         new BufferedOutputStream(
-                                new FileOutputStream(
-                                        "src/main/java/com/ohgiraffers/section03/filterstream/testObject.txt", true)));
+                                new FileOutputStream
+                                        ("src/main/java/com/ohgiraffers/section03/filterstream/testObject.txt",
+                                                true)));
             }
 
             for (int i = 0; i < memArr.length; i++) {
@@ -58,7 +63,8 @@ public class Application04 {
         try {
             ois = new ObjectInputStream(
                     new BufferedInputStream(
-                            new FileInputStream("src/main/java/com/ohgiraffers/section03/filterstream/testObject.txt")));
+                            new FileInputStream
+                                    ("src/main/java/com/ohgiraffers/section03/filterstream/testObject.txt")));
 
             int i = 0;
             while(true) {
@@ -66,7 +72,7 @@ public class Application04 {
                 i++;
             }
         } catch (EOFException e) {
-            System.out.println("객체 단위 파일 입력 완료");
+            System.out.println("객체 단위 파일 입력 완료 ...");
         } catch (IOException e) {
             throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {

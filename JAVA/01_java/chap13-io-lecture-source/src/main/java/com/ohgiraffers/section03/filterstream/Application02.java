@@ -32,7 +32,7 @@ public class Application02 {
         bw = new BufferedWriter(osw);
 
         try {
-            bw.write("println 구웃");
+            bw.write("println 정상작동 ...");
         } catch (IOException e) {
             throw new RuntimeException(e);
         } finally {

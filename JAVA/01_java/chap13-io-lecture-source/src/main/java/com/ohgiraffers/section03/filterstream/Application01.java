@@ -13,14 +13,15 @@ public class Application01 {
         BufferedWriter bw = null;
         try {
             bw = new BufferedWriter(
-                    new FileWriter("src/main/java/com/ohgiraffers/section03/fileStream/testBuffered.txt"));
+                    new FileWriter
+                            ("src/main/java/com/ohgiraffers/section03/filterstream/testBuffered.txt"));
 
             bw.write("드디어 푸바오가 당근을 먹을 수 있어 \n");
             bw.write("드디어 푸바오가 워토우를 먹을 수 있어\n");
             bw.write("푸바오는 사과를 제일 좋아해 ~ ");
 
             /* 설명.
-             *  버퍼를 이용해서 출력을 하는 경우 -> 버퍼 공간이 가득 차지 않으면 내보내기(출력)가 안 되는 경우 존재
+             *  버퍼를 이용해서 출력을 하는 경우 -> 버퍼 공간이 가득 차지 않으면 내보내기(출력)가 안 되는 경우 有
              *  -> 버퍼에 담긴 내용을 강제로 내보내기 위해 flush() 활용
              *  (write를 했는데 파일에 값이 안 적혀있으면 flush() 활용)
              *  -
@@ -41,7 +42,8 @@ public class Application01 {
         BufferedReader br = null;
         try {
             br = new BufferedReader(
-                    new FileReader("src/main/java/com/ohgiraffers/section03/fileStream/testBuffered.txt"));
+                    new FileReader
+                            ("src/main/java/com/ohgiraffers/section03/filterstream/testBuffered.txt"));
             String str = "";
             while ((str = br.readLine()) != null) {
                 System.out.println(str);
