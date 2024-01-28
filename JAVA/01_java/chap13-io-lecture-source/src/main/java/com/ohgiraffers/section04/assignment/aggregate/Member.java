@@ -6,6 +6,7 @@ import java.util.Arrays;
 /* 설명. 객체 입출력의 대상이 되는 클래스이자 엔티티 개념의 클래스(DB에 저장된 데이터를 담거나 넣을 데이터를 담을 객체) */
 public class Member implements Serializable {       // 객체 입출력을 위해 Serializable 인터페이스 구현
 
+    /* 필기. 입력받을 필드 추가 (과제) */
     private int memNo;                   // 회원 번호
     private String id;                   // 회원 아이디
     private String pwd;                  // 회원 비번

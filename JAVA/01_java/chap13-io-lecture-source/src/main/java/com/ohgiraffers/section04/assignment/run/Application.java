@@ -49,6 +49,7 @@ public class Application {
     }
 
     /* 설명. 사용자로부터 회원번호를 제외한 정보를 입력 받아(회원가입용 정보) Member타입으로 반환하는 메소드(파싱 및 가공처리) */
+    /* 설명. 추가로 입력 받을 필드 처리 (과제) */
     private static Member signUp() {
         Member newInfo = null;
 
