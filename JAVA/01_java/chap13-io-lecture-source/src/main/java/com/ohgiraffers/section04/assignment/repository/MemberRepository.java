@@ -7,6 +7,8 @@ import com.ohgiraffers.section04.assignment.stream.MyObjectOutput;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.regex.Pattern;
 
 /* 설명. 데이터와 입출력을 위해 만들어지며 성공 및 실패 결과를 반환하는 클래스 */
 public class MemberRepository {
@@ -70,8 +72,8 @@ public class MemberRepository {
         try {
             ois = new ObjectInputStream(
                     new BufferedInputStream(
-                       new FileInputStream
-                               ("src/main/java/com/ohgiraffers/section04/assignment/db/memberDB.dat")));
+                       new FileInputStream(
+                               "src/main/java/com/ohgiraffers/section04/assignment/db/memberDB.dat")));
 
             /* 설명. 파일로부터 모든 회원 정보를 읽어 memberList에 추가(add) */
             while(true) {
@@ -157,4 +159,6 @@ public class MemberRepository {
         }
         return 0;
     }
+
+
 }

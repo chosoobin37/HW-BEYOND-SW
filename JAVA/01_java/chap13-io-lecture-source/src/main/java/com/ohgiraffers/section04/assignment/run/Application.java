@@ -48,7 +48,7 @@ public class Application {
         return sc.nextInt();
     }
 
-    /* 설명. 사용자로부터 회원번호를 제외한 정보를 입력 받아(회원가입용 정보) Member타입으로 반환하는 메소드(파싱 및 가공처리) */
+    /* 설명. 사용자로부터 회원번호를 제외한 정보를 입력 받아(회원가입용 정보) Member 타입으로 반환하는 메소드(파싱 및 가공처리) */
     /* 설명. 추가로 입력 받을 필드 처리 (과제) */
     private static Member signUp() {
 
@@ -121,7 +121,6 @@ public class Application {
 
         System.out.print("이메일을 입력하세요 (예: chomuckbab@naver.com): ");
         String email= sc.nextLine();
-
 
         /* 필기.
          *  회원으로부터 회원가입을 위한 정보를 입력받아 Member 타입객체 하나로 가공 처리할 때 방법이 두 가지가 있다.

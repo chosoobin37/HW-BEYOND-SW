@@ -4,6 +4,7 @@ import com.ohgiraffers.section04.assignment.aggregate.Member;
 import com.ohgiraffers.section04.assignment.repository.MemberRepository;
 
 import java.util.ArrayList;
+import java.util.regex.Pattern;
 
 /* 설명. Transaction 성공실패 여부 확인 및 회원 관련 비즈니스 로직 처리 클래스 */
 public class MemberService {
@@ -17,9 +18,9 @@ public class MemberService {
         ArrayList<Member> selectedMembers = mr.selectAllMembers();
 
         /* 설명. 회원이 한명도 없어서 조회 결과가 없더라도 ArrayList객체는 넘어온다.(Empty상태로) */
-        if(!selectedMembers.isEmpty()) {        // 회원이 한명이라도 조회 된다면
+        if (!selectedMembers.isEmpty()) {        // 회원이 한명이라도 조회 된다면
 //            System.out.println("==== service까지 잘 반환되어 오나 확인 ====");
-            for(Member m: selectedMembers) {
+            for (Member m : selectedMembers) {
                 System.out.println(m);
             }
             return;                             // 이후 코드와 상관 없이 메소드 종료
@@ -33,7 +34,7 @@ public class MemberService {
     public void selectMember(int memNo) {
         Member selectedMember = mr.selectMember(memNo);
 
-        if(selectedMember == null) {
+        if (selectedMember == null) {
             System.out.println("존재하지 않는 회원입니다.");
         } else {
             System.out.println("조회된 회원: " + selectedMember);
@@ -48,23 +49,38 @@ public class MemberService {
         member.setMemNo(lastMemberNo + 1);
 
         int result = mr.registMember(member);
-        if(result == 1) {
+        if (result == 1) {
             System.out.println(member.getId() + "님의 회원가입이 성공하였습니다.");
         }
     }
+
     public void deleteMember(int memNo) {
         int result = mr.deleteMember(memNo);
         if (result > 0) {
-            System.out.println(memNo+"번 회원 탈퇴 성공하였습니다.");
+            System.out.println(memNo + "번 회원 탈퇴 성공하였습니다.");
             return;
         }
 
         System.out.println();
     }
+
+    public String checkID(String id) throws Exception {
+        String idPattern = "^[a-z0-9]+$";
+        if (Pattern.matches(idPattern, id)) {
+            return id;
+        } else {
+            throw new Exception
+                    ("올바른 ID 형식이 아닙니다. ID는 영어 소문자와 숫자 조합만 가능합니다.");
+        }
+    }
+
+    public String checkPwd(String pwd) throws Exception {
+        String pwdPattern="^[a-zA-Z0-9!~@#$%^&*]+$";
+        if (Pattern.matches(pwdPattern, pwd)) {
+            return pwd;
+        } else {
+            throw new Exception
+                    ("올바른 비밀번호 형식이 아닙니다. 비밀번호는 영어, 숫자, 특수문자의 조합만 가능합니다.");
+        }
+    }
 }
-
-
-
-
-
-
