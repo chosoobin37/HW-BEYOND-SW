@@ -27,7 +27,7 @@ public class Application2 {
 		/* 설명. 인자가 2개일 경우 */
 	    int reduceTwoParam = IntStream.range(1, 4)      // 1, 2, 3
 	            						.reduce(100, Integer::sum);
-
+		// 초기값을 100으로 설정, reduce -> 대충 총합 구하기
 	    System.out.println("reduceTwoParam = " + reduceTwoParam);
 
 		/* 설명. 인자가 3개일 경우 */
