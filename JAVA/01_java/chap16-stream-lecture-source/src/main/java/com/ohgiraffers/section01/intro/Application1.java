@@ -26,3 +26,5 @@ public class Application1 {
         stringList.stream().forEach(System.out::println);
     }
 }
+
+
