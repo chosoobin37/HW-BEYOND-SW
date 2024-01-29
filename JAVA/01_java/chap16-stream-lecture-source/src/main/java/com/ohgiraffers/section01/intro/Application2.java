@@ -11,7 +11,7 @@ public class Application2 {
         List<String> stringList =
                 new ArrayList<>(Arrays.asList("java", "oracle", "jdbc", "html", "css"));
 
-        /* 설명. main 스레드에서 ㅅ트림을 사용하지 않고 확인*/
+        /* 설명. main 스레드에서 스트림을 사용하지 않고 확인*/
         System.out.println(" ===== forEach");
         for (String s : stringList) {
             System.out.println(s + " :  " + Thread.currentThread().getName());
