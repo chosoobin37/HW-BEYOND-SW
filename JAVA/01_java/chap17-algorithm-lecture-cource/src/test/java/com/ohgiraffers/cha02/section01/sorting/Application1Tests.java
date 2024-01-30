@@ -12,7 +12,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Stream;
 
-public class ApplicationTests {
+public class Application1Tests {
 
     private static int input1, input2;
     private static int[] act1, act2;
