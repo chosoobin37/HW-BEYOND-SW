@@ -2,9 +2,8 @@ package com.ohgiraffers.chap02.section01.sorting;
 
 /* 수업목표. 삽입 정렬 이해 */
 /* 필기.
- *  Insertion Sort
- *  이미 정렬된 데이터 범위에 정렬되지 않은 데이터를 적절한 위치에 삽입시켜 정렬하는 방식
- *  시간 복잡도 -> O(n^2), 비효율적
+ *  삽입 정렬 (Insertion Sort) -> 이미 정렬된 데이터 범위에 정렬되지 않은 데이터를 적절한 위치에 삽입시켜 정렬하는 방식
+ *  시간 복잡도 O(n^2) ->  비효율적
 * */
 public class Application3 {
 
