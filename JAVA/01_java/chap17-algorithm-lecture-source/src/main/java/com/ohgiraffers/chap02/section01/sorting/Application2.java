@@ -1,5 +1,6 @@
 package com.ohgiraffers.chap02.section01.sorting;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /* 수업목표. 선택정렬 이해 */

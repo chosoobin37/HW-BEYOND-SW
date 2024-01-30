@@ -42,5 +42,4 @@ public class Application3 {
             arr[j + 1] = temp;
         }
     }
-
 }

@@ -3,16 +3,14 @@ package com.ohgiraffers.chap02.section01.sorting;
 import java.util.Arrays;
 import java.util.Scanner;
 
-/* 수업목표. 버블정렬을 이해할 수 있다. */
+/* 수업목표. 버블정렬 이해 */
 /* 필기.
- *  정렬 알고리즘
- *  데이터를 특정 순서대로 배열하는데 사용한다.(일반적으로는 배열의 정렬을 뜻함(코딩 테스트 기준))
+ *  정렬 알고리즘 -> 데이터를 특정 순서대로 배열 (일반적으로는 배열의 정렬 의미)
  *
  * 필기.
- *  버블정렬(Bubble sort)
- *   두 인접한 데이터의 크기를 비교해 정렬하는 방법이다.
- *   버블의 모든 요소에 대해 반복하면서, 각 반복마다 가장 큰 요소가 배열의 끝으로 "버블링(이동)" 된다.
- *   시간 복잡도는 O(n^2)이라 효율적이지는 않다.
+ *  버블정렬(Bubble sort) -> 두 인접한 데이터의 크기를 비교해 정렬하는 방법
+ *  버블의 모든 요소에 대해 반복, 각 반복마다 가장 큰 요소가 배열의 끝으로 Bubbling(이동)
+ *  시간 복잡도 O(n^2) -> 효율적이지는 않다.
  * */
 public class Application1 {
     /* 설명.
@@ -46,7 +44,7 @@ public class Application1 {
         int length = sc.nextInt();
         int[] arr = new int[length];
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = sc.nextInt();                  // 공백을 구분자로 하여 하나씩 입력 됨.
+            arr[i] = sc.nextInt();                  // 공백을 구분자로 하여 하나씩 입력
         }
         /* 설명. 알고리즘 실행 */
         solution(length, arr);
@@ -56,10 +54,9 @@ public class Application1 {
             System.out.print(i + " ");
         }
     }
-
     public static void solution(int length, int[] arr) {
         for (int i = 0; i < length - 1; i++) {
-            System.out.println(i+"번쨰 순회: " + Arrays.toString(arr));
+            System.out.println(i+"번째 순회: " + Arrays.toString(arr));
             for (int j = 0; j < length - 1; j++) {
                 if (arr[j] > arr[j + 1]) {
                     int temp = arr[j];              // 값이 사라지지 않게 temp라는 변수에 저장
