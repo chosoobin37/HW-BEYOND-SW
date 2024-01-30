@@ -16,6 +16,8 @@ import java.util.stream.Stream;
 public class ParameterizedTests {
 
     /* 목차. 1. @ValueSource를 이용한 parameter value 목록 지정 */
+    /* 설명. @ValueSource 이용 -> 한 개의 파라미터로 전달할 값들의 목록 지정 가능 */
+    /* 설명. 가능한 자동형 -> short, int, long, float, double, char, java.lang 클래스들 (String 포함) */
     @DisplayName("홀수 짝수 판별 테스트")
     @ParameterizedTest
     @ValueSource(ints = {1, 3, -1, 15, 123})
@@ -66,6 +68,7 @@ public class ParameterizedTests {
     }
 
     /* 목차. 3. 열거형을 이용한 @EnumSource 활용하기 */
+    /* 설명. Enum의 필드 개수만큼 각각 파라미터로 넣어주며 테스트 메소드 동장 */
     @DisplayName("Month에 정의된 타입들이 1~12월 사이의 범위인지 테스트")
     @ParameterizedTest
     @EnumSource(Month.class)
@@ -122,6 +125,8 @@ public class ParameterizedTests {
     )
     void testToUpperCase(String input, String verifyValue) {
 
+        System.out.println("input: " + input);
+        System.out.println("verifyValue: " + verifyValue);
         //when
         String actual = input.toUpperCase();
 
@@ -155,8 +160,8 @@ public class ParameterizedTests {
 
     @DisplayName("메소드 소스를 활용한 대문자 변환 테스트")
     @ParameterizedTest
-//    @MethodSource("providerStringSource")
-    @MethodSourceStringSource
+    @MethodSource("providerStringSource")
+//    @MethodSourceStringSource
     void testToUpperCaseWithMethodSource(String input, String verifyValue) {
 
         //when
@@ -166,11 +171,12 @@ public class ParameterizedTests {
         Assertions.assertEquals(verifyValue, actual);
     }
 
-    @Documented
-    @Target(ElementType.METHOD)
-    @Retention(RetentionPolicy.RUNTIME)
-    @MethodSource("providerStringSource")
-    private @interface MethodSourceStringSource {}
+    /* 설명. Annotation을 만들어서 메소드명을 일일히 작성하지 않아도 됨 */
+//    @Documented
+//    @Target(ElementType.METHOD)
+//    @Retention(RetentionPolicy.RUNTIME)
+//    @MethodSource("providerStringSource")
+//    private @interface MethodSourceStringSource {}
 
     /* 목차. 6. ArgumentsProvider를 이용한 메소드 소스 사용 */
     @DisplayName("두 수를 더한 결과를 정상적으로 반환하는지 테스트")
