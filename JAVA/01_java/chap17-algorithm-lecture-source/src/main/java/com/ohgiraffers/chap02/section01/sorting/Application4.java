@@ -2,6 +2,13 @@ package com.ohgiraffers.chap02.section01.sorting;
 
 import java.util.Scanner;
 
+/* 수업목표. 퀵 정렬 이해 */
+/* 필기.
+ *  퀵 정렬 (Quick Sorting) -> 기준값(pivot)을 선정해 해당 값보다 작은 데이터와 큰 데이터로 분류하는 것을 반복해서 정렬
+ *  병합 알고리즘과 함께 실제 정렬 알고리즘으로 많이 활용
+ *  시간 복잡도 O(nlogn) -> 최악의 경우 O(n^2)
+* */
+
 public class Application4 {
 
     public static void main(String[] args) {
@@ -28,8 +35,7 @@ public class Application4 {
         System.out.println("==== process call ====");
         int pivot = process(lo, hi, arr);
         System.out.println("lo = " + lo + ", hi = " + hi + ", pivot = " + pivot);
-        System.out.println("==== process end ====");
-
+        System.out.println("==== process end ====\n");
 
         solution(lo, pivot, arr);
         solution(pivot + 1, hi, arr);
@@ -43,17 +49,17 @@ public class Application4 {
         int pivot = arr[(left + right) / 2];
         while(true) {
 
-            /* 설명. pivot 위치에 있는 값보다 작은 값을 가리키면 lo 포인터를 증가한다. */
+            /* 설명. pivot 위치에 있는 값보다 작은 값을 가리키면 lo 포인터 증가 */
             do {
                 lo++;
             } while(arr[lo] < pivot);
 
-            /* 설명. pivot 위치에 있는 값보다 크면서 lo 포인터의 위치보다 크거나 같은 위치이면 감소한다. */
+            /* 설명. pivot 위치에 있는 값보다 크면서 lo 포인터의 위치보다 크거나 같은 위치면 감소 */
             do {
                 hi--;
             } while(arr[hi] > pivot && lo <= hi);
 
-            /* 설명. lo 포인터의 위치가 hi 포인터와 앞지를려고 하면 hi위치를 반환한다.(분할 기준 반환) */
+            /* 설명. lo 포인터의 위치가 hi 포인터와 앞지를려고 하면 hi위치 반환 (분할 기준 반환) */
             if(lo >= hi) {
                 return hi;
             }
@@ -61,7 +67,7 @@ public class Application4 {
         }
     }
 
-    /* 설명. 전달된 배열과 인덱스들을 바탕으로 위치를 스왑(바꾸는)하는 메소드 */
+    /* 설명. 전달된 배열과 인덱스들을 바탕으로 위치를 swap(바꾸는)하는 메소드 */
     private static void swap(int[] arr, int lo, int hi) {
         int temp = arr[lo];
         arr[lo] = arr[hi];
