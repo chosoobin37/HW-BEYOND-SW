@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
+/* 수업목표. BFS와 DFS를 활용해 동일한 결과가 나오는 것 이해 */
 public class Application4 {
     public static BufferedReader toBufferedReader(String str){
 
