@@ -3,6 +3,8 @@ package com.ohgiraffers.chap03.section01.graph_search;
 import java.io.*;
 import java.util.StringTokenizer;
 
+/* 수업목표.  */
+
 public class Application1 {
     static boolean[] visit;
     static int[][] map;
@@ -37,15 +39,15 @@ public class Application1 {
             int b = Integer.valueOf(str.nextToken());
 
             /* 설명. 무방향 그래프로 처리되기 위해 노드 번호들 (인덱스 번호) -> 반대로도 적용 */
-//            map[a][b] = 1;
-//            map[b][a] = 1;
-            map[a][b] = map[b][a] = 1;
+            map[a][b] = 1;
+            map[b][a] = 1;
+//            map[a][b] = map[b][a] = 1;
         }
         
         /* 설명. dfs 그래프 탐색 기법으로 1번 노드부터 1번 노드와 관련된 모든 노드들을 카운팅하는 메소드 호출 */
         dfs(1);
 
-        return count;
+        return count-1;
     }
 
     /* 설명. 재귀함수로 dfs 알고리즘 구현 메소드 */
@@ -56,7 +58,7 @@ public class Application1 {
         /* 설명. 넘어온 노드와 연관된 노드를 찾는 반복문 (기존에  */
         for (int i = 0; i < node; i++) {
             if (map[start][i] == 1 && !visit[i]) {
-                dfs(1);
+                dfs(i);
             }
         }
 
