@@ -76,10 +76,12 @@ public class Application2 {
         return count;
     }
 
+    /* 설명. 상하좌우에 배추가 심어져있는 경우 -> 한 번씩 동작 (기본적으로는 이렇고 방문 배열에 대해서는 다른 의미) */
     static void bfs(int x, int y) {
         q.offer(new Node(x, y));
         visit[y][x] = true;
 
+        /* 설명. 연속적으로 상하좌우에 배추가 심어진 경우 -> 반복 */ 
         while (!q.isEmpty()) {
             Node node = q.poll();
 
