@@ -51,7 +51,7 @@ public class Application4Tests {
                 arguments(input3, output3)
         );
     }
-    @DisplayName("BFS1")
+    @DisplayName("BFSDFS")
     @Timeout(value = 1000, unit = TimeUnit.MILLISECONDS)
     @ParameterizedTest
     @MethodSource("provideSource")
