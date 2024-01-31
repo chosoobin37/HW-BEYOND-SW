@@ -8,12 +8,17 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-/* 수업목표. BFS와 x, y 좌표를 활용한 문제 해결 -> 배열의 인덱스와 반대 개념 */ 
+/* 수업목표. BFS와 x, y 좌표를 활용한 문제 해결 -> 배열의 인덱스와 반대 개념 */
+/* 필기.
+ *  너비 우선 탐색(Breadth-First Search) -> 선입선출 구조에 queue 활용
+ *  시작노드에서 출발해 시작 노드를 기준으로 가까운 노드를 먼저 방문하며 탐색하는 알고리즘
+ * */
 public class Application2 {
     public static BufferedReader toBufferedReader(String str) {
         InputStream is = new ByteArrayInputStream(str.getBytes());
         return new BufferedReader(new InputStreamReader(is));
     }
+
     static Queue<Node> q = new LinkedList<>();
 
     /* 설명. 상하좌우 개념의 좌표 배열들 */
@@ -70,7 +75,7 @@ public class Application2 {
                 /* 설명. 방문 안 한 위치에 배추가 심어진 경우 */
                 if (visit[i][j] == false && map[i][j] == 1) {
                     count++;
-                    bfs(j,i);           // bfs 인자 -> x좌표, y좌표 순으로 받을 것이므로 i와 j 확인하고 넘겨줌
+                    bfs(j, i);           // bfs 인자 -> x좌표, y좌표 순으로 받을 것이므로 i와 j 확인하고 넘겨줌
                 }
             }
         }
@@ -82,7 +87,7 @@ public class Application2 {
         q.offer(new Node(x, y));
         visit[y][x] = true;
 
-        /* 설명. 연속적으로 상하좌우에 배추가 심어진 경우 -> 반복 */ 
+        /* 설명. 연속적으로 상하좌우에 배추가 심어진 경우 -> 반복 */
         while (!q.isEmpty()) {
             Node node = q.poll();
 
