@@ -6,7 +6,7 @@ import java.util.StringTokenizer;
 /* 수업목표. DFS를 활용(재귀함수)하는 예제 이해 */
 /* 필기.
  *  깊이 우선 탐색(Dept-First Search) -> 후입선출 구조에 stack 또는 재귀함수 활용
- *  한 쪽 분기를 정하여 최대 깊이까지 탐색을 마친 후 다른 분기로 이동해 재탐색 수행 알고리즘
+ *  한 쪽 분기를 정하여 최대 깊이까지 탐색을 마친 후 다른 분기로 이동해
 * */
 public class Application1 {
     static boolean[] visit;
