@@ -5,7 +5,6 @@ import java.util.List;
 import java.io.*;
 import java.util.StringTokenizer;
 
-
 public class Application1 {
 
     static int N;
