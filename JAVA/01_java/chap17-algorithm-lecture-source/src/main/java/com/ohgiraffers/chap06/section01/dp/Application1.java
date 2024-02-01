@@ -1,5 +1,11 @@
 package com.ohgiraffers.chap06.section01.dp;
 
+/* 수업목표. 동적계획법 (Dynamic Programming) 알고리즘 활용 예제 이해 */
+/* 필기.
+ *  복잡한 전체 문제를 작은 부분 문제에 대한 최적의 해결방법을 고안하여 해결하는 알고리즘
+ *  규칙이 보이는 구간들에 대한 점화식을 세워 작은 문제들을 해결하면 전체 문제의 최적의 값 도출
+* */
+
 public class Application1 {
 
     public static int solution(int N) throws Exception {

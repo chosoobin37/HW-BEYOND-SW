@@ -5,6 +5,12 @@ import java.util.List;
 import java.io.*;
 import java.util.StringTokenizer;
 
+/* 수업목표. Tree 알고리즘을 활용하는 예제 이해 */
+/* 필기.
+ *  그래프에서 계층적인 구조를 나타내기 위해 최상위 노드인 root 노드에서 시작
+ *  -> 하위노드들로 분기하는 방식으로 구성된 알고리즘
+* */
+
 public class Application1 {
 
     static int N;
