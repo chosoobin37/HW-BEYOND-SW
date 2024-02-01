@@ -1,5 +1,11 @@
 package com.ohgiraffers.chap04.section01.greedy;
 
+
+/* 수업목표. greedy 알고리즘 이해 */
+/* 필기.
+ *  현재 상태에서 최적의 해답(최대 이익)을 찾기 위해 적용하는 알고리즘
+ *  -> 앞의 선택이 이후에 영향을 주지 않을 때 적용 가능
+* */
 public class Application1 {
     public static int solution(int n) {
 
