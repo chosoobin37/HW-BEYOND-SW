@@ -22,7 +22,7 @@ public class Application1Tests {
     @BeforeAll
     public static void set() {
 
-        /* 예시1 */
+        /* 예시 1 */
         input1 = "7\n" +
                 "1 6\n" +
                 "6 3\n" +

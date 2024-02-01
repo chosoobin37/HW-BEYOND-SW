@@ -58,11 +58,15 @@ public class Application1 {
     }
 
     private static void dfs(int parentNode) {
+        /* 설명. 이미 방문한 노드들은 부모 노드들 -> 부모 노드들을 재방문하지 않도록 (방문 배열의 의미) */
         isVisit[parentNode] = true;
 
+        /* 설명. 입력받은 값을 통해 생성된 list로부터 관련 있는 노드들을 확인하기 위한 반복문 */
         for (int node : list[parentNode]) {
-            if(!isVisit[node]){
-                parent[node] = parentNode;
+
+            /* 설명. 방문한 적이 없다면 자식 노드 -> 루트부터 방문 체크하며 연관된 것들을 따라 내려왔기 때문 */
+            if (!isVisit[node]) {
+                parent[node] = parentNode;          // 여기서부터는 node가 childnode를 의미
                 dfs(node);
             }
         }
