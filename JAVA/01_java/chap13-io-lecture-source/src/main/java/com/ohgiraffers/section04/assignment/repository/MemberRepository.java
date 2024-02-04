@@ -22,12 +22,18 @@ public class MemberRepository {
         File file = new File("src/main/java/com/ohgiraffers/section04/assignment/db/memberDB.dat");
         if(!file.exists()) {
             ArrayList<Member> members = new ArrayList<>();
-            members.add(new Member(1, "user01", "pass01", 20, new String[]{"발레", "수영"}, BloodType.A,
-                    MBTI.INFP, "01012345678", "000101-1234567", "나성범", "namail@naver.com"));
-            members.add(new Member(2, "user02", "pass02", 10, new String[]{"게임", "영화시청"}, BloodType.B,
-                    MBTI.ENTP, "010-5621-6495", "000125-2236416", "양현종", "yang54@naver.com"));
-            members.add(new Member(3, "user03", "pass03", 15, new String[]{"음악감상", "독서", "명상"}, BloodType.O,
-                    MBTI.ISTJ, "010-5687-4666", "001125-3215698", "김도영", "doyoung@gmail.com"));
+            members.add
+                    (new Member
+                            (1, "user01", "pass01", 20, new String[]{"발레", "수영"}, BloodType.A,
+                                    MBTI.INFP, "01012345678", "000101-1234567", "나성범", "namail@naver.com"));
+            members.add
+                    (new Member
+                            (2, "user02", "pass02", 10, new String[]{"게임", "영화시청"}, BloodType.B,
+                                    MBTI.ENTP, "010-5621-6495", "000125-2236416", "양현종", "yang54@naver.com"));
+            members.add
+                    (new Member
+                            (3, "user03", "pass03", 15, new String[]{"음악감상", "독서", "명상"}, BloodType.O,
+                                    MBTI.ISTJ, "010-5687-4666", "001125-3215698", "김도영", "doyoung@gmail.com"));
 
             saveMembers(members);
         }

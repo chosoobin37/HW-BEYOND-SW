@@ -1,20 +1,48 @@
 package aggregate;
 
-public class Board {
+import java.io.Serializable;
+
+public class Board implements Serializable {
     private int boardNo;        // 게시글 번호
     private String id;          // 작성자
-    private String title;       // 글 제목
     private String content;     // 작성내용
     private String date;        // 작성날짜
-
+    private String title;       // 글 제목
     private CategoryType categoryType; // 카테고리
 
-    public Board(int boardNo, String id, String title, String content, String date, CategoryType categoryType) {
+    public int getBoardNo() {
+        return boardNo;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public CategoryType getCategoryType() {
+        return categoryType;
+    }
+
+    public Board() {
+    }
+
+    public Board(int boardNo,String id, String content, String date, String title, CategoryType categoryType) {
         this.boardNo = boardNo;
         this.id = id;
-        this.title = title;
         this.content = content;
         this.date = date;
+        this.title = title;
         this.categoryType = categoryType;
     }
 
@@ -24,60 +52,20 @@ public class Board {
         this.content = content;
     }
 
+    public void setBoardNo(int boardNo) {
+        this.boardNo = boardNo;
+    }
+
     @Override
     public String toString() {
         return "Board{" +
                 "boardNo=" + boardNo +
                 ", id='" + id + '\'' +
-                ", title='" + title + '\'' +
                 ", content='" + content + '\'' +
                 ", date='" + date + '\'' +
+                ", title='" + title + '\'' +
                 ", categoryType=" + categoryType +
                 '}';
-    }
-
-    public int getBoardNo() {
-        return boardNo;
-    }
-
-    public void setBoardNo(int boardNo) {
-        this.boardNo = boardNo;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public CategoryType getCategoryType() {
-        return categoryType;
     }
 
     public void setCategoryType(CategoryType categoryType) {
