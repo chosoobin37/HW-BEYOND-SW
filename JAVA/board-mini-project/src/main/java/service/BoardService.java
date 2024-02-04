@@ -22,8 +22,10 @@ public class BoardService {
         /* 설명. 회원이 한명도 없어서 조회 결과가 없더라도 ArrayList객체는 넘어온다.(Empty상태로) */
         if (!selectedBoards.isEmpty()) {        // 회원이 한명이라도 조회 된다면
             System.out.println("==== service까지 잘 반환되어 오나 확인 ====");
-            for (Board b : selectedBoards) {
-                System.out.println(b);
+            int boardNo = 0;
+            while (selectedBoards.size() > boardNo) {
+                System.out.println(selectedBoards.get(boardNo));
+                boardNo++;
             }
 
             return;                             // 이후 코드와 상관 없이 메소드 종료
@@ -46,11 +48,29 @@ public class BoardService {
 
     public void deleteBoard(int boardNo, String Member, String YN) {
         int result = br.deleteBoard(boardNo, Member, YN);
-        if (result > 0) {
-            System.out.println(boardNo + "번 게시물 삭제를 성공하였습니다.");
-            return;
+//        if (result == 1) {
+//            System.out.println(boardNo + "번 게시물 삭제를 성공하였습니다.");
+//            return;
+//        } else if (result == 2) {
+//            System.out.println("회원 아이디가 일치하지 않습니다.");
+//        } else if (result == 3) {
+//            System.out.println("입력이 잘못되었습니다.");
+//        } else if (result == 4){
+//            System.out.println("존재하지 않는 게시물 번호입니다.");
+//        }
+        switch (result) {
+            case 1:
+                System.out.println(boardNo + "번 게시물 삭제를 성공하였습니다.");
+                break;
+            case 2:
+                System.out.println("회원 아이디가 일치하지 않습니다.");
+                break;
+            case 3:
+                System.out.println("입력이 잘못되었습니다.");
+                break;
+            default:
+                System.out.println("게시물 삭제에 실패하였습니다.");
         }
-        System.out.println("게시물 삭제에 실패하였습니다.");
     }
 
     public void registBoard(Board board) {
@@ -92,7 +112,8 @@ public class BoardService {
         System.out.println("카테고리: " + board.getCategoryType());
         System.out.println("-----------------------------");
     }
-    public void updateBoard(int boardNo){
+
+    public void updateBoard(int boardNo) {
         br.updateBoard(boardNo);
     }
 }
