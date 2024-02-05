@@ -8,7 +8,7 @@
           MENU_NAME
         , MENU_PRICE
         , CATEGORY_CODE
-        , ODERABLE_STATUS
+        , ORDERABLE_STATUS
         )
         VALUES
         (

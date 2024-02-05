@@ -24,7 +24,7 @@ public class JDBCTemplate {
             /* 설명. 이번에는 'user'라는 키와 'password'라는 키 값을 지닌 properties 객체를 넘겨주고 Connection 객체 생성 */
             con = DriverManager.getConnection(url, prop);
 
-            /* 설명. DML (insert, update, deltet) 실행 시 -> 커밋 수동 설정 */
+            /* 설명. DML (insert, update, delete) 실행 시 -> 커밋 수동 설정 */
             con.setAutoCommit(false);
 
         } catch (ClassNotFoundException e) {
@@ -68,7 +68,7 @@ public class JDBCTemplate {
     public static void commit(Connection con) {
         try {
             if(con!=null&&!con.isClosed())
-                con.close();
+                con.commit();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
