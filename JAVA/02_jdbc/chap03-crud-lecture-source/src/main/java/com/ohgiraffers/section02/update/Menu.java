@@ -1,4 +1,4 @@
-package com.ohgiraffers.section01.insert;
+package com.ohgiraffers.section02.update;
 
 public class Menu {
     private int menuCode;
@@ -7,14 +7,21 @@ public class Menu {
     private int categoryCode;
     private String orderableStatus;
 
+    /* 설명. UPDATE용 생성자 */
+    public Menu(int menuCode, String menuName, int menuPrice) {
+        this.menuCode = menuCode;
+        this.menuName = menuName;
+        this.menuPrice = menuPrice;
+    }
+    public Menu() {
+    }
+
+    /* 설명. INSERT용 생성자 */
     public Menu(String menuName, int menuPrice, int categoryCode, String oderableStatus) {
         this.menuName = menuName;
         this.menuPrice = menuPrice;
         this.categoryCode = categoryCode;
         this.orderableStatus = oderableStatus;
-    }
-
-    public Menu() {
     }
 
     @Override
