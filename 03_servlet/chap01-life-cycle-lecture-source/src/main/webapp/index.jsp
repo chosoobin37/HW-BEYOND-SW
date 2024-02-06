@@ -6,6 +6,7 @@
 </head>
 <body>
     <h1 align="center">Life Cycle Test</h1>
-    <a href="xml-lifecycle">라이프사이클 테스트 (xml)</a>
+    <a href="xml-lifecycle">라이프사이클 테스트 (xml)</a><br>
+    <a href="annotation-lifecycle">라이프사이클 테스트 (annotation)</a>
 </body>
 </html>
