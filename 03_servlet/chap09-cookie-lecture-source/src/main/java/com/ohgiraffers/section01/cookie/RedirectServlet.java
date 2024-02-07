@@ -34,6 +34,7 @@ public class RedirectServlet extends HttpServlet {
             } else if ("lastName".equals(cookie.getName())) {
                 lastName = cookie.getValue();
             }
+
         }
 
         StringBuilder responseText = new StringBuilder();
