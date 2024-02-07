@@ -51,5 +51,4 @@ public class RedirectServlet extends HttpServlet {
         out.close();
 
     }
-
 }
