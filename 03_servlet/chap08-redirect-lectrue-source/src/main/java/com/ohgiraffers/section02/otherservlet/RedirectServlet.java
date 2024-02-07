@@ -12,7 +12,7 @@ import java.io.IOException;
 public class RedirectServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        /* 설명. redirect 이후 오는 서블릿은 기존과 다른 새로운 request와 respose 객체로 오게 됨 */
+        /* 설명. redirect 이후 오는 서블릿은 기존과 다른 새로운 request와 response 객체로 오게 됨 */
         System.out.println("redirect 이후 request의 attribute: " + req.getAttribute("test"));   // null
 
         /* 설명. 파라미터가 넘어오면 request 객체가 달라져도 값 전달 */
