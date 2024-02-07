@@ -5,18 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1987b6c9-d2e6-4680-8b1d-c5f86ed3a90c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../00_dev/apache-tomcat-10.1.18/webapps/chap05/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../00_dev/apache-tomcat-10.1.18/webapps/chap05/META-INF/war-tracker" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../00_dev/apache-tomcat-10.1.18/webapps/chap05/WEB-INF/classes/com/ohgiraffers/section01/response/ResponseTestServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../00_dev/apache-tomcat-10.1.18/webapps/chap05/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../00_dev/apache-tomcat-10.1.18/webapps/chap05/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ohgiraffers/section01/response/ResponseTestServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ohgiraffers/section02/headers/ResponseHeaderPrintServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../00_dev/apache-tomcat-10.1.18/webapps/chap06/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../00_dev/apache-tomcat-10.1.18/webapps/chap06/META-INF/war-tracker" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../00_dev/apache-tomcat-10.1.18/webapps/chap06/WEB-INF/classes/com/ohgiraffers/section01/exception/ExceptionHandlerServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../00_dev/apache-tomcat-10.1.18/webapps/chap06/WEB-INF/classes/com/ohgiraffers/section01/exception/Show404ErrorServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../00_dev/apache-tomcat-10.1.18/webapps/chap06/WEB-INF/classes/com/ohgiraffers/section01/exception/Show500ErrorServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../00_dev/apache-tomcat-10.1.18/webapps/chap06/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../00_dev/apache-tomcat-10.1.18/webapps/chap06/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap06-exception-handler-lecture-source/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap06-exception-handler-lecture-source/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap06-exception-handler-lecture-source/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap06-exception-handler-lecture-source/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap06-exception-handler-lecture-source/src/main/java/com/ohgiraffers/section01/exception/ExceptionHandlerServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap06-exception-handler-lecture-source/src/main/java/com/ohgiraffers/section01/exception/Show404ErrorServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap06-exception-handler-lecture-source/src/main/java/com/ohgiraffers/section01/exception/Show500ErrorServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/chap05responselecturesource/HelloServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chap06-exception-handler-lecture-source/src/main/java/com/example/chap06exceptionhandlerlecturesource/HelloServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chap06-exception-handler-lecture-source/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../chap06-exception-handler-lecture-source/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chap06-exception-handler-lecture-source/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../chap06-exception-handler-lecture-source/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +171,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1707268787992</updated>
-      <workItem from="1707268789231" duration="3330000" />
+      <workItem from="1707268789231" duration="4838000" />
     </task>
     <servers />
   </component>
