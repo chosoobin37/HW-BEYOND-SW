@@ -1,5 +1,6 @@
 package com.ohgiraffers.section01.contextlistener;
 
+import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -12,6 +13,14 @@ import java.io.IOException;
 public class ContextListenerTestServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doGet(req, resp);
+        System.out.println("context listener 확인용 servlet");
+
+        ServletContext context = req.getServletContext();
+
+        context.setAttribute("test", "value");
+        context.setAttribute("test2", "value");
+        context.setAttribute("test2", "value2");
+        context.removeAttribute("test");
+
     }
 }
