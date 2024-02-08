@@ -1,13 +1,21 @@
 package com.ohgiraffers.section02.sessionlistener;
 
 import jakarta.servlet.annotation.WebListener;
-import jakarta.servlet.http.HttpSessionAttributeListener;
-import jakarta.servlet.http.HttpSessionBindingEvent;
-import jakarta.servlet.http.HttpSessionEvent;
-import jakarta.servlet.http.HttpSessionListener;
+import jakarta.servlet.http.*;
 
 @WebListener
-public class SessionListener implements HttpSessionListener, HttpSessionAttributeListener {
+public class SessionListener implements HttpSessionListener,
+        HttpSessionAttributeListener/*, HttpSessionBindingListener*/ {
+
+    /* 설명. Binding 리스너는 SessionListener가 아닌 Session에 담기는 타입의 클래스에 직접 각각 정의해야 함  */
+    /*@Override
+    public void valueBound(HttpSessionBindingEvent event) {
+        System.out.println("bound ...");
+    }
+    @Override
+    public void valueUnbound(HttpSessionBindingEvent event) {
+        System.out.println("unbound ...");
+    }*/
 
     public SessionListener() {
         System.out.println("session listener instance 생성 ...");
@@ -35,7 +43,6 @@ public class SessionListener implements HttpSessionListener, HttpSessionAttribut
     public void sessionCreated(HttpSessionEvent se) {
         System.out.println("session created ...");
         System.out.println("created session id: " + se.getSession().getId());
-
     }
 
     @Override
