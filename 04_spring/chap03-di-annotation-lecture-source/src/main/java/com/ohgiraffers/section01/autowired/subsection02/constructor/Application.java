@@ -1,19 +1,16 @@
-package com.ohgiraffers.section01.autowired.subsection01.field;
+package com.ohgiraffers.section01.autowired.subsection02.constructor;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Application {
     public static void main(String[] args) {
-
-        /* 설명.
-         *  AnnotaqtionCongifApplicationContext 생성자에 basPackage 문자열 전달
-         *  -> ComponentScan 개념 따로 설정 클래스 없이 바로 적용 가능
-        * */
+        
         ApplicationContext context
                 = new AnnotationConfigApplicationContext("com.ohgiraffers.section01");
-
-        BookService bookService = context.getBean("bookService", BookService.class);
+        
+        /* 설명. subsection01에 있는 BookService 타입의 bean과 혼선 방지하고자 bean 이름(id) 수정 */
+        BookService bookService = context.getBean("bookServiceConstructor", BookService.class);
 
         /* 설명. 전체 도서 목록 조회 후 출력 확인 */
         bookService.findAllBook().forEach(System.out::println);

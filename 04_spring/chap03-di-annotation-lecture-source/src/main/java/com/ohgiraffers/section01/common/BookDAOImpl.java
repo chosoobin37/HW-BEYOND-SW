@@ -16,13 +16,16 @@ public class BookDAOImpl implements BookDAO {
         bookList.put(2, new BookDTO(2, 222333, "푸바오의 하루",
                 "강바오", "바오출판", new Date()));
     }
-    
+
     @Override
     public List<BookDTO> findAllBook() {
 
         /* 설명. HashMap의 value들만 추출해 ArrayList 형태로 반환 (Map -> List) */
         return new ArrayList<>(bookList.values());
+    }
 
-
+    @Override
+    public BookDTO searchBookBySequence(int sequence) {
+        return bookList.get(sequence);
     }
 }
