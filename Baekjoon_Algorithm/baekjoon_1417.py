@@ -12,7 +12,7 @@ dasom_out.sort()
 if num == 1:
     print(0)
 else:
-    while dasom<max(dasom_out):
+    while dasom<=max(dasom_out):
         dasom_out[-1] -= 1
         dasom += 1
         ppl_count += 1
