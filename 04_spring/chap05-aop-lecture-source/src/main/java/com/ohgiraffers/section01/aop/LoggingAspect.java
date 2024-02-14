@@ -17,7 +17,7 @@ public class LoggingAspect {
      *  -
      *  PointCut 표현식
      *  execution([수식어] returnType [클래스 이름].이름(파라미터))
-     *  1) 수식어 -> pub;lic, private 등 수식어 명시 (생략 가능)
+     *  1) 수식어 -> public, private 등 수식어 명시 (생략 가능)
      *  2) 리턴 타입 -> 리턴 타입 명시
      *  3) 클래스 이름 (패키지명 포함) -> 메소드의 파라미터 명시
      *  4) 파라미터 (매개변수) -> 메소드의 파라미터 명시
