@@ -1,4 +1,7 @@
 package com.ohgiraffers.section02.annotation.common;
 
-public class Pokemon {
+public interface Pokemon {
+
+    /* 설명. 공격 가능 */
+    void attack();
 }
