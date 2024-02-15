@@ -7,3 +7,6 @@ test:
   value: hell world!
   age: 19
   array: 하이루, 방가방가
+
+server:
+  port: 8888
