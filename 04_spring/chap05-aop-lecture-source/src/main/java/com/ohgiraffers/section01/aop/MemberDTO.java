@@ -8,6 +8,6 @@ import lombok.*;
 @Setter
 @ToString
 public class MemberDTO {
-    private Long id;
+    private int index;
     private String name;
 }
