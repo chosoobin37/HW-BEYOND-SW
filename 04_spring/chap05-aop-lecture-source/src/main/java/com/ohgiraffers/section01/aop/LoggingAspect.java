@@ -94,14 +94,14 @@ public class LoggingAspect {
      *   조인포인트를 진행하는 호출을 잊는 경우가 자주 발생하기 때문에 주의해야 하며
      *   가능한 최소한의 요건을 충족하면서도 가장 기능이 약한 어드바이스를 쓰는게 바람직하다.
      * */
-    @Around("logPointcut()")
-    public Object logAround(ProceedingJoinPoint joinPoint) throws Throwable{
-        System.out.println("Around Before: " + joinPoint.getSignature().getName());
-        Object result = joinPoint.proceed();        // 타겟 메소드 동작
-        System.out.println("Around Afger: " + joinPoint.getSignature().getName());
-
-        /* 설명. 실행된 타겟 메소드 반환(다른 어드바이스가 다시 실행할 수 있도록 반환한다.) */
-        return result;
-
-    }
+//    @Around("logPointcut()")
+//    public Object logAround(ProceedingJoinPoint joinPoint) throws Throwable{
+//        System.out.println("Around Before: " + joinPoint.getSignature().getName());
+//        Object result = joinPoint.proceed();        // 타겟 메소드 동작
+//        System.out.println("Around Afger: " + joinPoint.getSignature().getName());
+//
+//        /* 설명. 실행된 타겟 메소드 반환(다른 어드바이스가 다시 실행할 수 있도록 반환한다.) */
+//        return result;
+//
+//    }
 }
