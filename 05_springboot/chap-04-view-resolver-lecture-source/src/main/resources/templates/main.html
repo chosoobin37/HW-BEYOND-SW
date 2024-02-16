@@ -34,10 +34,21 @@
     <button onclick="location.href='modelandview-redirect'">ModelAndView로 View 이름 반환하여 리다이렉트</button>
 
     <script>
-        const message2 = `[[${message2}]]`;
-        if (message2) {
-            alert(message2);
+        const message2 = `[[${param.message2}]]`;
+        if (message2) {             // 설명. message2가 존재한다면
+            alert(message2);        // 설명. 확인 버튼이 있는 알림창 팝업 (현재 -> F5 누르면 무한 팝업)
         }
     </script>
+
+    <h3>ModelAndView로 Redirect 하면서 flashAttribute 추가</h3>
+    <button onclick="location.href='modelandview-redirect-attr'">
+        ModelAndView로 View 이름 반환하며 리다이렉트 & flash attr 사용하기</button>
+    <script>
+        const flashMessage2 = `[[${flashMessage2}]]`;
+        if (flashMessage2) {        // 설명. parameter 방식 X -> param. 사용 X
+            alert(flashMessage2);   // 설명. F5를 눌러도 최초 팝업 이후 재생성 X (parameter 사용X기 때문)
+        }
+    </script>
+
 </body>
 </html>
