@@ -1,6 +1,7 @@
 package com.ohgiraffers.handlermethod;
 
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -57,10 +58,10 @@ public class FirstController {
 
     /* 설명.
      *  @RequestParam 속성
-     *  1) defaultValue -> 사용자의 입력값이 없거나("") 
+     *  1) defaultValue -> 사용자의 입력값이 없거나("")
      *                      request의 parameter 키 값과 일치하지 않는 매개변수 명 사용 시 매개변수가 가질 default 값 작성
      *  2) name -> request parameter의 키 값과 다른 매개변수 명 사용하고 싶을 경우 request parameter의 키 값 작성
-    * */
+     * */
 
     // SpringBoot
     // @RequestParam 생략 가능 (Model model, String name, int modifyPrice
@@ -84,5 +85,28 @@ public class FirstController {
         model.addAttribute("message", message);
 
         return "first/messagePrinter";
+    }
+
+    @GetMapping("search")
+    public void searchMenu() {
+    }
+
+    /* 설명. 핸들러 메소드에 우리가 작성한 클래스를 메개변수로 작성하면 스프링이 객체를 만들어 주고 setter로 값도 주입해 준다.(커맨드 객체) */
+    /* 설명. @ModleAttribute 어노테이션 활용 -> 커맨드 객체를 모델에도 담아주며, 어트리뷰트의 키 값 지정 가능 (키 값 X -> 낙타봉 표기법이 키값) */
+    @PostMapping("search")
+    public String searchMenu(MenuDTO menu) {
+        System.out.println("menu = " + menu);
+
+        return "first/searchResult";
+    }
+
+    @GetMapping("login")
+    public void login() {
+    }
+
+    @PostMapping("login")
+    public String sessionTest1(HttpSession session, @RequestParam String id) {
+        session.setAttribute("id", id);
+        return "first/loginResult";
     }
 }
