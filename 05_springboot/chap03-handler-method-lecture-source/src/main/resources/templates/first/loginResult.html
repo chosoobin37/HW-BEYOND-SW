@@ -6,9 +6,11 @@
 </head>
 <body>
   <h1 align="center">session에 담긴 회원 ID 값 확인</h1>
+  <!-- thymleaf scope를 적고 값을 꺼내야 함 (param, request, session) -->
   <h3 align="center" th:text="|${session.id}님 환영합니다.|"></h3>
   <div align="right">
     <button onclick="location.href='logout1'">로그아웃1</button>
+    <button onclick="location.href='logout2'">로그아웃2</button>
   </div>
 </body>
 </html>
