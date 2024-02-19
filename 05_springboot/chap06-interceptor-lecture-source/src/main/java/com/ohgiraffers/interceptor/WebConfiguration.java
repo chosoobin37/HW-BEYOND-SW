@@ -21,5 +21,6 @@ public class WebConfiguration implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(stopwatchInterceptor)
                 .excludePathPatterns("/css/**");
+        // excludePathPattern 등록한 경로의 요청 -> Interceptor가 가로채지 X
     }
 }
