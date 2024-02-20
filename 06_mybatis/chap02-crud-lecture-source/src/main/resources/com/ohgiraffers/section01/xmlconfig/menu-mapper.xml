@@ -31,4 +31,41 @@
             FROM TBL_MENU
             WHERE MENU_CODE = #{menuCode}
     </select>
+
+    <!-- 설명. DML용 태그 -> 반환형의 개념 필요 X, resultMap or resultType 속성 태그에 사용 X -->
+    <!-- 설명. parameterType으로 던져지는 타입이 기본적으로 존재하는 자료형이 아닌 경우 full 클래스명 사용
+              설정용 xml에 typeAlias 설정 시 줄여쓰기 가능-->
+
+    <insert id="insertMenu" parameterType="MenuDTO">
+        INSERT
+            INTO TBL_MENU
+            (
+               MENU_NAME
+            ,  MENU_PRICE
+            ,  CATEGORY_CODE
+            ,  ORDERABLE_STATUS
+            )
+            VALUES
+            (
+              #{menuName}
+            , #{menuPrice}
+            , #{categoryCode}
+            , 'Y'
+            )
+    </insert>
+
+    <update id="updateMenu">
+        UPDATE
+                TBL_MENU
+                SET   MENU_NAME = #{menuName}
+                    , MENU_PRICE = #{menuPrice}
+            WHERE MENU_CODE = #{menuCode}
+    </update>
+
+    <delete id="deleteMenu">
+        DELETE
+            FROM TBL_MENU
+            WHERE MENU_CODE = #{menuCode}
+
+    </delete>
 </mapper>
