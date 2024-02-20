@@ -24,7 +24,7 @@ public class MenuController {
     public void findMenuByMenuCode(Map<String, String> parameter) {
 
         int menuCode = Integer.valueOf(parameter.get("menuCode"));
-       MenuDTO menu = menuService.findMenuByMenuCode(menuCode);
+        MenuDTO menu = menuService.findMenuByMenuCode(menuCode);
 
         if (menu != null) {
             printResult.printMenu(menu);

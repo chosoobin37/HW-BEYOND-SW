@@ -27,4 +27,15 @@ public class MenuService {
         return menus;
     }
 
+    public MenuDTO findMenuByMenuCode(int menuCode) {
+    }
+
+    public boolean registMenu(MenuDTO menu) {
+    }
+
+    public boolean modifyMenu(com.ohgiraffers.section01.xmlconfig.MenuDTO menu) {
+    }
+
+    public boolean removeMenu(int menuCode) {
+    }
 }
