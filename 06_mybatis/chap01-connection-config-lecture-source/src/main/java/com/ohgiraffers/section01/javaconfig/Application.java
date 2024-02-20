@@ -1,6 +1,5 @@
 package com.ohgiraffers.section01.javaconfig;
 
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.datasource.pooled.PooledDataSource;
 import org.apache.ibatis.mapping.Environment;
 import org.apache.ibatis.session.Configuration;
@@ -11,7 +10,7 @@ import org.apache.ibatis.transaction.jdbc.JdbcTransactionFactory;
 
 public class Application {
     private static String driver = "com.mysql.cj.jdbc.Driver";
-    private static String url = "jdbc:mysql//localhost:3306/menudb";
+    private static String url = "jdbc:mysql://localhost:3306/menudb";
     private static String user = "swcamp";
     private static String password = "swcamp";
 
@@ -42,6 +41,12 @@ public class Application {
         * */
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(configuration);
         SqlSession session = sqlSessionFactory.openSession(false);
-    }
 
+        Mapper mapper = session.getMapper(Mapper.class);
+
+        java.util.Date date = mapper.selectNow();
+        System.out.println("date = " + date);
+
+        session.close();
+    }
 }
