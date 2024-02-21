@@ -14,6 +14,46 @@ public class MenuService {
         List<MenuDTO> menus = mapper.selectMenuByPrice(maxPrice);
         System.out.println("service: ");
         menus.forEach(System.out::println);
+    }
+    public void searchMenu(SearchCriteria searchCriteria) {
+
+        SqlSession sqlSession = getSqlSession();
+        MenuMapper mapper = sqlSession.getMapper(MenuMapper.class);
+
+        List<MenuDTO> menus = mapper.searchMenu(searchCriteria);
+        System.out.println("service: ");
+        menus.forEach(System.out::println);
+
+    }
+
+    public void searchMenuBySupCategory(SearchCriteria searchCriteria) {
+
+        SqlSession sqlSession = getSqlSession();
+        MenuMapper mapper = sqlSession.getMapper(MenuMapper.class);
+
+        List<MenuDTO> menus = mapper.searchMenuBySupCategory(searchCriteria);
+        System.out.println("service: ");
+        menus.forEach(System.out::println);
+
+        if (menus != null && menus.size() > 0) {
+            menus.forEach(System.out::println);
+        } else {
+            System.out.println("DB 연동에 실패했거나 검색 결과가 없습니다.");
+        }
+        sqlSession.close();
+    }
+    public void searchMenuByRandomMenuCode() {
+        SqlSession sqlSession = getSqlSession();
+        MenuMapper mapper = sqlSession.getMapper(MenuMapper.class);
+
+        List<MenuDTO> menus = mapper.searchMenuByRandomMenuCode();
+
+        if (menus != null && menus.size() > 0) {
+            menus.forEach(System.out::println);
+        } else {
+            System.out.println("DB 연동에 실패했거나 검색 결과가 없습니다.");
+        }
+        sqlSession.close();
 
     }
 }
