@@ -122,7 +122,7 @@ public class Application {
 
             switch (no) {
                 case 1:
-                    menuService.searchMenuByRandomMenuCode();
+                    menuService.searchMenuByRandomMenuCode(generateRandomMenuCodeList());
                     break;
                 case 9:
                     return;

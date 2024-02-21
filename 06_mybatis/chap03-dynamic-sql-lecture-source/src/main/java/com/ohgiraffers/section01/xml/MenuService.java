@@ -42,11 +42,11 @@ public class MenuService {
         }
         sqlSession.close();
     }
-    public void searchMenuByRandomMenuCode() {
+    public void searchMenuByRandomMenuCode(List randomCode) {
         SqlSession sqlSession = getSqlSession();
         MenuMapper mapper = sqlSession.getMapper(MenuMapper.class);
 
-        List<MenuDTO> menus = mapper.searchMenuByRandomMenuCode();
+        List<MenuDTO> menus = mapper.searchMenuByRandomMenuCode(randomCode);
 
         if (menus != null && menus.size() > 0) {
             menus.forEach(System.out::println);
