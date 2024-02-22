@@ -7,6 +7,7 @@ import java.util.List;
 import static com.ohgiraffers.common.Template.getSqlSession;
 public class ElementService {
     public void selectResultMapTest() {
+
         SqlSession sqlSession = getSqlSession();
         ElementMapper mapper = sqlSession.getMapper(ElementMapper.class);
 
@@ -17,6 +18,7 @@ public class ElementService {
     }
 
     public void selectResultMapAssociationTest() {
+
         SqlSession sqlSession = getSqlSession();
         ElementMapper mapper = sqlSession.getMapper(ElementMapper.class);
 
@@ -24,6 +26,17 @@ public class ElementService {
         menus.forEach(System.out::println);
 
         System.out.println("첫번째 메뉴의 카테고리명: " + menus.get(0).getCategory().getCategoryName());
+
+        sqlSession.close();
+    }
+
+    public void selectResultMapCollectionTest() {
+
+        SqlSession sqlSession = getSqlSession();
+        ElementMapper mapper = sqlSession.getMapper(ElementMapper.class);
+
+        List<CategoryAndMenuDTO> categories = mapper.selectResultMapCollectionTest();
+        categories.forEach(System.out::println);
 
         sqlSession.close();
     }
