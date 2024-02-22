@@ -1,7 +1,7 @@
 package com.ohgiraffers.section01.xmlmapper;
 
 public class MenuDTO {
-    private int menuCdoe;
+    private int menuCode;
     private String menuName;
     private int menuPrice;
     private int categoryCode;
@@ -10,7 +10,7 @@ public class MenuDTO {
     public MenuDTO() {
     }
     public MenuDTO(int menuCdoe, String menuName, int menuPrice, int categoryCode, String orderableStatus) {
-        this.menuCdoe = menuCdoe;
+        this.menuCode = menuCdoe;
         this.menuName = menuName;
         this.menuPrice = menuPrice;
         this.categoryCode = categoryCode;
@@ -20,7 +20,7 @@ public class MenuDTO {
     @Override
     public String toString() {
         return "MenuDTO{" +
-                "menuCdoe=" + menuCdoe +
+                "menuCdoe=" + menuCode +
                 ", menuName='" + menuName + '\'' +
                 ", menuPrice=" + menuPrice +
                 ", categoryCode=" + categoryCode +
@@ -29,11 +29,11 @@ public class MenuDTO {
     }
 
     public int getMenuCdoe() {
-        return menuCdoe;
+        return menuCode;
     }
 
     public void setMenuCdoe(int menuCdoe) {
-        this.menuCdoe = menuCdoe;
+        this.menuCode = menuCdoe;
     }
 
     public String getMenuName() {

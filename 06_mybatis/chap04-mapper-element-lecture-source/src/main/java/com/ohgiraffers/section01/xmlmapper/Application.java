@@ -23,7 +23,7 @@ public class Application {
         Scanner sc = new Scanner(System.in);
         ElementService elementService = new ElementService();
         do {
-            System.out.println("===== <resutlMap> Sub Menu");
+            System.out.println("===== <resutlMap> Sub Menu =====");
             System.out.println("1. <resultMap> Test");
             System.out.println("2. <association> Test");
             System.out.println("3. <collection> Test");

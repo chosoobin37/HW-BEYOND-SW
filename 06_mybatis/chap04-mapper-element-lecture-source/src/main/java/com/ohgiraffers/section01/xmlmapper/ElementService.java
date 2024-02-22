@@ -11,5 +11,6 @@ public class ElementService {
         ElementMapper mapper = sqlSession.getMapper(ElementMapper.class);
 
         List<MenuDTO> menus = mapper.selectResultMapTest();
+        menus.forEach(System.out::println);
     }
 }
