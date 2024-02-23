@@ -1,10 +1,17 @@
 package com.ohgiraffers.transactional.section01.annotation;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
+
 public class Order {
     private int orderCode;
     private String orderDate;
     private String orderTime;
     private int totalOrderPrice;
+    /* 설명. insert의 편리함을 위하여 Order의 개념인 orderMenu Entity까지 포함해 필드 작성 -> insert 추가 시 */ 
+    private List<OrderMenu> orderMenus;
 
     public Order() {
     }
@@ -14,6 +21,15 @@ public class Order {
         this.orderDate = orderDate;
         this.orderTime = orderTime;
         this.totalOrderPrice = totalOrderPrice;
+    }
+
+    public Order(LocalDate orderDate, LocalTime orderTime, int totalOrderPrice, List<OrderMenu> orderMenus) {
+        
+        /* 설명. LocalDate 또는 LocalTime형을 DB에 저장하고 싶은 문자열 형탸로 변환하는 작업 응용 */ 
+        this.orderDate = orderDate.format(DateTimeFormatter.ofPattern("yyyyMMdd"));
+        this.orderTime = orderTime.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
+        this.totalOrderPrice = totalOrderPrice;
+        this.orderMenus = orderMenus;
     }
 
     public int getOrderCode() {
