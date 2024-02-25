@@ -14,24 +14,27 @@ public class MenuController {
     }
 
     public void findAllMenu() {
-        List<MenuDTO> menus = menuService.findAllMenu();
 
-        if (!menus.isEmpty()) {
+        List<MenuDTO> menus = menuService.findAllMenu();    // findAllMenu()에서 반환되는 것은 MenuDTO 객체들의 목록, 그 목록은 list<menuDTO> 형태로 menus변수에 할당
+
+        if(!menus.isEmpty()) {
             printResult.printMenus(menus);
         } else {
-            printResult.printErrorMessage("전체 메뉴 조회 실패 ...");
+            printResult.printErrorMessage("전체 메뉴 조회 실패!");
         }
     }
 
-    public void findMenuByMenuCode(Map<String, String> parameter) {
 
+    public void findMenuBy(Map<String, String> parameter) {
+        // 전달 받은 매개변수(Map)에서 menuCode키에 해당하는 값을 가져와 정수로 변환
         int menuCode = Integer.valueOf(parameter.get("menuCode"));
-        MenuDTO menu = menuService.findMenuByMenuCode(menuCode);
 
-        if (menu != null) {
+        MenuDTO menu = menuService.findMenuBy(menuCode);
+
+        if(menu != null) {
             printResult.printMenu(menu);
         } else {
-            printResult.printErrorMessage(menuCode + "번 메뉴는 존재하지 않습니다.");
+            printResult.printErrorMessage(menuCode + "번의 메뉴는 없습니다.");
         }
     }
 
@@ -45,16 +48,14 @@ public class MenuController {
         menu.setMenuPrice(menuPrice);
         menu.setCategoryCode(categoryCode);
 
-        if (menuService.registMenu(menu)) {
-            printResult.printSuccesMessage("regist");
+        if(menuService.registMenu(menu)) {
+            printResult.printSuccessMessage("regist");
         } else {
-            printResult.printErrorMessage("메뉴 추가 실패");
+            printResult.printErrorMessage("메뉴 추가 실패!");
         }
-
     }
 
     public void modifyMenu(Map<String, String> parameter) {
-
         int menuCode = Integer.valueOf(parameter.get("menuCode"));
         String menuName = parameter.get("menuName");
         int menuPrice = Integer.valueOf(parameter.get("menuPrice"));
@@ -64,21 +65,19 @@ public class MenuController {
         menu.setMenuName(menuName);
         menu.setMenuPrice(menuPrice);
 
-        if (menuService.modifyMenu(menu)) {
-            printResult.printSuccesMessage("modify");
+        if(menuService.modifyMenu(menu)) {
+            printResult.printSuccessMessage("modify");
         } else {
-            printResult.printErrorMessage("메뉴 수정 실패");
+            printResult.printErrorMessage("메뉴 수정 실패!");
         }
     }
 
     public void removeMenu(Map<String, String> parameter) {
-
         int menuCode = Integer.valueOf(parameter.get("menuCode"));
-
-        if (menuService.removeMenu(menuCode)) {
-            printResult.printSuccesMessage("remove");
+        if(menuService.removeMenu(menuCode)) {
+            printResult.printSuccessMessage("remove");
         } else {
-            printResult.printErrorMessage("메뉴 삭제 실패");
+            printResult.printErrorMessage("메뉴 삭제 실패!");
         }
     }
 }

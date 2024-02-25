@@ -11,15 +11,12 @@ public class MenuDTO {
     public MenuDTO() {
     }
 
-    @Override
-    public String toString() {
-        return "MenuDTO{" +
-                "menuCode=" + menuCode +
-                ", menuName='" + menuName + '\'' +
-                ", menuPrice=" + menuPrice +
-                ", categoryCode=" + categoryCode +
-                ", orderableStatus='" + orderableStatus + '\'' +
-                '}';
+    public MenuDTO(int menuCode, String menuName, int menuPrice, int categoryCode, String orderableStatus) {
+        this.menuCode = menuCode;
+        this.menuName = menuName;
+        this.menuPrice = menuPrice;
+        this.categoryCode = categoryCode;
+        this.orderableStatus = orderableStatus;
     }
 
     public int getMenuCode() {
@@ -60,5 +57,16 @@ public class MenuDTO {
 
     public void setOrderableStatus(String orderableStatus) {
         this.orderableStatus = orderableStatus;
+    }
+
+    @Override
+    public String toString() {
+        return "MenuDTO{" +
+                "menuCode=" + menuCode +
+                ", menuName='" + menuName + '\'' +
+                ", menuPrice=" + menuPrice +
+                ", categoryCode=" + categoryCode +
+                ", orderableStatus='" + orderableStatus + '\'' +
+                '}';
     }
 }

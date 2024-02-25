@@ -1,41 +1,99 @@
 package com.ohgiraffers.section03.remix;
 
 import org.apache.ibatis.session.SqlSession;
+import static com.ohgiraffers.section03.remix.Template.getSqlSession;
 
 import java.util.List;
 
 /* 설명.
- *  Service 계층 이후부터는 xml 방식, javaconfig 방식, remix 방식 중 선택
- *  remix -> mybatis 설정은 javaConfig, 쿼리 다루기는 xml 방식 사용
- *  DAO -> 추상 메소드를 지닌 인터페이스로 만드는 데 인터페이스와 mapper용 xml은 3가지 준수해야 함 
- *  1) xml 파일 -> mapper용 인터페이스(DAO에 해당하는 인터페이스)와 같은 경로에 위치
- *  2) xml 파일의 namespace -> mapper용 인터페이스로 작성 (fullname)
- *  3) xml 파일명 -> mapper용 인터페이스명 동일
-* */
-
-import static com.ohgiraffers.section03.remix.Template.getSqlSession;
+ *  Service 계층 이후부터는 xml방식, javaconfig방식, remix방식 중 어떤 것을 선택할 지 고민해서 진행해야 한다.
+ *  remix 방식의 경우는,
+ *  mybatis 설정은 javaconfig 방식을 취하고, 쿼리를 다루는 것은 xml 방식을 취한다.
+ *  DAO에 해당하는 것은 추상메소드를 지닌 인터페이스로 만드는데 이 인터페이스와 mapper용 xml은 세 가지를 준수해야 한다.
+ *  1. xml 파일은 mapper용 인터페이스(DAO에 해당하는 인터페이스)와 같은 경로에 위치해야 한다.
+ *  2. xml 파일의 namespace는 mapper용 인터페이스로 작성해야 한다.(풀네임으로)
+ *  3. xml 파일명과 mapper용 인터페이스명이 동일해야 한다.
+ * */
 public class MenuService {
+
+    private MenuMapper menuMapper;
     public List<MenuDTO> findAllMenu() {
 
+        /* 필기. sqlSession은 DB와 상호작용을 담당하는 인터페이스, 자바객체와 SQL문 사이의 매핑을 쉽게 할 수 있도록 도와주는 프레임워크 */
         SqlSession sqlSession = getSqlSession();
-        MenuMapper menuMapper = sqlSession.getMapper(MenuMapper.class);
+        MenuMapper menuMapper = sqlSession.getMapper(MenuMapper.class); // MenuMapper 인터페이스를 구현한 객체를 얻어온다.
 
         List<MenuDTO> menus = menuMapper.selectAllMenus();
-        System.out.println("remix 방식으로 service 계층까지 잘 조회되는지 확인 ...");
+        System.out.println("remix 방식으로 service 계층까지 잘 조회되어 오는지 확인");
         menus.forEach(System.out::println);
+
+        sqlSession.close(); // sqlsession은 항상 사용이 끝나면 닫아줘야한다. 메모리 누수 방지와 메모리 소스 효과적 관리
 
         return menus;
     }
 
-    public MenuDTO findMenuByMenuCode(int menuCode) {
+    public MenuDTO findMenuBy(int menuCode) {
+        // Mybatis의 sqlSession 객체를 얻어온다.
+        SqlSession sqlSession = getSqlSession();
+        // MenuMapper 인터페이스를 구현한 객체를 얻어온다.
+        MenuMapper menuMapper = sqlSession.getMapper(MenuMapper.class);
+
+        MenuDTO menu = menuMapper.selectMenu(menuCode);
+
+        sqlSession.close();
+
+        return menu;
     }
+
 
     public boolean registMenu(MenuDTO menu) {
+        SqlSession sqlSession = getSqlSession();
+
+        menuMapper = sqlSession.getMapper(MenuMapper.class);
+        /* 필기. MenuMapper를 통해 DB에 메뉴를 추가하고, 결과를 반환한다. */
+        int result = menuMapper.insertMenu(menu);
+
+        if(result > 0) {
+            sqlSession.commit();
+        } else {
+            sqlSession.rollback();
+        }
+
+        sqlSession.close();
+
+        return (result > 0)? true: false;
     }
 
-    public boolean modifyMenu(com.ohgiraffers.section01.xmlconfig.MenuDTO menu) {
+    public boolean modifyMenu(MenuDTO menu) {
+        SqlSession sqlSession = getSqlSession();
+
+        menuMapper = sqlSession.getMapper(MenuMapper.class);
+        int result = menuMapper.updateMenu(menu);
+
+        if(result > 0) {
+            sqlSession.commit();
+        } else {
+            sqlSession.rollback();
+        }
+
+        sqlSession.close();
+
+        return (result > 0)? true: false;
     }
 
     public boolean removeMenu(int menuCode) {
+
+        SqlSession sqlSession = getSqlSession();
+        MenuMapper menuMapper = sqlSession.getMapper(MenuMapper.class);
+
+        int result = menuMapper.deleteMenu(menuCode);
+
+        if(result > 0) {
+            sqlSession.commit();
+        } else {
+            sqlSession.rollback();
+        }
+
+        return (result > 0)? true: false;
     }
 }
