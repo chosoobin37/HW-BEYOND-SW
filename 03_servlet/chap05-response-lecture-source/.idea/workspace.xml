@@ -5,24 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1987b6c9-d2e6-4680-8b1d-c5f86ed3a90c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../00_dev/apache-tomcat-10.1.18/webapps/chap06/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../00_dev/apache-tomcat-10.1.18/webapps/chap06/META-INF/war-tracker" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../00_dev/apache-tomcat-10.1.18/webapps/chap06/WEB-INF/classes/com/ohgiraffers/section01/exception/ExceptionHandlerServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../00_dev/apache-tomcat-10.1.18/webapps/chap06/WEB-INF/classes/com/ohgiraffers/section01/exception/Show404ErrorServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../00_dev/apache-tomcat-10.1.18/webapps/chap06/WEB-INF/classes/com/ohgiraffers/section01/exception/Show500ErrorServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../00_dev/apache-tomcat-10.1.18/webapps/chap06/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../00_dev/apache-tomcat-10.1.18/webapps/chap06/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../chap06-exception-handler-lecture-source/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../chap06-exception-handler-lecture-source/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../chap06-exception-handler-lecture-source/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../chap06-exception-handler-lecture-source/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../chap06-exception-handler-lecture-source/src/main/java/com/ohgiraffers/section01/exception/ExceptionHandlerServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../chap06-exception-handler-lecture-source/src/main/java/com/ohgiraffers/section01/exception/Show404ErrorServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../chap06-exception-handler-lecture-source/src/main/java/com/ohgiraffers/section01/exception/Show500ErrorServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../chap06-exception-handler-lecture-source/src/main/java/com/example/chap06exceptionhandlerlecturesource/HelloServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../chap06-exception-handler-lecture-source/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../chap06-exception-handler-lecture-source/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../chap06-exception-handler-lecture-source/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../chap06-exception-handler-lecture-source/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +35,9 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4
+}]]></component>
   <component name="ProjectId" id="2c1Ac3nPPJAB7QxcEhH8OC62AFV" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -65,11 +52,15 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/pc/Desktop/HW BEYOND SW/03_servlet/chap05-response-lecture-source",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -163,6 +154,13 @@
       </method>
     </configuration>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -172,6 +170,7 @@
       <option name="presentableId" value="Default" />
       <updated>1707268787992</updated>
       <workItem from="1707268789231" duration="4838000" />
+      <workItem from="1708839745688" duration="418000" />
     </task>
     <servers />
   </component>
