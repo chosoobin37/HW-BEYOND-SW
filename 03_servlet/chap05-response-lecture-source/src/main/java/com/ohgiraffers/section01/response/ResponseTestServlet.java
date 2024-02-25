@@ -39,8 +39,8 @@ public class ResponseTestServlet extends HttpServlet {
 //        resp.setCharacterEncoding("UTF-8");
 //        resp.setContentType("text/html");
         
-        /* 필기. 2) MIME 타입과 인코딩 방식을 setContentType으로 한 번에 설정 */ 
-
+        /* 필기. 2) MIME 타입과 인코딩 방식을 setContentType으로 한 번에 설정 */
+//        resp.setContentType("text/html; charset=UTF-8");
 
         /* 설명. tomcat 10버전 이후 */
         /* 필기. MIME 타입만 명시해도 인코딩 방식도 UTF-8로 적용 */
