@@ -2,6 +2,7 @@ package com.ohgiraffers.section01.entity;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
 import org.junit.jupiter.api.*;
 
@@ -49,10 +50,16 @@ public class EntityMappingTests {
         member.setStatus("Y");
 
         // when
+        EntityTransaction entityTransaction = entityManager.getTransaction();
+        entityTransaction.begin();
+
         entityManager.persist(member);
 
         // then
         Member foundMember = entityManager.find(Member.class, 1);
+        foundMember.setNickname("먹밥쿤 .. !!");
+
+        entityTransaction.commit();
         assertEquals(member, foundMember);
     }
 }
