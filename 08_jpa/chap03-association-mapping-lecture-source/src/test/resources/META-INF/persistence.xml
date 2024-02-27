@@ -7,6 +7,8 @@
         <class>com.ohgiraffers.section01.manytoone.MenuAndCategory</class>
         <class>com.ohgiraffers.section02.onetomany.Menu</class>
         <class>com.ohgiraffers.section02.onetomany.CategoryAndMenu</class>
+        <class>com.ohgiraffers.section03.bidirection.Menu</class>
+        <class>com.ohgiraffers.section03.bidirection.Category</class>
         <properties>
 
             <!-- 설명. 데이터베이스 연결 정보 -->
