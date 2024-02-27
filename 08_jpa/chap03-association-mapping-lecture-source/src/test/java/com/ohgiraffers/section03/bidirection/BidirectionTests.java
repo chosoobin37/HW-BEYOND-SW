@@ -30,6 +30,7 @@ public class BidirectionTests {
         entityManager.close();
     }
 
+    /* 설명. 양뱡향 연관관계 -> 지양되는 방식이며 순환참조 (특히 toString() 작성 시 조심) */
     @Test
     public void 양방향_연관관계_매핑_조회_테스트() {
 
