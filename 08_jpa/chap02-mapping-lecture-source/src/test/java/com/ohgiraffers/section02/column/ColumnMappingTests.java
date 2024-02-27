@@ -58,7 +58,6 @@ public class ColumnMappingTests {
 
         entityTransaction.commit();
         assertEquals(member, foundMember);
-
     }
 
 }
