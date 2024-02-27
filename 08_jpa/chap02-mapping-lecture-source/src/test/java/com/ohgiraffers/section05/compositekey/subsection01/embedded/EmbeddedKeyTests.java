@@ -1,4 +1,4 @@
-package com.ohgiraffers.section04.enumtype;
+package com.ohgiraffers.section05.compositekey.subsection01.embedded;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -8,7 +8,7 @@ import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class EnumTypeMappingTests {
+public class EmbeddedKeyTests {
 
     private static EntityManagerFactory entityManagerFactory;
     private EntityManager entityManager;
@@ -34,33 +34,19 @@ public class EnumTypeMappingTests {
     }
 
     @Test
-    public void enum_타입_매핑_테스트() {
+    public void 임베디드_아이디를_사용한_복합키_테이블_매핑_테스트() {
 
         Member member = new Member();
-        member.setMemberNo(1);
-        member.setMemberId("user01");
-        member.setMemberPwd("pass01");
-        member.setNickname("조먹밥");
-        member.setPhone("010-1234-5678");
-        member.setEmail("chomuckbab@naver.com");
+        member.setMemberPK(new MemberPK(1, "user01"));
+        member.setPhone("010-4547-4564");
         member.setAddress("서울시 마포구");
-        member.setEnrollDate(new java.util.Date());
-        member.setMemberRole(RoleType.MEMBER);
-        member.setStatus("Y");
-
-        /* 설명.
-        *   테이블에 insert
-        *   1. @Enumerated(EnumType.ORDINAL) -> 숫자로 값이 들어감 ex) 0 or 1
-        *   2. @Enumerated(EnumType.STRING) -> 문자열로 값이 들어감 ex) ADMIN or MEMBER
-        *   자바 객체 상에서는 "ADMIN" 또는 "MEMBER"라고 나옴 */
 
         EntityTransaction entityTransaction = entityManager.getTransaction();
         entityTransaction.begin();
         entityManager.persist(member);
         entityTransaction.commit();
 
-        Member foundMember = entityManager.find(Member.class, member.getMemberNo());
-        assertEquals(member.getMemberNo(), foundMember.getMemberNo());
-        System.out.println("foundMember = " + foundMember);
+        Member foundMember = entityManager.find(Member.class, member.getMemberPK());
+        assertEquals(member.getMemberPK(), foundMember.getMemberPK());
     }
 }
