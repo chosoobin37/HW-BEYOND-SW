@@ -5,24 +5,23 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-@Entity(name = "menu")
-@Table(name = "tbl_menu")
+@Entity(name="menu")
+@Table(name="tbl_menu")
 public class Menu {
 
     @Id
-    @Column(name = "menu_code")
+    @Column(name="menu_code")
     private int menuCode;
 
-    @Column(name = "menu_name")
+    @Column(name="menu_name")
     private String menuName;
 
-    @Column(name = "menu_price")
+    @Column(name="menu_price")
     private int menuPrice;
 
-    @Column(name = "category_code")
-    private String categoryCode;
+    @Column(name="category_code")
+    private int categoryCode;
 
-    @Column(name = "orderableStatus")
+    @Column(name="orderable_status")
     private String orderableStatus;
-
 }
