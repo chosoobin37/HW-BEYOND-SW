@@ -31,6 +31,26 @@ public class ManyToOneAssociationTests {
     public void closeManager() {
         entityManager.close();
     }
+    
+    /* 설명. 
+     *  Association Mapping은 Entity 클래스 간의 관계를 매핑 -> for join
+     *  이를 통해 객체를 이용해 데이터베이스의 테이블 간의 관계를 활용해 한 번에 객체로 조회 가능
+     *  -
+     *  1) 다중성에 의한 분류
+     *  연관관계가 있는 객체 관계에서 실제로 연관을 가지는 객체의 수에 따라 분류
+     *  -> N:1 (ManyToOne) 연관관계
+     *  -> 1:N (OneToMany) 연관관계
+     *  -> 1:1 (OneToONe) 연관관계
+     *  -> N:N (ManyToMany) 연관관계
+     *  -
+     *  2) 방향에 따른 분류
+     *  테이블의 연관관계는 외래 키를 이용하여 양방향 연관 관계의 특징을 지님
+     *  반면, 객체는 참조에 의한 연관관계로 단방향
+     *  객체 간의 연관관계를 양방향으로 만들고 싶을 경우 반대 쪽에서도 필드를 추가해 참조 보관
+     *  하지만, 엄밀하게는 양방향 관계가 아니라 단방향 관계 2개
+     *  -> 단방향 (UniDirectional) 연관관계
+     *  -> 양방향 (BiDirectional) 연관관계
+    * */
 
     @Test
     public void 다대일_연관관계_객체_그래프_탐색을_이용한_조회_테스트() {
