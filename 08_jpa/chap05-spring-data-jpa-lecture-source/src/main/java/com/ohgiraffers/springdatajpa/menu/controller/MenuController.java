@@ -95,7 +95,8 @@ public class MenuController {
     }
 
     @GetMapping("/regist")
-    public void reigstPage() { }
+    public void reigstPage() {
+    }
 
     /* 설명. /menu/regist.html 열리자마자 js 코드를 통해 /menu/category 비동기 요청 오게 됨 */
     @GetMapping(value = "/category", produces = "application/json; charset=UTF-8")
@@ -105,10 +106,41 @@ public class MenuController {
      *  @ResponseBody가 붙었을 때 기존과 다른 핸들러 메소드의 차이점
      *  1) 핸들러 메소드의 반환형이 어떤 것이라도 상관X -> 모두 json 문자열 형태로 요청이 들어온 곳으로 반환
      *  2) 한글이 포함된 데이터 -> produces 속성의 'application/json'이라는 MIME 타입과 'charset=UTF-8' 인코딩 타입 추가
-    * */
+     * */
     @ResponseBody
     public List<CategoryDTO> findCategoryList() {
         return menuService.findAllCategory();
+    }
+
+    /* 설명. Spring Data JPA로 DML 작업 -> Insert, Update, Delete */
+    @PostMapping("/regist")
+    public String regitMenu(MenuDTO newMenu) {
+
+        menuService.registMenu(newMenu);
+
+        return "redirect:/menu/list";
+    }
+
+    @GetMapping("/modify")
+    public void modifyPage() {
+    }
+
+    @PostMapping("/modify")
+    public String modifyMenu(MenuDTO modifyMenu) {
+        menuService.modifyMenu(modifyMenu);
+
+        return "redirect:/menu/" + modifyMenu.getMenuCode();
+    }
+
+    @GetMapping("/delete")
+    public void deletPage() {
+    }
+
+    @PostMapping("/delete")
+    public String deleteMenu(@RequestParam int menuCode) {
+        menuService.deleteMenu(menuCode);
+
+        return "redirect:/menu/list";
     }
 }
 
