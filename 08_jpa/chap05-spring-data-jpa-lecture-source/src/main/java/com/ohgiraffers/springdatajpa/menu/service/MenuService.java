@@ -10,6 +10,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 /* 설명.
  *  Service 계층
@@ -40,7 +41,9 @@ public class MenuService {
     /* 설명. 2) findAll 예제 (페이징 처리 전) */
     public List<MenuDTO> findMenuList() {
 
-        List<Menu> menuList = menuRepository.findAll(Sort.by("menuCode").descending());
+        List<Menu> menuList = menuRepository.findAll(Sort.by("menuCode").ascending());
+
+        return menuList.stream().map(menu -> mapper.map(menu, MenuDTO.class)).collect(Collectors.toList());
     }
 
 

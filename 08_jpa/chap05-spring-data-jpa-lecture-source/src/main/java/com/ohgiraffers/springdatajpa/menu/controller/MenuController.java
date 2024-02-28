@@ -46,6 +46,8 @@ public class MenuController {
     public String findMenuList(Model model) {
 
         List<MenuDTO> menuList = menuService.findMenuList();
+        model.addAttribute("menuList", menuList);
+
         return "menu/list";
     }
 }
