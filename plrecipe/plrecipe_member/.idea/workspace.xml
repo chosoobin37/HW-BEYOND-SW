@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="749a63da-8c73-491f-b27f-79417d8fc0a8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe/plrecipe/src/main/java/com/sixcandoit/configuration/PlrecipeConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe/plrecipe/src/main/java/com/sixcandoit/plrecipe/feature/place/Course.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe/plrecipe/src/main/java/com/sixcandoit/plrecipe/feature/place/CourseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe/plrecipe/src/main/java/com/sixcandoit/plrecipe/feature/place/CourseMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe/plrecipe/src/main/java/com/sixcandoit/plrecipe/feature/post/HashTagDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe/plrecipe/src/main/java/com/sixcandoit/plrecipe/feature/post/PostHashtagDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe/plrecipe/src/main/java/com/sixcandoit/plrecipe/feature/post/PostLikeDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe/plrecipe/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe/plrecipe/src/main/resources/com/sixcandoit/plrecipe/feature/place/CourseMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe/plrecipe/src/test/java/com/sixcandoit/plrecipe/feature/place/CoursePlaceServiceTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe_group/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe_group/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe_group/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe_group/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe_group/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe_group/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe_group/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe_group/src/main/java/com/sixcandoit/plrecipe_group/PlrecipeGroupApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe_group/src/test/java/com/sixcandoit/plrecipe_group/PlrecipeGroupApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe_member/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe_member/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe_member/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe_member/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe_member/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe_member/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe_member/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe_member/src/main/java/com/sixcandoit/plrecipe_member/PlrecipeMemberApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe_member/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe_member/src/test/java/com/sixcandoit/plrecipe_member/PlrecipeMemberApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe_post/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe_post/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe_post/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe_post/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe_post/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe_post/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe_post/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe_post/src/main/java/com/sixcandoit/plrecipe_post/PlrecipePostApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe_post/src/main/java/com/sixcandoit/plrecipe_post/common/MyBatisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe_post/src/main/java/com/sixcandoit/plrecipe_post/feature/dto/PostDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe_post/src/main/java/com/sixcandoit/plrecipe_post/feature/entity/Post.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe_post/src/main/java/com/sixcandoit/plrecipe_post/feature/repository/PostMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe_post/src/main/resources/com/sixcandoit/plreicpe_post/repository/PostMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe_post/src/test/java/com/sixcandoit/plrecipe_post/PlrecipePostApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe/plrecipe/src/main/java/com/sixcandoit/feature/member/MemberGrade.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe/plrecipe/src/main/java/com/sixcandoit/plrecipe/feature/group/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe/plrecipe/src/main/java/com/sixcandoit/plrecipe/feature/group/Group.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe/plrecipe/src/main/java/com/sixcandoit/plrecipe/feature/group/GroupDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe/plrecipe/src/main/java/com/sixcandoit/plrecipe/feature/group/GroupDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe/plrecipe/src/main/java/com/sixcandoit/plrecipe/feature/group/GroupMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe/plrecipe/src/main/java/com/sixcandoit/plrecipe/feature/group/GroupMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe/plrecipe/src/main/java/com/sixcandoit/plrecipe/feature/place/Place.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe/plrecipe/src/main/java/com/sixcandoit/plrecipe/feature/place/Place.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe/plrecipe/src/main/java/com/sixcandoit/plrecipe/feature/place/PlaceMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe/plrecipe/src/main/java/com/sixcandoit/plrecipe/feature/place/PlaceMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe/plrecipe/src/main/java/com/sixcandoit/plrecipe/feature/post/MemberCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe/plrecipe/src/main/java/com/sixcandoit/plrecipe/feature/post/MemberCount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe/plrecipe/src/main/java/com/sixcandoit/plrecipe/feature/post/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe/plrecipe/src/main/java/com/sixcandoit/plrecipe/feature/post/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe/plrecipe/src/main/java/com/sixcandoit/plrecipe/feature/post/PostDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe/plrecipe/src/main/java/com/sixcandoit/plrecipe/feature/post/PostDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe/plrecipe/src/main/java/com/sixcandoit/plrecipe/feature/post/PostMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe/plrecipe/src/main/java/com/sixcandoit/plrecipe/feature/post/PostMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe/plrecipe/src/main/resources/com/sixcandoit/plrecipe/feature/group/GroupMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe/plrecipe/src/main/resources/com/sixcandoit/plrecipe/feature/group/GroupMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe/plrecipe/src/main/resources/com/sixcandoit/plrecipe/feature/place/PlaceMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe/plrecipe/src/main/resources/com/sixcandoit/plrecipe/feature/place/PlaceMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe/plrecipe/src/main/resources/com/sixcandoit/plrecipe/feature/post/PostMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe/plrecipe/src/main/resources/com/sixcandoit/plrecipe/feature/post/PostMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe/plrecipe/src/test/java/com/sixcandoit/plrecipe/feature/group/GroupServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe/plrecipe/src/test/java/com/sixcandoit/plrecipe/feature/group/GroupServiceTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe/plrecipe/src/test/java/com/sixcandoit/plrecipe/feature/place/PlaceServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe/plrecipe/src/test/java/com/sixcandoit/plrecipe/feature/place/PlaceServiceTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe/plrecipe/src/test/java/com/sixcandoit/plrecipe/feature/post/PostServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Plrecipe_project02/plrecipe/plrecipe/src/test/java/com/sixcandoit/plrecipe/feature/post/PostServiceTests.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="2d27L4t3iO4ZnrVc2XfKH81QZMV" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
+      <setting name="path" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="file://$PROJECT_DIR$" />
+      <setting name="debug" value="false" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlrecipeMemberApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="plrecipe_member.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.sixcandoit.plrecipe_member.PlrecipeMemberApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="749a63da-8c73-491f-b27f-79417d8fc0a8" name="Changes" comment="" />
+      <created>1709194260679</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1709194260679</updated>
+      <workItem from="1709194261772" duration="685000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
