@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest
-public class MemberServiceTests {
+public class MemberServiceTestsByMyBatis {
 
     @Autowired
     private MemberService memberService;
@@ -37,4 +37,5 @@ public class MemberServiceTests {
 
         assertTrue(!memberList3.isEmpty());
     }
+
 }
