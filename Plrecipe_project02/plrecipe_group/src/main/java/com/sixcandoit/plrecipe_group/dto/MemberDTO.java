@@ -1,7 +1,10 @@
-package com.sixcandoit.plrecipe_group.feature.group.dto;
+package com.sixcandoit.plrecipe_group.dto;
+
+import com.sixcandoit.plrecipe_group.dto.MemberGrade;
 
 public class MemberDTO {
 
+    private int memberId;
     private String memberEmail;
     private String password;
     private String memberName;
@@ -15,7 +18,8 @@ public class MemberDTO {
     public MemberDTO() {
     }
 
-    public MemberDTO(String memberEmail, String password, String memberName, String memberNickname, String memberNumber, String joinDate, String withdrawalDate, MemberGrade memberGrade, String memberStatus) {
+    public MemberDTO(int memberId, String memberEmail, String password, String memberName, String memberNickname, String memberNumber, String joinDate, String withdrawalDate, MemberGrade memberGrade, String memberStatus) {
+        this.memberId = memberId;
         this.memberEmail = memberEmail;
         this.password = password;
         this.memberName = memberName;
@@ -25,6 +29,10 @@ public class MemberDTO {
         this.withdrawalDate = withdrawalDate;
         this.memberGrade = memberGrade;
         this.memberStatus = memberStatus;
+    }
+
+    public int getMemeberId() {
+        return memberId;
     }
 
     public String getMemberEmail() {
@@ -66,7 +74,8 @@ public class MemberDTO {
     @Override
     public String toString() {
         return "MemberDTO{" +
-                "memberEmail='" + memberEmail + '\'' +
+                "memeberId=" + memberId +
+                ", memberEmail='" + memberEmail + '\'' +
                 ", password='" + password + '\'' +
                 ", memberName='" + memberName + '\'' +
                 ", memberNickname='" + memberNickname + '\'' +
