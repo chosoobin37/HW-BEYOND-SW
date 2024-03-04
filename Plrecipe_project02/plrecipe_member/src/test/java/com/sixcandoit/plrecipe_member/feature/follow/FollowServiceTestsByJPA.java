@@ -6,7 +6,9 @@ import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
 import org.junit.jupiter.api.*;
+import org.springframework.boot.test.context.SpringBootTest;
 
+@SpringBootTest
 public class FollowServiceTestsByJPA {
 
     private static EntityManagerFactory entityManagerFactory;
