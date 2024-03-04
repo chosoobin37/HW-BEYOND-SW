@@ -8,16 +8,18 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @Slf4j
-@RequestMapping("/second-service")
+//@RequestMapping("/second-service")
+@RequestMapping("/")
 public class SecondServiceController {
 
     @GetMapping("health_check")
-    public String healthCheck() {
-        return "I'm OK-ver2";
+    public String healthCheck(){
+        return "I m Ok222222";
     }
 
     @GetMapping("message")
-    public String message(@RequestHeader("second_request") String header) {
+    public String message(@RequestHeader("second-request") String header){
+        log.info("넘어온 헤더값: {}", header);
         return "Second Service Message";
     }
 }
