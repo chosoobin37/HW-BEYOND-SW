@@ -14,7 +14,7 @@ public class SecondServiceController {
 
     @GetMapping("health_check")
     public String healthCheck(){
-        return "I m Ok222222";
+        return "I'm OK ver2";
     }
 
     @GetMapping("message")

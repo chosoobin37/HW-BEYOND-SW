@@ -1,19 +1,37 @@
 package com.ohgiraffers.firstservice;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @Slf4j
+
+/* 설명. GateWay 추가 후 Routes 경로 추가 후 작성했던 부분 */ 
 //@RequestMapping("/first-service")
+
+/* 설명. GateWay에서 RewritePath 필터 추가 후 뒤에 segment만 넘어오게 한 이후 */ 
 @RequestMapping("/")
 public class FirstServiceController {
 
-    @GetMapping("health_check")
-    public String healthCheck(){
-        return "I m Ok";
+    /* 설명. @Value와 같이 application.yml 또는 환경설정 값 불러오기 위해 추가 -> 생성자 주입 */ 
+    private Environment env;
+
+    public FirstServiceController(Environment env) {
+        this.env = env;
     }
 
+    @Autowired
+    @GetMapping("health_check")
+    public String healthCheck(){
+        
+        /* 설명. first-server 어플리케이션 여러 개 실행 시 (스케일 아웃) -> 실행되는 어플리케이션 포트번호로 확인 */ 
+        /* 설명. Gateway의 lb(loadBalancing)를 통해 RoundRobin 방식으로 스위칭 확인 */
+        return "I'm OK port at " + env.getProperty("local.server.port") ;
+    }
+
+    /* 설명. GateWay를 거치고 넘어오는 요청 -> RequestHeader에 값 추가 (by GateWay Filter) */
     @GetMapping("message")
     public String message(@RequestHeader("first-request") String header){
         log.info("넘어온 헤더값: {}", header);
