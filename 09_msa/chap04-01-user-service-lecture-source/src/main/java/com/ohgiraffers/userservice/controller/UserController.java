@@ -1,8 +1,10 @@
 package com.ohgiraffers.userservice.controller;
 
+import com.ohgiraffers.userservice.dto.UserDTO;
 import com.ohgiraffers.userservice.vo.HelloVO;
 import com.ohgiraffers.userservice.vo.RequestUser;
 import com.ohgiraffers.userservice.vo.ResponseUser;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
@@ -15,11 +17,13 @@ public class UserController {
 
     private Environment env;
     private HelloVO helloVO;
+    private ModelMapper modelMapper;
 
     @Autowired
-    public UserController(Environment env, HelloVO helloVO) {
+    public UserController(Environment env, HelloVO helloVO, ModelMapper modelMapper) {
         this.env = env;
         this.helloVO = helloVO;
+        this.modelMapper=modelMapper;
     }
 
     /* 설명.
@@ -45,7 +49,10 @@ public class UserController {
     /* 설명. 회원가입 -> POST - /users */
     @PostMapping("/users")
     public ResponseEntity<ResponseUser> registUser(@RequestBody RequestUser user) {
-        System.out.println("user = " + user);
+//        System.out.println("user = " + user);
+
+        UserDTO userDTO = modelMapper.map(user, UserDTO.class);
+        System.out.println("userDTO = " + userDTO);
 
         ResponseUser responseUser = new ResponseUser();
         responseUser.setName("응답 재확인");
