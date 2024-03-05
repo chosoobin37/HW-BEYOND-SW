@@ -55,16 +55,16 @@ public class UserController {
     /* 설명. 회원가입 -> POST - /users */
     @PostMapping("/users")
     public ResponseEntity<ResponseUser> registUser(@RequestBody RequestUser user) {
-//        System.out.println("user = " + user);
 
+        /* 설명. RequestUser -> UserDTO */
         UserDTO userDTO = modelMapper.map(user, UserDTO.class);
-        System.out.println("userDTO = " + userDTO);
 
         /* 설명. 회원가입 비즈니스 로직 시작 */
         userService.resgistUser(userDTO);
 
-        ResponseUser responseUser = new ResponseUser();
-        responseUser.setName("응답 재확인");
+        /* 설명. UserDTO -> ResponseUser */
+        ResponseUser responseUser = modelMapper.map(userDTO, ResponseUser.class);
+
         return ResponseEntity.status(HttpStatus.CREATED).body(responseUser);
     }
 }
