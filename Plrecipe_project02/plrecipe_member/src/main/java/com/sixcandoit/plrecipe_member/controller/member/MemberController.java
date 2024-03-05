@@ -19,5 +19,5 @@ public class MemberController {
         this.memberService = memberService;
     }
 
-    @GetMapping()
+//    @GetMapping()
 }
