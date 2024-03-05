@@ -17,7 +17,7 @@ public class Chap0401UserServiceLectureSourceApplication {
     /* 설명. ModelMapper Bean으로 등록 -> 필요 시 의존성 주업 받을 예정 */
     @Bean
     public ModelMapper getModelMapper() {
-        return new ModelMapper();
+        return new ModelMapper();           // 현재느느 Standard 모드 -> 임의적 매핑도 가능한 상태니 주의
     }
 
 }
