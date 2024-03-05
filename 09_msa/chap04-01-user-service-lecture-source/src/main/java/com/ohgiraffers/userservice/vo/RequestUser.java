@@ -9,4 +9,3 @@ public class RequestUser {
     private String email;       // 사용자 이메일
     private String pwd;         // 사용자 비밀번호
 }
-
