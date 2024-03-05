@@ -1,13 +1,16 @@
 package com.sixcandoit.plrecipe_post.controller;
 
 import com.sixcandoit.plrecipe_post.aggregate.MemberCount;
+import com.sixcandoit.plrecipe_post.aggregate.Post;
+import com.sixcandoit.plrecipe_post.dto.HashtagDTO;
 import com.sixcandoit.plrecipe_post.dto.PostDTO;
 import com.sixcandoit.plrecipe_post.dto.PostHashtagDTO;
 import com.sixcandoit.plrecipe_post.dto.PostLikeDTO;
 import com.sixcandoit.plrecipe_post.repository.mapper.PostMapper;
+import com.sixcandoit.plrecipe_post.service.HashtagService;
+import com.sixcandoit.plrecipe_post.service.PostHashtagService;
 import com.sixcandoit.plrecipe_post.service.PostService;
-import com.sixcandoit.plrecipe_post.vo.RequestPost;
-import com.sixcandoit.plrecipe_post.vo.ResponsePost;
+import com.sixcandoit.plrecipe_post.vo.*;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,16 +22,21 @@ import java.util.List;
 @RestController
 @RequestMapping("/post")
 public class PostRestApiTest {
+    private HashtagService hashtagService;
     private PostService postService;
     private ModelMapper modelMapper;
-    private PostService postMapper;
+    private PostHashtagService postHashtagService;
 
     @Autowired
-    public PostRestApiTest(PostService postService, ModelMapper modelMapper, PostService postMapper) {
+    public PostRestApiTest(HashtagService hashtagService, PostService postService, ModelMapper modelMapper, PostHashtagService postHashtagService) {
+        this.hashtagService = hashtagService;
         this.postService = postService;
         this.modelMapper = modelMapper;
-        this.postMapper = postMapper;
+        this.postHashtagService = postHashtagService;
     }
+
+    @Autowired
+
 
     @GetMapping("/posts")
     public List<PostDTO> selectAllPost() {
@@ -60,6 +68,17 @@ public class PostRestApiTest {
         return postService.selectPostByLikes(postId);
     }
 
+    @PostMapping("/regist/hashtag")
+    private ResponseEntity<ResponseHashtag> registHashTag(@RequestBody RequestHashtag hashtag) {
+        HashtagDTO hashtagDTO = modelMapper.map(hashtag, HashtagDTO.class);
+
+        hashtagService.registHashtag(hashtagDTO);
+
+        ResponseHashtag responseHashtag = modelMapper.map(hashtagDTO, ResponseHashtag.class);
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(responseHashtag);
+    }
+
     @PostMapping("/regist")
     private ResponseEntity<ResponsePost> registPost(@RequestBody RequestPost post) {
         PostDTO postDTO = modelMapper.map(post, PostDTO.class);
@@ -70,4 +89,26 @@ public class PostRestApiTest {
 
         return ResponseEntity.status(HttpStatus.CREATED).body(responsePost);
     }
+
+    @PostMapping("/regist/post_hashtag")
+    private ResponseEntity<ResponsePostHashtag> registPostHashtag(@RequestBody RequestPostHashtag postHashtag) {
+        PostHashtagDTO postHashtagDTO = modelMapper.map(postHashtag, PostHashtagDTO.class);
+
+        postHashtagService.registPostHashtag(postHashtagDTO);
+
+        ResponsePostHashtag responsePostHashtag = modelMapper.map(postHashtagDTO, ResponsePostHashtag.class);
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(responsePostHashtag);
+    }
+
+    @PatchMapping("/modify/{postId}")
+    public ResponseEntity<Post> modifyPost (@RequestBody RequestPost requestPost, @PathVariable int postId ) {
+        return ResponseEntity.ok(postService.modifyPost(postId, requestPost));
+    }
+
+    @PatchMapping("/delete/{postId}")
+    public ResponseEntity<Post> deletePost (@RequestBody RequestPost requestPost, @PathVariable int postId) {
+        return ResponseEntity.ok(postService.modifyPostDeleteDate(postId, requestPost));
+    }
+
 }
