@@ -1,6 +1,7 @@
 package com.sixcandoit.plrecipe_member.feature.member.controller;
 
 import com.sixcandoit.plrecipe_member.feature.member.dto.MemberDTO;
+import com.sixcandoit.plrecipe_member.feature.member.entity.Follow;
 import com.sixcandoit.plrecipe_member.feature.member.service.FollowServiceImpl;
 import com.sixcandoit.plrecipe_member.feature.vo.RequestFollow;
 import com.sixcandoit.plrecipe_member.feature.vo.ResponseFollow;
@@ -19,7 +20,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/follow")
-@Slf4j
 public class FollowController {
 
     private final FollowServiceImpl followServiceImpl;
@@ -47,22 +47,21 @@ public class FollowController {
 
     @PostMapping("/new")
     private ResponseEntity<ResponseFollow> followMember(@RequestBody RequestFollow follow) {
+
         FollowDTO followDTO = modelMapper.map(follow, FollowDTO.class);
-
         followServiceImpl.followMember(followDTO);
-
         ResponseFollow responseFollow = modelMapper.map((followDTO), ResponseFollow.class);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(responseFollow);
     }
 
     @GetMapping("/unfollow")
-    public void unFollow() {    }
+    public void cancelFollow() {    }
 
-    @DeleteMapping("/unfollow")
-    public String unFollow(@RequestParam int followId) {
-        followServiceImpl.unFollow(followId);
-
-        return "redirect:/follow";
+    @DeleteMapping("/unfollow/{followId}")
+    public ResponseEntity<ResponseFollow> cancelFollow(@PathVariable int followId) {
+        followServiceImpl.cancelFollow(followId);
+        return ResponseEntity.ok().build();
     }
+
 }

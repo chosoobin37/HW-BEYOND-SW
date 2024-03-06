@@ -15,6 +15,7 @@ import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,35 +45,64 @@ public class CourseServiceImpl implements CourseService {
     }
 
     /* 코스id에 해당하는 장소 리스트 select */
-    public List<Place> getPlacesByCourseName(int courseId){ return courseMapper.getPlacesByCourseName(courseId);}
-
+    public List<Place> getPlacesByCourseName(int courseId){
+        return courseMapper.getPlacesByCourseName(courseId);
+    }
 
     @Override
-    public void registCoursePlace(CourseDTO course, List<PlaceDTO> placeList) {
-
-        mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
+    public void registCourse(CourseAndPlace cp) {
 
         /* 코스 정보 저장 */
-        Course newCourse = mapper.map(course, Course.class);
+        Course newCourse = cp.getCourse();
         courseRepository.save(newCourse);
+        System.out.println("newCourse = " + cp);
 
-        /* 장소 정보 저장 */ // 장소 이미 있는 id 가져올 것이기 때문에 수정 필요
-        mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
-        List<Place> places = placeList.stream().map(place -> mapper.map(place, Place.class)).collect(Collectors.toList());
-        placeRepository.saveAll(places);
+        /* 코스장소 정보 insert */
+        saveCoursePlace(newCourse.getCourseId(), cp.getPlaces());
+    }
+
+    public void saveCoursePlace(int courseId, List<Place> placeList){
 
         /* 코스id와 장소id를 중간객체 리스트로 만들어서 저장 */
         List<CoursePlaceDTO> coursePlaceList = new ArrayList<>();
         for (int i = 0; i < placeList.size(); i++) {
-            CoursePlaceDTO coursePlaceDTO = new CoursePlaceDTO(newCourse.getCourseId(), places.get(i).getPlaceId(), i);
+            CoursePlaceDTO coursePlaceDTO = new CoursePlaceDTO(courseId, placeList.get(i).getPlaceId(), i+1);
             coursePlaceList.add(coursePlaceDTO);
         }
 
         /* 코스장소 정보 저장 */
+        mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
         List<CoursePlace> coursePlaces = coursePlaceList.stream()
                 .map(coursePlace -> mapper.map(coursePlace, CoursePlace.class))
                 .collect(Collectors.toList());
         coursePlaceRepository.saveAll(coursePlaces);
+
+    }
+
+    @Transactional
+    public void modifyCourse(CourseAndPlace modifyCP) {
+
+        int courseId = modifyCP.getCourse().getCourseId();
+        Course foundCourse = courseRepository.findById(courseId).orElseThrow(IllegalArgumentException::new);
+        foundCourse.setCourseName(modifyCP.getCourse().getCourseName());
+
+        deleteCoursePlace(courseId);
+        saveCoursePlace(courseId, modifyCP.getPlaces());
+
+    }
+
+    @Transactional
+    public void deleteCoursePlace(int courseId){
+        coursePlaceRepository.deleteAllByCourseId(courseId);
+    }
+
+    @Transactional
+    public void deleteCourse(CourseAndPlace deleteCP) {
+
+        int courseId = deleteCP.getCourse().getCourseId();
+        deleteCoursePlace(courseId);
+        courseRepository.deleteById(courseId);
+
     }
 
     /* 멤버id로 멤버가 작성한 코스 리스트 select */
