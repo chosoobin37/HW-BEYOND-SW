@@ -5,3 +5,4 @@ Plrecipe_project02/plrecipe_member/src/main/resources/application.yml
 Plrecipe_project02/plrecipe_group/src/main/resources/application.yml
 09_msa/chap04-01-user-service-lecture-source/src/main/resources/application.yml
 09_msa/chap03-spring-cloud-gateway-lecture-source/src/main/resources/application.yml
+Plrecipe_project02/plrecipe_member/src/test/resources/META-INF/persistence.xml

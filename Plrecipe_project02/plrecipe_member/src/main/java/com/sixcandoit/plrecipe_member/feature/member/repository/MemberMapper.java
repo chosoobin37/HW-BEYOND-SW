@@ -9,7 +9,7 @@ import java.util.List;
 public interface MemberMapper {
 
     List<MemberDTO> selectAllMember();
+    MemberDTO selectMemberById();
     List<MemberDTO> selectMemberByLikePost(int memberId);
-
 
 }

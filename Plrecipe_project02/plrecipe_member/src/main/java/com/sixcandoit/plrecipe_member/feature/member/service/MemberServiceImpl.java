@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class MemberServiceImpl implements MemberService {
@@ -25,16 +26,11 @@ public class MemberServiceImpl implements MemberService {
         this.memberRepository = memberRepository;
     }
 
-    @Override
-    public MemberDTO findMemberById(int memberId) {
-        Member member = memberRepository.findById(memberId).orElseThrow(IllegalArgumentException::new);
-        return mapper.map(member, MemberDTO.class);
-    }
-
-    @Override
-    public void modifyMember(MemberDTO modifyMember) {
-    }
-
+//    @Override
+//    public MemberDTO selectMemberById(int memberId) {
+//        Member member = memberRepository.findById(memberId).orElseThrow(IllegalArgumentException::new);
+//        return mapper.map(member, MemberDTO.class);
+//    }
     @Override
     public void registMember(MemberDTO memberDTO) {
         Date date = new Date();
@@ -47,6 +43,15 @@ public class MemberServiceImpl implements MemberService {
         memberRepository.save(member);
     }
 
+    @Override
+    public void modifyMember(MemberDTO modifyMember) {
+
+    }
+
+//    @Override
+//    public void modifyMember(MemberDTO modifyMember) {
+//    }
+
     //    ---------------------------------------------------------------
     @Override
     public List<MemberDTO> selectAllMember() {
@@ -54,13 +59,21 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
+    public MemberDTO selectMemberById(int memberId) {
+        Optional<Member> userEntity = memberRepository.findById(memberId);
+        MemberDTO userDTO = mapper.map(userEntity, MemberDTO.class);
+
+        return userDTO;
+    }
+
+    @Override
     public List<MemberDTO> selectMemberByLikePost(int memberId) {
         return memberMapper.selectMemberByLikePost(memberId);
     }
 
-    @Override
-    public String selectMemberById(int memberId) {
-        return null;
-    }
+//    @Override
+//    public List<MemberDTO> selectMemberById(int memberId) {
+//        return memberMapper.selectMemberById(memberId);
+//    }
 
 }

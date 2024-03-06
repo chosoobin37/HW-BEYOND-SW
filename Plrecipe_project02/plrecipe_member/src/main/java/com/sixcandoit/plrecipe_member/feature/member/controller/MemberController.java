@@ -40,14 +40,12 @@ public class MemberController {
     }
 
     @GetMapping("/{memberId}")
-    public String findMemberById(@PathVariable int memberId, Model model) {
+    public ResponseEntity<ResponseMember> selectMemberById(@PathVariable("memberId") int memberId) {
 
-        MemberDTO member = memberServiceImpl.findMemberById(memberId);
-        model.addAttribute("member", member);
+        MemberDTO memberDTO = memberServiceImpl.selectMemberById(memberId);
+        ResponseMember returnValue = modelMapper.map(memberDTO, ResponseMember.class);
 
-        System.out.println("member = " + member);
-
-        return memberServiceImpl.selectMemberById(memberId);
+        return ResponseEntity.status(HttpStatus.OK).body(returnValue);
     }
 
     @PostMapping("/regist")
@@ -61,16 +59,14 @@ public class MemberController {
         return ResponseEntity.status(HttpStatus.CREATED).body(responseMember);
     }
 
-    @GetMapping("modify")
-    public void modifyMember() {
-    }
-
-    @PostMapping("/modify")
-    public String modifyMember(MemberDTO modifyMember) {
-        memberServiceImpl.modifyMember(modifyMember);
-
-        return "redirect:/member/" + modifyMember.getMemberId();
-    }
-
-
+//    @GetMapping("modify")
+//    public void modifyMember() {
+//    }
+//
+//    @PostMapping("/modify")
+//    public String modifyMember(MemberDTO modifyMember) {
+//        memberServiceImpl.modifyMember(modifyMember);
+//
+//        return "redirect:/member/" + modifyMember.getMemberId();
+//    }
 }

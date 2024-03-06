@@ -7,15 +7,10 @@ import java.util.List;
 
 public interface MemberService {
 
-    MemberDTO findMemberById(int memberId);
-
-    void modifyMember(MemberDTO modifyMember);
-
     List<MemberDTO> selectAllMember();
-
+    MemberDTO selectMemberById(int memberId);
     List<MemberDTO> selectMemberByLikePost(int memberId);
 
-    String selectMemberById(int memberId);
-
     void registMember(MemberDTO memberDTO);
+    void modifyMember(MemberDTO modifyMember);
 }
