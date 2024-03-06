@@ -16,12 +16,10 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/")
 public class UserController {
 
-    private Environment env;
-    private HelloVO helloVo;
-
-    private ModelMapper modelMapper;
-
-    private UserService userService;
+    private final Environment env;
+    private final HelloVO helloVo;
+    private final ModelMapper modelMapper;
+    private final UserService userService;
 
     @Autowired
     public UserController(Environment env,
@@ -56,6 +54,8 @@ public class UserController {
     /* 설명. 회원가입(POST - /users) */
     @PostMapping("/users")
     public ResponseEntity<ResponseUser> registUser(@RequestBody RequestUser user) {
+
+//        System.out.println("config server 설정값 확인: "+env.getProperty("test.message"));
 
         /* 설명. RequestUser -> UserDTO */
         UserDTO userDTO = modelMapper.map(user, UserDTO.class);
