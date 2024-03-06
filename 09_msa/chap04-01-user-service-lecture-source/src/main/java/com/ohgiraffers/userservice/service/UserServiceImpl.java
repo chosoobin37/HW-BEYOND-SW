@@ -49,8 +49,6 @@ public class UserServiceImpl implements UserService{
         userEntity.setEncryptedPwd(bCryptPasswordEncoder.encode(userDTO.getPwd()));
 
         userRepository.save(userEntity);
-
-
     }
 
     /* 설명. 토큰의 재료인 userId(사용자 고유 번호) 조회를 위해 만들어진 메소드 */
@@ -81,5 +79,15 @@ public class UserServiceImpl implements UserService{
         return new User(userEntity.getEmail(), userEntity.getEncryptedPwd(),
                 true, true, true, true,
                 new ArrayList<>());
+    }
+    @Override
+    public UserDTO getUserById(String id) {
+        UserEntity userEntity = userRepository.findById(Long.valueOf(id))
+                .orElseThrow(() -> {
+                    return new UsernameNotFoundException("조회된 회원이 없습니다.");
+                });
+        UserDTO userDTO = modelMapper.map(userEntity, UserDTO.class);
+
+        return userDTO;
     }
 }
