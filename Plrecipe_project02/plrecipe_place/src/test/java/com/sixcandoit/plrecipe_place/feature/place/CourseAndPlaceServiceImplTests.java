@@ -41,10 +41,11 @@ public class CourseAndPlaceServiceImplTests {
     @ValueSource(ints = {1, 2, 3, 4})
     void selectCoursePlaceByCourseId(int courseId){
 
-        List<CourseAndPlace> courseAndPlaceList = courseService.selectCoursePlaceByCourseId(courseId);
-        courseAndPlaceList.forEach(System.out::println);
+        CourseAndPlace courseAndPlaceList = courseService.selectCoursePlaceByCourseId(courseId);
+        //courseAndPlaceList.forEach(System.out::println);
 
-        assertNotNull(!courseAndPlaceList.isEmpty());
+
+        assertNotNull(courseAndPlaceList);
     }
 
     @ParameterizedTest
@@ -81,12 +82,10 @@ public class CourseAndPlaceServiceImplTests {
 
     @Test
     void deleteCourse(){
+
         Course course = courseService.selectCourseByMember(6).get(0);
-        List<Place> placeList = courseService.getPlacesByCourseName(course.getCourseId());
 
-        CourseAndPlace cp = new CourseAndPlace(course, placeList);
-
-        courseService.deleteCourse(cp);
+        courseService.deleteCourse(course.getCourseId());
     }
 
 
