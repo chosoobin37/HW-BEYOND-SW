@@ -48,8 +48,8 @@ public class PostRestApiTest {
     }
 
     @GetMapping("/posts/email/{memberId}")
-    public List<PostDTO> selectMemberPosts(@PathVariable int memberId) {
-        return postService.selectMemberPosts(memberId);
+    List<PostDTO> selectMemberPosts(@PathVariable int memberId) {
+        return postService.selectPostByMember(memberId);
     }
 
     @GetMapping("/posts/status/{postStatus}")
