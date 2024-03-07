@@ -19,7 +19,7 @@ content-Type: application/json
 }
 
 ### PATCH modify Member
-PATCH localhost:8000/plrecipe-member/modify/35
+PATCH localhost:8000/plrecipe-member/modify/40
 Content-Type: application/json
 
 {
