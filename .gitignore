@@ -10,3 +10,4 @@ Plrecipe_project02/plrecipe_member/src/test/resources/META-INF/persistence.xml
 09_msa/chap04-01-user-service-lecture-source/src/main/resources/bootstrap.yml
 Plrecipe_project02/plrecipe_gateway/src/main/resources/application.yml
 Plrecipe_project02/plrecipe_main/src/main/resources/application.yml
+Plrecipe_project02/plrecipe_group/src/test/resources/META-INF/persistence.xml
