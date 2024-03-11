@@ -83,7 +83,7 @@
 <br/>
 <br/>
 
-## 기술스택
+## 💾 기술스택
 <div align="center">
 
 |DA#|Ubuntu|MariaDB|Java|JavaSpring|MyBatis|JPA|
@@ -92,10 +92,10 @@
 
 </div>
 
-## WBS
+## 🗓️ WBS
 
 <div align="center">
-<img src="https://github.com/6candoit/Plrecipe/blob/3431f2808430514cfcd53cde0d556e64828373a8/PNG/wbs.png" height=600>
+<img src="https://github.com/6candoit/Plrecipe/blob/feature/develop/PNG/wbs2.jpg" height=600>
 </div>
 
 <div align="right">
@@ -103,7 +103,7 @@
 [WBS 바로가기](https://docs.google.com/spreadsheets/d/1dhRdFafID_h05nar4hWZGUSe7SvHYnjZY0G2BIQMQTE/edit#gid=1108790350)
 </div>
 
-## 요구사항
+## 📝 요구사항
 <details>
 <summary><b>Plrecipe 상세정책</b></summary>
 
@@ -173,7 +173,14 @@
     
 </details>
 
-## DDD(Event-Storming/Context-Map) 설계
+<img src="https://github.com/6candoit/Plrecipe/blob/622b4aa295688ae08a82b6786b608c3d12811034/PNG/요구사항image.png">
+
+<div align="right">
+ 
+[요구사항 명세서 바로가기](https://docs.google.com/spreadsheets/d/1dhRdFafID_h05nar4hWZGUSe7SvHYnjZY0G2BIQMQTE/edit#gid=1108790350](https://docs.google.com/spreadsheets/d/1dhRdFafID_h05nar4hWZGUSe7SvHYnjZY0G2BIQMQTE/edit#gid=0))
+</div>
+
+## 📱 DDD(Event-Storming/Context-Map) 설계
 
 **Event-Storming이란<br/>**
 : 서비스와 관계 있는 모든 이해관계자들이 서로가 가지고 있는 생각을 공유하며 서비스에서 발생하는 이벤트를 중심(Event-First)으로 분석하는 기법
@@ -286,17 +293,33 @@
 - 핵심 기능 우선 구현
 - Root간 1:N, 1:1 관계 설정
 
-## 모델링
+## ⚙️ 모델링
 
 ### 1. 개념 모델링
 
+<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/05df842097d0c404817695a759fbfb8f2e055b1c/PNG/개념image.png" height=400>
+</div>
+
 ### 2. 논리 모델링
+
+<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/05df842097d0c404817695a759fbfb8f2e055b1c/PNG/논리image.png" height=600>
+</div>
 
 ### 3. 물리 모델링
 
+<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/05df842097d0c404817695a759fbfb8f2e055b1c/PNG/물리image.png" height=550>
+</div>
+
 ### ERD Cloud 활용
 
-## DDL
+<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/05df842097d0c404817695a759fbfb8f2e055b1c/PNG/erdimage.png" height=400>
+</div>
+
+## 📜 DDL
 <details>
 <summary><b>DDL</b></summary>
     
@@ -554,8 +577,8 @@ REFERENCES `post` (
 </details>
 
 
-## Project Architecture(프로젝트 아키텍처)
-### Monolith Architecture(모놀리스 아키텍처)
+## ⚪ Project Architecture(프로젝트 아키텍처)
+### 1. Monolith Architecture(모놀리스 아키텍처)
 <div align="center">
 <img src="https://github.com/6candoit/Plrecipe/blob/637599a4f5d49fde05fffae4919f2709a826839a/PNG/monolith_image.png" height=250>
 </div>
@@ -565,7 +588,7 @@ REFERENCES `post` (
 - 각 서비스 실행할 경우 하나로 모여있는 서버로 요청
 - 서버에서 요청을 처리
 
-**1. Monolith Architecture의 장점**
+**1-1. Monolith Architecture의 장점**
 
 &nbsp;&nbsp;a. 간단한 배포 방식
 
@@ -575,14 +598,14 @@ REFERENCES `post` (
 
 &nbsp;&nbsp;d. 코드의 재사용 용이
 
-**2. Monolith Architecture의 단점** 
+**1-2. Monolith Architecture의 단점** 
 
 &nbsp;&nbsp;a. 높은 결합도 - 혼란스로운 경계선(소유권)
 
 &nbsp;&nbsp;b. 혼란스로운 경계선(소유권)
 
 
-### MicroService Architecture(마이크로 서비스 아키텍처)
+### 2. MicroService Architecture(마이크로 서비스 아키텍처)
 <div align="center">
 <img src="https://github.com/6candoit/Plrecipe/blob/637599a4f5d49fde05fffae4919f2709a826839a/PNG/microservice_image.png" height=250>
 </div>
@@ -593,7 +616,7 @@ REFERENCES `post` (
 - 서비스들은 네트워크를 통해 서로 통신
 - 서비스별로 데이터베이스 소유
 
-***1-1. 마이크로 서비스의 장점***
+***2-1. 마이크로 서비스의 장점***
 
 - 독립적인 특성으로 인해 확장성, 견고성
 
@@ -601,31 +624,31 @@ REFERENCES `post` (
 
 - 언어, 플랫폼, 데이터베이스 등 종류에 상관없이 조합 가능
 
-***1-2. 마이크로 서비스의 단점***
+***2-2. 마이크로 서비스의 단점***
 
 - 다수의 네트워크 통신으로 예측이 힘들고 패킷 손실이 야기될 수 있음
 
 - 서비스를 분산할 수로 높은 비용, 시스템의 복잡도 상승, 고도의 기술이 필요
 
-***1-3. 사용자 인터페이스***
+***A. 사용자 인터페이스***
 
 - 마이크로 서비스를 사용 시 UI도 고려해야 됨
 
-***1-4. 기술***
+***B. 기술***
 
 - 장점중 하나인 [언어, 플랫폼, 데이터베이스 등 종류에 상관없이 조합 가능]과 같이 기술의 제한 없이 구축 가능
 
-***2 결합도와 응집력***
+***2-3. 결합도와 응집력***
 
 마이크로 서비스 아키텍처의 가장 중요한 요소는 결합도와 응집력.(응집력 높고 결합도 낮은게 안정적)
 
-2-1. 응집력(Cohesion)
+a. 응집력(Cohesion)
 
 - 관련된 것끼리 묶인것
 
 - 변경시 함께 바뀜
 
-2-2. 결합도(Coupling)
+b. 결합도(Coupling)
 
 - 다른 것과 연관된 것
 
@@ -640,6 +663,12 @@ REFERENCES `post` (
 - 도메인 결합도 : 서비스 도메인 간의 연결<br/>
 
 ### 프로젝트 아키텍처
+
+<p align="center">
+  <img src="https://github.com/6candoit/Plrecipe/blob/d48af65a0b290f3e5506ef8919ee5ea574199977/PNG/archi1.png" align="center" width="32%">
+  <img src="https://github.com/6candoit/Plrecipe/blob/d48af65a0b290f3e5506ef8919ee5ea574199977/PNG/archi2.png" align="center" width="32%">
+  <img src="https://github.com/6candoit/Plrecipe/blob/f33caa9efde9575b394bf2307583648cdd9a7e28/PNG/archi3.jpg" align="center" width="32%">
+</p>
 
 <div align="center">
  <img src="https://github.com/6candoit/Plrecipe/blob/5fc203e0989f0f13a5a119b9e1f75cd48b280bce/PNG/plrecipe_architecture_test1.drawio1.png" height=320>
@@ -667,7 +696,7 @@ REFERENCES `post` (
 - 각 서비스끼리 통신하여 필요한 정보를 주고 받음
 - (현재 DB는 하나의 DB를 사용함)
 
-## Eureka Server
+## 🟡 Eureka Server
 <p align="center"><img src="https://github.com/6candoit/Plrecipe/blob/3127aa3c06426140eb0887869201fe4d40b9a96f/PNG/eurekaserver.png" height=350></p>
 
 &nbsp;Eureka 서버는 마이크로서비스 아키텍처에서 사용되는 서비스 디스커버리 및 로드 밸런싱 도구 중 하나입니다. Netflix에서 개발한 Eureka는 클라우드 환경에서 동적으로 변하는 서비스 인스턴스를 관리하고, 이를 검색할 수 있는 기능을 제공합니다.
@@ -682,7 +711,7 @@ REFERENCES `post` (
 
 3. 서비스 상태 감시: Eureka는 등록된 서비스 인스턴스들의 상태를 주기적으로 감시하고, 문제가 발생한 인스턴스들을 자동으로 감지하고 제거함.
 
-## API 개발 및 설계 도구
+## 🟠 API 개발 및 설계 도구
 ### Postman
 <div align="center">
 <figure class="half">
@@ -723,15 +752,291 @@ REFERENCES `post` (
 
 5. 인증 및 보안: Swagger를 사용하여 API에 대한 인증 및 보안 기능을 정의. 이를 통해 API를 보호하고 안전하게 사용할 수 있도록 함.
 
-## 테스트
+## 🔴 테스트
+
+<div align="left">
+	
+[API 명세서](https://github.com/6candoit/Plrecipe/tree/feature/develop/PNG/API%20%EB%AA%85%EC%84%B8%EC%84%9C)
+
+</div>
+
+<details>
+<summary><b><strong>테스트케이스 정의</strong></b></summary>
+
+<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/1d87b7714944d08af9986750fc15c800cd993e43/PNG/Plrecipe_test/테스트 케이스 정의서.jpg">
+</div>
+</details>
+
+<details>
+<summary><b><strong>Member</strong></b></summary>
+
+<div align="center">
+<img src="PNG/Plrecipe_test/member/Test Results - All_in_member.jpg">
+</div>
+<hr>
+<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/7ba32508e12a651dc608190bccd0cfd939fed360/PNG/Plrecipe_test/member/login.png">
+</div>
+<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/7ba32508e12a651dc608190bccd0cfd939fed360/PNG/Plrecipe_test/member/logintoken.png">
+</div>
+Login<br/><br/>
+<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/7ba32508e12a651dc608190bccd0cfd939fed360/PNG/Plrecipe_test/member/memberRegist.png">
+</div>
+Regist Member<br/><br/>
+
+<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/7ba32508e12a651dc608190bccd0cfd939fed360/PNG/Plrecipe_test/member/modifyMember.png">
+</div>
+Modify Member<br/><br/>
+<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/7ba32508e12a651dc608190bccd0cfd939fed360/PNG/Plrecipe_test/member/pwEncryption.png">
+</div>
+Password Encryption<br/><br/>
+<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/7ba32508e12a651dc608190bccd0cfd939fed360/PNG/Plrecipe_test/member/selectAll.png">
+</div>
+All Member Select<br/><br/>
+<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/7ba32508e12a651dc608190bccd0cfd939fed360/PNG/Plrecipe_test/member/selectByMemberID.png">
+</div>
+Select By MemberId<br/><br/>
+<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/7ba32508e12a651dc608190bccd0cfd939fed360/PNG/Plrecipe_test/member/withdrawMember.png">
+</div>
+Withdraw Member<br/><br/>
+<details>
+	<summary><b>Follow</b></summary>
+	<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/7ba32508e12a651dc608190bccd0cfd939fed360/PNG/Plrecipe_test/member/follow/insertFollow.png">
+</div>
+	Insert Follow<br/><br/>
+	<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/7ba32508e12a651dc608190bccd0cfd939fed360/PNG/Plrecipe_test/member/follow/searchFollower.png">
+</div>
+	Search Follower<br/><br/>
+	<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/8be88e02c8f5babacc9ae0f4e2cd6efaf1de8617/PNG/Plrecipe_test/member/follow/searchFollowing.png">
+</div>
+	Search Follwing<br/><br/>
+	<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/7ba32508e12a651dc608190bccd0cfd939fed360/PNG/Plrecipe_test/member/follow/searchByFollowiD.png">
+</div>
+	Search By FollowID<br/><br/>
+	<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/7ba32508e12a651dc608190bccd0cfd939fed360/PNG/Plrecipe_test/member/follow/deletefollow.png">
+</div>
+	Delete Follow<br/><br/>
+</details>
+ 
+</details>
+
+<details>
+<summary><b><strong>Post</strong></b></summary>
+
+<div align="center">
+<img src="PNG/Plrecipe_test/post/Test Results - All_in_post.jpg">
+</div>
+<hr>
+
+<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/34de6fe51298a713e33b28a3e4b6ca3c00613c0f/PNG/Plrecipe_test/post/registPost.png">
+</div>
+Regist Post<br/><br/>
+<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/34de6fe51298a713e33b28a3e4b6ca3c00613c0f/PNG/Plrecipe_test/post/modifyPost.png">
+</div>
+Modify Post<br/><br/>
+<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/34de6fe51298a713e33b28a3e4b6ca3c00613c0f/PNG/Plrecipe_test/post/registPostLike.png">
+</div>
+Regist Post Like<br/><br/>
+<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/34de6fe51298a713e33b28a3e4b6ca3c00613c0f/PNG/Plrecipe_test/post/selectAllPost.png">
+</div>
+Select All Post<br/><br/>
+<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/34de6fe51298a713e33b28a3e4b6ca3c00613c0f/PNG/Plrecipe_test/post/deletePost.png">
+</div>
+Delete Post<br/><br/>
+<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/34de6fe51298a713e33b28a3e4b6ca3c00613c0f/PNG/Plrecipe_test/post/insertHashTag.png">
+</div>
+Insert HashTag<br/><br/>
+<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/34de6fe51298a713e33b28a3e4b6ca3c00613c0f/PNG/Plrecipe_test/post/selectLikeByPost.png">
+</div>
+Select Like By Post<br/><br/>
+<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/34de6fe51298a713e33b28a3e4b6ca3c00613c0f/PNG/Plrecipe_test/post/selectMemberPosts.png">
+</div>
+Select Member Posts<br/><br/>
+<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/34de6fe51298a713e33b28a3e4b6ca3c00613c0f/PNG/Plrecipe_test/post/selectHashtagByPost.png">
+</div>
+Select HashTag By Post<br/><br/>
+<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/34de6fe51298a713e33b28a3e4b6ca3c00613c0f/PNG/Plrecipe_test/post/selectPostByMemberCount.png">
+</div>
+Select Post By MemberCount<br/><br/>
+<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/34de6fe51298a713e33b28a3e4b6ca3c00613c0f/PNG/Plrecipe_test/post/selectPostByStatus.png">
+</div>
+Select Post By Status<br/><br/>
+
+<details>
+	<summary><b>HashTag</b></summary>
+	<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/44ba5e24b2425fef7471afcc6965f00385afb2cf/PNG/Plrecipe_test/post/Hashtag/insertHashTag.png">
+</div>
+	Insert HashTag<br/><br/>
+	<div align="center">
+	<img src="https://github.com/6candoit/Plrecipe/blob/44ba5e24b2425fef7471afcc6965f00385afb2cf/PNG/Plrecipe_test/post/Hashtag/selectHashtagByPost.png">
+</div>
+	Select HashTag By Post<br/><br/>
+	<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/44ba5e24b2425fef7471afcc6965f00385afb2cf/PNG/Plrecipe_test/post/Hashtag/deleteHashtag.png">
+</div>
+	Delete HashTag<br/><br/>
+</details>
+
+</details>
+
+<details>
+<summary><b><strong>Place</strong></b></summary>
+
+<div align="center">
+<img src="PNG/Plrecipe_test/place/Test Results - All_in_place.png">
+</div>
+<hr>
+ 
+<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/11559462b80f4c4d6dbce0b9c192dd0217ac88f1/PNG/Plrecipe_test/place/registPlace.png">
+</div>
+Regist Place<br/><br/>
+<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/11559462b80f4c4d6dbce0b9c192dd0217ac88f1/PNG/Plrecipe_test/place/placeUsingKakaoAPI.png">
+</div>
+<div align="center">
+Place Using KakaoAPI<br/><br/>
+<img src="https://github.com/6candoit/Plrecipe/blob/11559462b80f4c4d6dbce0b9c192dd0217ac88f1/PNG/Plrecipe_test/place/registStar.png">
+</div>
+Regist Star (To place)<br/><br/>
+<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/11559462b80f4c4d6dbce0b9c192dd0217ac88f1/PNG/Plrecipe_test/place/modifyStar.png">
+</div>
+Modify Star<br/><br/>
+<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/11559462b80f4c4d6dbce0b9c192dd0217ac88f1/PNG/Plrecipe_test/place/deletePlace.png">
+</div>
+Delete Place<br/><br/>
+<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/11559462b80f4c4d6dbce0b9c192dd0217ac88f1/PNG/Plrecipe_test/place/deleteStar.png">
+</div>
+Delete Star<br/><br/>
+<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/11559462b80f4c4d6dbce0b9c192dd0217ac88f1/PNG/Plrecipe_test/place/selectAllPlace.png">
+</div>
+Select All Place<br/><br/>
+<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/11559462b80f4c4d6dbce0b9c192dd0217ac88f1/PNG/Plrecipe_test/place/selectPlaceByPlaceID.png">
+</div>
+Select Place By PlaceId<br/><br/>
+<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/11559462b80f4c4d6dbce0b9c192dd0217ac88f1/PNG/Plrecipe_test/place/selectPlaceByFilter.png">
+</div>
+Select Place By Filter<br/><br/>
+<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/11559462b80f4c4d6dbce0b9c192dd0217ac88f1/PNG/Plrecipe_test/place/selectStarByMemberID.png">
+</div>
+Select Star By MemberId<br/><br/>
+<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/11559462b80f4c4d6dbce0b9c192dd0217ac88f1/PNG/Plrecipe_test/place/selectStarByPlace.png">
+</div>
+Select Star By Place<br/><br/>
+
+<details>
+	<summary><b>Course</b></summary>
+	<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/11559462b80f4c4d6dbce0b9c192dd0217ac88f1/PNG/Plrecipe_test/place/course/registCourse.png">
+</div>
+	Regist Course<br/><br/>
+	<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/11559462b80f4c4d6dbce0b9c192dd0217ac88f1/PNG/Plrecipe_test/place/course/modifyCourse.png">
+</div>
+	Modify Course<br/><br/>
+	<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/11559462b80f4c4d6dbce0b9c192dd0217ac88f1/PNG/Plrecipe_test/place/course/DeleteCourse.png">
+</div>
+	Delete Course<br/><br/>
+	<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/11559462b80f4c4d6dbce0b9c192dd0217ac88f1/PNG/Plrecipe_test/place/course/selectCourseByMember.png">
+</div>
+	Select Course Bt Member<br/><br/>
+	<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/11559462b80f4c4d6dbce0b9c192dd0217ac88f1/PNG/Plrecipe_test/place/course/selectPlaceByCourseID.png">
+</div>
+	Select Place By CourseID<br/><br/>
+	<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/11559462b80f4c4d6dbce0b9c192dd0217ac88f1/PNG/Plrecipe_test/place/course/selectPlacesByCourseID.png">
+</div>
+	Select Places By CourseID<br/><br/>
+</details>
+
+</details>
+
+<details>
+<summary><b><strong>Group</strong></b></summary>
+
+<div align="center">
+<img src="PNG/Plrecipe_test/group/Test Results - All_in_group.jpg">
+</div>
+<hr>
+
+<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/3268813d41ec902de4061134ee4cd14dc9a3ad66/PNG/Plrecipe_test/group/registGroup.png">
+</div>
+Regist Group<br/><br/>
+<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/3268813d41ec902de4061134ee4cd14dc9a3ad66/PNG/Plrecipe_test/group/inviteGroup.png">
+</div>
+Invite Group<br/><br/>
+<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/3268813d41ec902de4061134ee4cd14dc9a3ad66/PNG/Plrecipe_test/group/modifyGroup.png">
+</div>
+Modify Group<br/><br/>
+<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/3268813d41ec902de4061134ee4cd14dc9a3ad66/PNG/Plrecipe_test/group/deleteGroup.png">
+</div>
+Delete Group<br/><br/>
+<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/3268813d41ec902de4061134ee4cd14dc9a3ad66/PNG/Plrecipe_test/group/acceptRequest.png">
+</div>
+Accept Request<br/><br/>
+<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/3268813d41ec902de4061134ee4cd14dc9a3ad66/PNG/Plrecipe_test/group/selectAllGroups.png">
+</div>
+Select All Group<br/><br/>
+<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/3268813d41ec902de4061134ee4cd14dc9a3ad66/PNG/Plrecipe_test/group/selectGroupByPubilcStatus.png">
+</div>
+Select Group By Public Status<br/><br/>
+<div align="center">
+<img src="https://github.com/6candoit/Plrecipe/blob/3268813d41ec902de4061134ee4cd14dc9a3ad66/PNG/Plrecipe_test/group/withdrawalGroup.png">
+</div>
+Withdrawal Group<br/><br/>
+
+</details>
 
 
-## 회고
+## 💎 회고
 
 |&nbsp;&nbsp;팀&nbsp;원&nbsp;&nbsp;&nbsp;|회고록|
 |:---:|---|
-|배성민||
-|한소혜||
+|배성민|&nbsp;주제는 '필요성'을 고려하여 프로젝트를 시작했으며, 팀원들과 함께 즐겁게 진행할 수 있는 측면도 고려했습니다. 프로젝트를 마이크로 서비스 아키텍처(MSA) 형태로 진행했으며, 이는 쉽지 않았지만 팀원들과의 교류를 촉진하고 서비스에 대한 이해를 높일 수 있었습니다. 완벽한 MSA를 구축하지 못했지만, 다양한 세분화 방식을 경험할 수 있었습니다. 백엔드 구현 기간의 제약으로 인해 모든 기능을 완벽하게 구현하지 못한 점이 아쉬웠지만, 이를 고도화하는 과정을 통해 더 나은 서비스를 제공하고자 하는 욕심이 있습니다.<br/>&nbsp;다양한 기술 스택을 활용하면서 이전에 학습한 내용을 복습할 수 있었고, 특히 MyBatis(조회)와 JPA(입력, 수정, 삭제)를 통한 데이터베이스 처리 방법을 활용했습니다. 또한 유레카 서버와 클라이언트를 통해 게이트웨이를 설정하고 다른 서비스를 호출하는 방식을 적용했는데, 이를 통해 실제 회사에서의 적용 사례를 학습할 수 있었습니다.<br/>&nbsp;제가 맡은 역할 중에서는 암호화와 아키텍처 제작이 기억에 남습니다. Spring Security의 지속적인 업데이트로 인해 암호화 부분이 어려움을 겪었고, MSA를 적용하면서 토큰 방식(JWT)을 통한 인증 및 인가가 어려웠습니다. 아키텍처는 정해진 형식이 없었지만 실제 사례와 성공 사례를 참고하여 구성했으나, 더 많은 기능을 고려한 아키텍처를 구성하고 싶은 아쉬움이 남았습니다.<br/>&nbsp;팀 프로젝트는 긍정적인 분위기 속에서 팀원들은 각자의 역할을 잘 수행하고 의견을 나누어주어 프로젝트를 성공적으로 이끌어낼 수 있었던 것 같습니다. 이러한 이유 때문인지 프로젝트 이후에도 더 발전하고자 하는 욕심이 생겼으며, 새로운 기술과 도구에 대한 학습에 대 흥미를 느끼기도 했습니다. 이번 프로젝트에서 부족한 부분과 궁금한 부분을 보완하고 발전시키기 위해 꾸준히 노력해봐야겠다는 생각도 들었습니다.|
+|한소혜|&nbsp;이번 백엔드 프로젝트를 진행하며 이전보다는 생소하지 않은 주제로 진행하게 되어서 과정을 좀 더 즐길 수 있었습니다. 그리고 이전의 경험을 토대로 미리 장소 블럭과 코스 등 주요한 개념을 팀원들과 맞춰가며 좀 더 수월하게 진행할 수 있었습니다.<br/>&nbsp;jsp, servlet을 이용하여 백엔드 프로젝트를 진행한 적이 있었는데, 스프링을 활용해 개발을 진행하니 같은 시간을 사용해 더 제대로 된 기능을 구현할 수 있어 신기했습니다. 또한 조회는 MyBatis, 삽입/수정/삭제는 JPA를 통해 구현하며 다양한 방식을 활용하며 각 장단점을 직접 느끼고 어떻게 하면 잘 활용할 수 있을지 고민해볼 수 있던 시간이었습니다.<br/>&nbsp;이번 프로젝트에서 가장 좋았던 점은 msa 방식을 배우고 각 서비스를 나눠서 구현해볼 수 있었다는 것입니다. 유레카 서버와 클라이언트를 이용하고 게이트웨이까지 직접 설정해볼 수 있었던 의미있는 경험이었다고 생각합니다. feign client를 사용해 다른 서비스와 통신하고 정보를 받아오는 과정도 뿌듯하고 재밌었습니다.<br/>&nbsp;이전 프로젝트보다 더 발전된 모습으로 이번 구현을 통해 팀원들과 함께 고민하고 프로젝트를 완성할 수 있어서 좋았습니다.|
 |윤재은|&nbsp;놀거리 코스를 제공하는 커뮤니티를 주제로 하는 백엔드 프로젝트를 하며 수업에서 배웠던 MyBatis의 remix 방식을 채택한 다중열 조회, JPA를 사용한 CRUD 에서 많은 오류를 겪으며 myBatis와 JPA의 장단점을 알 수 있었고 resultMap 작성, 비즈니스 로직등 아직 확실히 알지 못했던 것을 실제로 사용해보며 깨우칠 수 있어 좋았습니다.<br/> &nbsp;또한 Eureka cloud를 사용하여 서비스를 MSA로 나누어 server와 gateway를 통해 연결 후 DB에서 join을 이용해 값을 가져오는 것이 아니라  feign client를 사용해 주고받는 기능을 적용해보며 흥미를 많이 느꼈습니다.|
 |조수빈|&nbsp;기획 단계에서 기존 서비스와는 차별성이 있되 어느정도 참조할 레퍼런스도 있는 서비스를 기획하는 게 생각보다 어렵고 시간이 오래 걸리는 과정이었습니다. 팀원들이 각자 사용하면서 만족했던 서비스와 아쉬웠던 점을 공유하며 적합한 주제를 찾을 수 있었고, 이후 기능 구현 단계에서 시간이 오래 걸리더라도 기획 단계를 꼼꼼하게 하는 것이 얼마나 중요한지 깨달을 수 있었습니다.<br/> &nbsp;또한, 구현할 서비스에 대해 사소한 개념이라도 명확하게 한 상태에서 기능 구현을 시작해야 한다는 점도 배울 수 있었습니다. 이전 프로젝트에서는 다루지 못했던 서버 및 통신 이슈들을 직접 다뤄보며 수업시간에 배웠던 내용을 직접 구현하는 과정을 통해 자연스레 복습하며 체화할 수 있는 좋은 경험이었습니다.<br/> &nbsp;MSA 방식으로 팀원별로 한 가지 기능을 맡아 구현하며 책임감을 가지고 작업할 수 있었으며, 오류가 발생했을 때는 본인의 기능이 아니더라도 서로 의견을 공유하며 제대로 된 협업을 경험할 수 있었습니다. 중간객체가 없는 기능을 맡아 직접 중간객체 구현 및 통신을 하지 못했다는 아쉬움이 있어 다음 프로젝트에는 양이 부담이 되어도 구현할 분량이 더 많은 기능을 맡아보고 싶습니다.|
 |김재현|&nbsp;처음에 무슨 주제를 할지 토론하는 시간도 즐거웠고, 커플 앱 아이디어로 시작해서 저희 PLRECIPE 프로젝트까지 오게된 과정도 굉장히 재밌었습니다. 이번 백엔드 프로젝트를 진행하며 그동안 수업헤서 배웠던 Mybatis 방식으로 조회 기능을 구현하고 테스트 해보며, 특히 xml 파일에서 수많은 resultMap 오류를 접하고  sql 쿼리문을 복습할 수 있었던점이 좋았습니다. 또한 JPA 방식으로 C(R)UD 기능또한 구현하고 테스트하며 mybatis 방식과 어떤 차이점이 있는지 명확하게 알 수 있었습니다.<br/> &nbsp;다만 제가 맡은 그룹 서비스 기능에서 db에서 조인을 통해 다른 서비스의 값데이터를 불러오는게 아닌  완벽하진 않지만 준 msa 방식을 통해 다른 서버에서 feignclient를 통해 불러오고 싶었는데 그 기능은 기한내 못해서 좀 아쉬웠습니다. 이 프로젝트를 프론트 개발 단계까지 이어나간다면 더 고도화 해보고 싶습니다. 다들 정말 고생많으셨습니다!!|
