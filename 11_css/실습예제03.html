@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS 선택자 실습</title>
+  <style>
+    h2{
+      color: blue;
+    }
+
+    h2+p{
+      font-size: 20px;
+    }
+
+    h2~*{
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h2>Heading1</h2>
+  <h3>Paragraph1</h3>
+  <ul>
+    <li>List item1</li>
+    <li>List item2</li>
+    <li>List item3</li>
+  </ul>
+  <p>paragraph2</p>
+
+  <h2>Heading2</h2>
+  <p>Paragraph3</p>
+  <p>paragraph4</p>
+  <div>
+    <p>paragraph5</p>
+    <p>paragraph6</p>
+  </div>
+</body>
+</html>

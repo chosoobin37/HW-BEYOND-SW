@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+     #c-name{
+      color: red;
+     }
+
+     #c-16{
+      color: #0b12b0;
+     }
+
+     #c-rgb{
+      color: rgb(215, 18, 195);
+     }
+
+    /* 마지막으로 부여하는 투명도는 0부터 1까지 투명도 부여 (투명하면 배경 비침) */
+     #c-rgba{
+      color: rgba(215, 18, 195, 0.6);
+     }
+
+     /* (색조, 채도, 명도)
+        색조(0~360) -> 0 red, 120 green, 240 blue 
+        채도(0~100)
+        명도(0~100)  */
+     #c-hsl{
+      color: hsl(279, 69%, 54%);
+     }
+
+     #c-hsla{
+      color: hsla(177, 82%, 38%, 0.908);
+     }
+
+    /* 텍스트 줄 표시 및 없애기 지정 */
+     #td1{text-decoration: none;}
+     #td2{text-decoration: underline;}
+     #td3{text-decoration: line-through;}
+     #td4{text-decoration: overline;}
+
+     /* 그림자 효과 */
+     #ts1{
+      color: orange;
+      text-shadow: 5px 5px red;
+     }
+
+     #ts2{
+      color: white;
+      text-shadow: 0px 1px 20px rgb(255, 0, 212);
+     }
+
+     #ts3{
+      color: white;
+      text-shadow: 1px 1px 20px rgb(29, 248, 204);
+     }
+     
+     #ts4 {
+            color: black;
+            text-shadow: 0px 0px 4px #ccc,
+            0px -5px 4px #ff3,
+            2px -10px 6px #fd3,
+            2px -15px 11px #f80,
+            2px -19px 18px #f20;
+        }
+
+  </style>
+</head>
+<body>
+  <h1>텍스트 스타일</h1>
+  <hr>
+
+  <h3>color 속성: 텍스트의 색상 지정 가능</h3>
+  <p>색상값 참조 사이트: <a href="https://colorpicker.com/ko/explore" target="_blank">사이트로 이동</a></p>
+  <ul>
+    <li id="c-name">색상명으로 지정</li>
+    <li id="c-16">16진수 값으로 지정</li>
+    <li id="c-rgb">rgb로 지정</li>
+    <li id="c-rgba">rgba로 지정</li>
+    <li id="c-hsl">hls로 지정</li>
+    <li id="c-hsla">hlas로 지정</li>
+  </ul>
+
+  <h3>text-decoration 속성: 텍스트에 줄을 긋거나 없앨 때 사용</h3>
+  <ul>
+    <li><a href="#" id="td1">하이퍼링크 밑줄 없애기</a></li>
+    <li id="td2">텍스트 영역 아래 줄 긋기</li>
+    <li id="td3">텍스트 영역 중간에 줄 긋기</li>
+    <li id="td4">텍스트 영역 위에 줄 긋기</li>
+  </ul>
+
+  <h3>text-transform 속성: 텍스트에 그림자 효과 적용</h3>
+  <div id="bg">
+    <span id="ts1" class="shadow">HTML5</span>&nbsp;&nbsp;&nbsp;&nbsp;
+    <span id="ts2" class="shadow">HTML5</span>&nbsp;&nbsp;&nbsp;&nbsp;
+    <span id="ts3" class="shadow">HTML5</span>&nbsp;&nbsp;&nbsp;&nbsp;
+    <span id="ts4" class="shadow">HTML5</span>
+  </div>
+</body>
+</html>
