@@ -1,6 +1,6 @@
 package com.sixcandoit.plrecipe_member.feature.member;
 
-import com.sixcandoit.plrecipe_member.feature.member.entity.Follow;
+import com.sixcandoit.plrecipe_member.command.aggregate.Follow;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;

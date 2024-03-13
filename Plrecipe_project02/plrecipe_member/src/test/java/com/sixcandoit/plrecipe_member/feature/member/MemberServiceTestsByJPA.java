@@ -1,7 +1,7 @@
 package com.sixcandoit.plrecipe_member.feature.member;
 
-import com.sixcandoit.plrecipe_member.feature.member.entity.Member;
-import com.sixcandoit.plrecipe_member.feature.member.entity.MemberGrade;
+import com.sixcandoit.plrecipe_member.command.aggregate.Member;
+import com.sixcandoit.plrecipe_member.command.aggregate.MemberGrade;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
