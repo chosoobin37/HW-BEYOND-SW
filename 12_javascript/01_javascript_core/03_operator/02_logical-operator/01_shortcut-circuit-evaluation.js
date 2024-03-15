@@ -10,6 +10,7 @@ console.log('apple' || false);         // apple
 /* 2 AND */
 console.log('apple' && 'banana'); 
 console.log(false && 'banana'); 
+
 console.log('apple' && false); 
 
 var num = 2;
@@ -21,5 +22,5 @@ var num = 2;
 // }
 
 /* 단축 평가를 활용하여 같은 결과 */
-num%2==0 && console.log('짝수입니다.');
-num%2==0 || console.log('홀수입니다.');
+num%2==0 && console.log('짝수입니다.');   // &&는 왼쪽이 맞으면 오른쪽 실행
+num%2==0 || console.log('홀수입니다.');   // ||는 왼쪽이 틀리면 오른쪽 실행
