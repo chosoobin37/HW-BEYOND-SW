@@ -16,3 +16,11 @@ const arr3 = Array(10);
 console.log(arr3);
 console.log(arr3.length);
 
+const arr4 = Array(1, 2, 3);
+console.log(arr4);
+
+for (let i = 0; i < arr4.length; i++) {
+  console.log(arr4[i]);
+ }
+
+ console.log(typeof arr4);
