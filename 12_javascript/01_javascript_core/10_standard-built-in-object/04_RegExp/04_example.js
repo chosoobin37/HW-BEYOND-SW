@@ -26,6 +26,7 @@ console.log(/^\d+$/.test(target2));       // false
 const id = 'hello123';
 const id2 = '가hello123';
 const id3 = 'hello12345657890';
+
 /* 알파벳, 숫자로 된 6~12자의 문자로 시작하고 끝남 */
 console.log(/^[A-Za-z0-9]{6,12}$/.test(id));        // true
 console.log(/^[A-Za-z0-9]{6,12}$/.test(id2));       // false
