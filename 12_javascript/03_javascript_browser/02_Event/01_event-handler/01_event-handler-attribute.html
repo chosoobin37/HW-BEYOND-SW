@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>event handler</title>
+</head>
+<body>
+  <h1>01 Event Handler Attribute</h1>
+
+  <div class="prop">
+    <button onclick="alert('하이루방가방가'); console.log('콘솔 출력')">클릭</button>
+    <button id="btn" onmouseover="hello('조먹밥');">마우스를 올리세요</button>
+  </div>
+
+  <h3>1. event handler attribute 방식</h3>
+  <p>html 이벤트 핸들러 어트리뷰트(on 접두사 + 이벤트 타입) 값으로 함수 호출문을 할당하여 이벤트 핸들러 등록 방식
+    주의할 점 -> 함수 참조가 아닌 함수 호출문(소괄호까지 작성)을 할당한다는 점점
+  </p>
+
+  <script>
+    console.log(document.getElementsByClassName('prop'));
+
+    function hello(name) {
+      alert(`${name} 님, 마우스를 올리지 마세요.`)
+    }
+  </script>
+</body>
+</html>
