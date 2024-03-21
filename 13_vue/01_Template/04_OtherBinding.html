@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div id="step01">
+    <h5>다중 속성 바인딩</h5>
+    <!-- 반응형 변수(객체가 담긴)를 활용해 한 번에 다양한 attribute 세팅 가능 -->
+    <div v-bind="multiAttr">{{multiAttr.value}}</div>
+    <button @click="fun">ref에 담긴 객체 접근</button>
+  </div>
+
+  <script>
+    const {createApp, ref, reactive}=Vue;
+
+    /*
+      ref 사용 시 템플릿 영역이 아닌 곳에서는 .value를 붙여야 데이터 접근 가능하지만,
+      템플릿 영역에서는 안 붙여도 사용 가능
+    */
+    createApp ({
+      setup() {
+        const multiAttr = ref({
+          id: "multiId",
+          class: "multiClass",
+          value: "multiValue"
+        });
+
+
+        const fun = () => {
+          console.log(multiAttr.value);
+        }
+        return {
+          multiAttr,
+          fun
+        }
+      }
+    }).mount('#step01')
+  </script>
+</body>
+</html>

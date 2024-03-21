@@ -35,22 +35,22 @@
 
 
   <script>
-    const {createApp, ref} =Vue;
-    createApp({
-      setup() {
-        const dynamicId=ref('vue');
-        const value=ref('test');
+    const{createApp, ref,reactive} = Vue;
+        createApp ({
+            setup() {
+                const dynamicId = ref('vue');
+                const value = ref('test');
 
-        const skipId=ref('skipId');
-        const skipValue=ref('skipValue');
-        return {
-          dynamicId,
-          value,
-          skipId,
-          skipValue
-        }
+                const skipId = ref('skipId');
+                const skipValue = ref('skipValue');
+                return {
+                    dynamicId,
+                    value,
+                    skipId,
+                    skipValue
+                }
+            }
 
-      }
     }).mount('#step01')
 
     /*
@@ -64,13 +64,27 @@
     2. 기본 값 설정 가능
     3. 객체 또는 배열 감싸기 가능
     */
-    createApp({
-      setup() {
-        const isTrue=ref(true);
-        const activation=() => {
-          console.log(isTrue.value);
-          isTrue.value=!isTrue.value;
-        }
+    createApp ({
+            setup() {
+                const isTrue = ref(false);
+
+        /*
+          이후에 reactive 파트에서 다시 다루겠지만 Vue가 제공하는 reactive 함수를 써서도 객체 데이터 관리 가능
+
+          ref와 reactive 차이점
+          1. ref는 모든 자료형 관리 가능, reactive는 객체 형태들만 관리 가능
+          2. ref는 모든 setup() 안에서 접근할 때, .value를 붙여야 하고 reactive는 바로 접근 가능
+        */
+        const refObj = ref({test: 'ttt'});
+                const reactiveObj = reactive({test: 'abc'});
+
+                const activation = () => {
+                    console.log(isTrue);
+                    console.log(refObj.value.test);
+                    console.log(reactiveObj);
+                    isTrue.value = !isTrue.value;
+                }
+
         return {
           isTrue,
           activation
