@@ -39,6 +39,17 @@
       <p>falsy</p>
     </div>
   </div>
+
+  <!-- 
+
+  -->
+  <div id="step03">
+    <h1 v-if="awesome =='awesome'">Vue is awesome!</h1>
+    <h1 v-else-if="awesome =='good'">hello</h1>
+    <h1 v-else>OMG</h1>
+    <button @click="setToggle">toggle</button>
+  </div>
+
   <script>
     const {createApp, ref, reactive}=Vue;
     createApp({
@@ -67,6 +78,29 @@
         }
       }
     }).mount('#step02');
+
+    createApp({
+      setup() {
+
+        const awesome=ref('awesome');
+        const count=ref(1);
+
+        function setToggle() {
+          const options =
+          ['awesome', 'good', 'not good'];
+
+          const optionIndex = 
+          count.value % options.length;
+
+          awesome.value = options[optionIndex];
+          count.value++;
+          }
+        return {
+          awesome,
+          setToggle
+        }
+      }
+    }).mount('#step03');
   </script>
 </body>
 </html>
