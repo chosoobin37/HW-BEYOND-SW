@@ -38,9 +38,25 @@
     </div>
 
     <div id="step04">
-        <li v-for="item in items" v-if="item.state">
+        <!-- v-for와 v-if를 한곳에 같이 적용하면 동작하지 않는다. -->
+        <!-- <li v-for="item in items" v-if="item.state">{{ item }}</li> -->
+        <template v-for="item in items">
+            <li v-if="item.state">
+                {{ item.name }}
+            </li>
+        </template>
+    </div>
 
-        </li>
+    <!-- 
+        :key
+        Vue가 렌더링 된 요소 목록을 업데이트 할 때 v-for는 기본적으로 DOM 요소 전체 확인
+        이때 Vue가 각 노드의 id를 추척할 수 있도록 힌트를 주고 기존 요소를 재사용 하여 순서를 변경함에 있어
+        용이하게 하기 위해 key라는 정보를 제공하면 성능상 이점 -> 사실상 반복에서 필수로 적게 됨
+     -->
+    <div id="step05">
+        <div v-for="item in items" :key="item.id">
+            {{item.id}}-{{item.name}}
+        </div>
     </div>
 
     <script>
@@ -77,12 +93,33 @@
         }).mount('#step03')
 
         createApp({
-            setup() {
-                return {
-
-                }
+        setup() {
+            const items = ref([
+                {name: 'apple', state: true},
+                {name: 'pineapple', state: false},
+                {name: 'melon', state: true},
+                {name: 'watermelon', state: false},            
+        ]);
+            return {
+                items
             }
-        }).mount('#step04')
+        }
+    }).mount('#step04');
+
+    createApp({
+        setup() {
+            const items = ref([
+                {id:0, name: 'apple'},
+                {id:0, name: 'pineapple'},
+                {id:0, name: 'melon'},
+                {id:0, name: 'watermelon'},            
+        ]);
+            return {
+                items
+            }
+        }
+    }).mount('#step05');
+</script>
     </script>
 </body>
 </html>
