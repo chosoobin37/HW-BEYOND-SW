@@ -70,6 +70,25 @@ public class CommandMemberServiceImpl implements CommandMemberService {
         return memberRepository.save(member);
     }
 
+
+
+//    @Override
+//    public MemberDTO selectMemberById(int memberId) {
+//
+//        Optional<Member> userEntity = memberRepository.findById(memberId);
+////        MemberDTO userDTO = modelMapper.map(userEntity, MemberDTO.class);
+//
+//        MemberDTO memberDTO = modelMapper.map(userEntity, MemberDTO.class);
+//
+////        List<ResponsePost> postList = postServiceClient.selectMemberPosts(Integer.valueOf(memberId).toString());
+////        memberDTO.setPosts(postList);
+//
+//
+//        return memberDTO;
+//    }
+
+
+
     @Transactional
     @Override
     public void registUser(RegisterDTO registerDTO) {

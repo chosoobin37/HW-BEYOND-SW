@@ -2,11 +2,11 @@
 
 /* 헤더 스타일 */
 .header {
-  background-color: transparent; /* 배경을 투명으로 설정합니다. */
+  background-color: transparent; /* 배경을 투명으로 설정 */
   color: #fff;
-  padding: 20px;
+  padding: 10px 20px;
   text-align: left;
-  border-bottom: 2px solid black; /* 검은색 직선을 추가합니다. */
+  border-bottom: 3px solid black; /* 검은색 직선을 추가 */
 }
 
 /* 제목 스타일 */
@@ -14,38 +14,47 @@
   margin: 0;
 }
 
-/* 네비게이션 스타일 */
+/* 네비게이션 위치 조정 */
 .nav {
+  text-align: center;
+}
+
+.nav-list1 {
+  display: inline-block;
+}
+
+.nav-list2 {
   float: right;
 }
 
-/* 네비게이션 리스트 스타일 */
-.nav-list li {
-  display: inline;
-  margin-left: 20px;
-  border-bottom: 2px solid transparent; /* 초기에는 투명한 선으로 설정합니다. */
-}
-
-/* 네비게이션 리스트 아이템 스타일 */
-.nav-list li {
+/* 네비게이션 리스트 스타일 수정 */
+.nav-list1 li {
   display: inline;
   margin-left: 20px;
 }
 
-/* 네비게이션 링크 스타일 */
-.nav-list li a {
+.nav-list2 li {
+  float: left;
+  margin-left: 20px;
+}
+
+/* 네비게이션 링크 스타일 수정 */
+.nav-list1 li a,
+.nav-list2 li a {
   color: #000000;
   text-decoration: none;
 }
 
-/* 네비게이션 링크 호버 스타일 */
-.nav-list li a:hover {
-  border-bottom-color: black;
+/* 네비게이션 링크 호버 스타일 수정 */
+.nav-list1 li a:hover,
+.nav-list2 li a:hover {
+  color: #6c6c6c; /* 호버 시 색상 변경 */
 }
+
 
 /* 로고 이미지 스타일 */
 .logo {
-  height: 50px; /* 로고 이미지의 높이를 조정합니다. */
+  height: 50px; /* 로고 이미지의 높이를 조정 */
   width: 200px;
 }
 
