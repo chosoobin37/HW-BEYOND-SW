@@ -8,26 +8,27 @@
 </head>
     <body>
         <div id="step01">
-            <label>name: </label><input type="text" ref="nameBox" v-model="name">
-            <br>
-            <label>입력한 이름: {{name}}</label>
+            <h1>상품 담기</h1>
+            <select v-model="selectedFruit">
+                <option v-for="fruit in fruits" :value="fruit">{{fruit.name}}</option>
+            </select>
+            <button @click="addProduct(selectedFruit)">상품 추가</button>
+            <hr>
+            <li v-for="list in basket">{{list}}</li>
+            <p>{{totalPrice}}</p>
+
         </div>
 
         <script>
-            const {createApp, ref, reactive} = Vue;
+            const {createApp, ref} = Vue;
 
             createApp({
                 setup() {
-                    const name = ref('aaaa');
+                    
                     return {
-                        name
                     }
-                },
-                mounted() {
-                    console.log(this.$refs.nameBox);
-                    this.$refs.nameBox.focus();
                 }
             }).mount('#step01');
         </script>
     </body>
-</html> 
+</html>
