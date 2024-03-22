@@ -41,13 +41,29 @@
   </div>
 
   <!-- 
-
+    v-if v-else-if v-else
+    if 조건부로 블록을 렌더링 하는데 지시자의 식이 참인 경우 if 블록 렌더링
+    그러나 if 블록의 지시자의 식이 참이 아닌 경우 else 블록이 렌더링
+    항상 if와 연관 있는 곳에 배배치
   -->
   <div id="step03">
     <h1 v-if="awesome =='awesome'">Vue is awesome!</h1>
     <h1 v-else-if="awesome =='good'">hello</h1>
     <h1 v-else>OMG</h1>
     <button @click="setToggle">toggle</button>
+  </div>
+
+  <!-- 
+    <template>
+      v-if는 조건에 따라 특정 요소들을 렌더링하거나 제거하는 데 사용
+      요소를 렌더링하는 과정에서 요소들을 감싸주는 부모 요소가 필요하지 않을 수 있다.
+      이러한 경우 template를 이용하여 부모 요소가 없이 요소들 그룹화 가능
+   -->
+  <div id="step04">
+    <template v-if="isTrue">
+      <h1>awesome</h1>
+      <h2>good</h2>
+    </template>
   </div>
 
   <script>
@@ -101,6 +117,17 @@
         }
       }
     }).mount('#step03');
+
+    createApp({
+      setup() {
+        const isTrue=ref(true);
+
+        return {
+          isTrue
+        }
+      }
+    }).mount('#step04');
+
   </script>
 </body>
 </html>
