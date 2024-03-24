@@ -4,16 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="post.css"> 
+    <link rel="stylesheet" href="mypost.css"> 
     <title>PL-RECIPE</title>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <header class="header">
-        <a href="http://127.0.0.1:5500/static/main.html">
-            <img src="img/logo.webp" alt="PLRECIPE 로고" class="logo"> 
-        </a>
+        <img src="img/logo.webp" alt="PLRECIPE 로고" class="logo"> 
         <nav class="nav">
-            <ul class="nav-list">   
+            <ul class="nav-list">
                 <li><a href="#"><b>게시판</b></a></li>
                 <li><a href="#"><b>장소</b></a></li>
                 <li><a href="#"><b>자유게시판</b></a></li>
@@ -27,8 +25,8 @@
 </head>
 
 <body>
-    <h3>내가 작성한 게시글</h3>
     <div id="app">
+        <h3>내가 좋아요 누른 게시글</h3>
         <div class="post" v-for="post in posts" :key="post.postId">
             <div class="title"><p>{{ post.postTitle }}</p></div>
             <div class="image"></div>
@@ -52,7 +50,7 @@
             },
             methods: {
                 fetchPosts() {
-                    axios.get('http://localhost:8000/plrecipe-post/posts')
+                    axios.get('http://localhost:8000/plrecipe-post/likePosts/')
                         .then(response => {
                             this.posts = response.data;
                             this.fetchHashtags();
@@ -88,6 +86,27 @@
         });
 
         app.mount('#app');
+    </script>
+
+    <!-- 카드 크기 맞추기 -->
+    <script>
+        window.addEventListener('load', () => {
+    const posts = document.querySelectorAll('.post');
+    let maxHeight = 0;
+
+    // 모든 게시물의 높이를 확인하여 가장 높은 높이를 찾음
+    posts.forEach((post) => {
+        if (post.offsetHeight > maxHeight) {
+            maxHeight = post.offsetHeight;
+        }
+    });
+
+    // 모든 게시물에 가장 높은 높이를 적용
+    posts.forEach((post) => {
+        post.style.height = `${maxHeight}px`;
+    });
+});
+
     </script>
 </body>
 
