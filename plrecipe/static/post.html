@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <title>Vue Example</title>
+</head>
+<body>
+  <div id="app">
+    <button @click="fetchData">게시글 조회</button>
+    <table>
+      <thead>
+        <tr>
+          <th>게시글 번호</th>
+          <th>게시글 제목</th>
+          <th>게시글 내용</th>
+          <th>작성 날짜</th>
+          <!-- <th>memberCount</th> -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="post in posts" :key="post.postId">
+          <td>{{ post.postId }}</td>
+          <td>{{ post.postTitle }}</td>
+          <td>{{ post.postContent }}</td>
+          <td>{{ post.postDate }}</td>
+          <!-- <td>{{ post.memberCount }}</td> -->
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        posts: [] // 게시글 데이터를 저장할 배열
+      },
+      methods: {
+        fetchData() {
+          axios.get('http://localhost:8000/plrecipe-post/posts')
+            .then(response => {
+              // 서버로부터 받은 데이터를 posts 배열에 저장
+              this.posts = response.data;
+            })
+            .catch(error => {
+              console.error('API 호출 중 오류 발생:', error);
+            });
+        }
+      }
+    });
+  </script>
+</body>
+</html>

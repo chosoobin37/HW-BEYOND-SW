@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3bf30269-50cc-42c3-83d8-e184e1fb9ea6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sixcandoit/plrecipe_member/command/service/CommandMemberServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sixcandoit/plrecipe_member/command/service/CommandMemberServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plrecipe_post/src/main/java/com/sixcandoit/plrecipe_post/command/configuration/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../plrecipe_post/src/main/java/com/sixcandoit/plrecipe_post/command/configuration/test.java" afterDir="false" />
-    </list>
+    <list default="true" id="3bf30269-50cc-42c3-83d8-e184e1fb9ea6" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -134,7 +131,7 @@
       <workItem from="1710323408942" duration="7275000" />
       <workItem from="1710374421913" duration="15000" />
       <workItem from="1710374476519" duration="5480000" />
-      <workItem from="1710979414801" duration="1679000" />
+      <workItem from="1710979414801" duration="2379000" />
     </task>
     <servers />
   </component>
