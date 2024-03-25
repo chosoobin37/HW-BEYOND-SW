@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Document</title>
+    <style>
+        .rootContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .appContainer {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            border: 1px dotted black;
+            width: 80%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .wine-card {
+            display: flex;
+            flex-direction: column;
+            width: 30%;
+            height: 300px;
+            border: 1px solid black;
+            justify-content: center;
+            align-items: center;
+            margin: 5px;
+        }
+
+        .image {
+            width: 70px;
+            height: 100px;
+        }
+
+        .btn-group {
+            display: flex;
+            width: 60%;
+            justify-content: space-around;
+        }
+
+        .btn {
+            width: 50px;
+            height: 50px;
+        }
+
+        .neon {
+            color: #fff;
+            text-shadow: 0 0 10px #00f, 0 0 20px #00f, 0 0 30px #00f, 0 0 40px #00f, 0 0 70px #00f, 0 0 80px #00f, 0 0 100px #00f, 0 0 150px #00f;
+            animation: neonAnimation 1s ease-in-out infinite alternate;
+        }
+
+        @keyframes neonAnimation {
+            from {
+                text-shadow: 0 0 10px #00f, 0 0 20px #00f, 0 0 30px #00f, 0 0 40px #00f, 0 0 70px #00f, 0 0 80px #00f, 0 0 100px #00f, 0 0 150px #00f;
+            }
+
+            to {
+                text-shadow: 0 0 5px #00f, 0 0 10px #00f, 0 0 15px #00f, 0 0 20px #00f, 0 0 35px #00f, 0 0 40px #00f, 0 0 50px #00f, 0 0 75px #00f;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="app" class="rootContainer">
+        <div v-if="loadingState">
+            로딩 중입니다...
+        </div>
+        <template v-else>
+
+        </template>
+    </div>
+    
+    <script>
+        const {createApp, reactive, onMounted, toRefs} = Vue;
+
+        /* wine과 관련된 상태값(reactive 하나의 객체로)과 기능들을 반환하는 함수 */
+        const useWines = () => {
+            const state = reactive({
+                loadingState: true,   // 로딩 상태 토글 위한 상태값
+                isMounted: false,     // 마운트 상태를 관리할 상태값
+                wines: [],            // 비동기 통신으로 불러온 와인 데이터를 담은 상태값
+                pageWine: [],         // 한 페이지에 그려질 와인 데이터를 담을 상태값
+                index:0,              // 한 페이지의 첫 와인 시작 인덱스 값
+                next: 10,             // 다음 페이지의 첫 와인 시작 인덱스 값 (next -1: 한 페이지의 마지막 와인 인덱스 값)
+            });
+
+            // await 사용하기 위한 async
+            const fetchWines =async () => {
+              const response = await fetch("http://api.sampleapis.com/wines/reds");
+              const data =await response.json();
+              console.log(data);
+
+            }
+
+            /* 우리가 만든 컴포넌트가 화면에 mount 되고 나서 */
+            onMounted(async () => {
+                // console.log('mount 이후 시점 실행')
+                await fetchWines();         // api 서버로부터 wine 정보를 불러오는 비동기 통신
+            })
+
+            // return {loadingState: true};
+
+            /*
+              toRefs:
+              반응형 객체 반환 시 -> 이걸 사용하는 컴포넌트가 반응형을 잃지 않고 분해 할당 및 확장 가능
+              reactive로 관리중인 객체의 프로퍼티를 꺼내기 위한 용도이기도 함            
+            */
+            return {...toRefs(state)};  // 객체 축약 문법
+        }
+
+        createApp({
+            setup() {
+                // console.log(useWines());
+                const {loadingState} = useWines();                       // 객체 구조 분해 할당
+                //const loadingState = useWines().loadingState;
+                return {
+                    loadingState
+                }
+            }
+        }).mount("#app");
+    </script>
+</body>
+</html>
