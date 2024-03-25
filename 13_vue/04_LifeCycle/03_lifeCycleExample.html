@@ -81,24 +81,37 @@
             <button @click="nextPage" class="btn">next</button>
           </div>
 
+          <!-- 나중에 추가할 부분 1-->
+          <div v-if="likes.length">
+            <p>내가 좋아하는 총 와인 id들: {{likes}}</p>
+
+            <!-- 나중에 추가할 부분 2 -->
+            <button @click="toggleViewingState">{{ viewingState? '쇼핑하기': '쇼핑완료' }}</button>
+          </div>
+
           <div class="appContainer">
 
             <!-- 쇼핑하기 -->
             <template v-if="!viewingState">
               <div class="wine-card" v-for="wine in pageWine" :key="wine.id">
-                <p>{{wine.wine}}</p>
-                <img class="image" :src="wine.image" alt="wine iamge">
+                  <p>{{ wine.wine }}</p>
+                  <img class="image" :src="wine.image" alt="wine image"/>
 
-                <!-- 나중에 추가할 부분 1 -->
-                <button v-if="!likes.includes(wine.id)" @click="likeWine(wine.id)">like</button>
-                <button v-if="likes.includes(wine.id)" @click="hateWine(wine.id)">hate</button>
+                  <!-- 나중에 추가할 부분1 -->
+                  <button v-if="!likes.includes(wine.id)" @click="likeWine(wine.id)">like</button>
+                  <button v-if="likes.includes(wine.id)" @click="hateWine(wine.id)">hate</button>
               </div>
-            </template>
+          </template>
 
             <!-- 쇼핑완료 -->
             <template v-else>
-              
-            </template>
+
+              <!-- 나중에 추가할 부분2 -->
+              <div class="wine-card" v-for="wine in totalLikes" :key="wine.id">
+                  <p>{{ wine.wine }}</p>
+                  <img class="image" :src="wine.image" alt="wine image">
+              </div>
+          </template>
           </div>
         </template>
     </div>
@@ -117,6 +130,7 @@
                 next: 10,             // 다음 페이지의 첫 와인 시작 인덱스 값 (next -1: 한 페이지의 마지막 와인 인덱스 값)
                 viewingState: false,  // 쇼핑 완료 버튼을 누르기 전(와인 목록 보기)과 후(고른 와인들만 보기)를 구분하기 위한 상태값
                 likes: [],            // 좋아요 누른 wine 목록 (wine의 id값만 관리)
+                totalLikes: []        // 좋아요 누른 전체 wine 목록
             });
 
             const goBack = () => {
@@ -153,11 +167,20 @@
 
             const hateWine = (id) => {
               const index =state.likes.indexOf(id);     // hate한 wine이 넘어오면 기존 likes에서 찾아서 해당 인덱스 반환
-              if(indec>-1) {                            // 기존에 likes에 존재할 때만 
+              if(index>-1) {                            // 기존에 likes에 존재할 때만 
                 /* filter -> 콜백함수가 반환하는 값이 true인 것들만 추려내어 다시 배열 만들어 반환 */
-                state.likes = state.likes.filter((item) => {item !== id});      // return 생략 가능
+                state.likes = state.likes.filter((item) => item !== id);      // return 생략 가능
               }
             }
+
+            const toggleViewingState = () => {
+                    state.viewingState =!state.viewingState;
+                    if(state.viewingState) {
+
+                        /* 전체 와인에서 like에 담긴 와인의 id와 일치하는 와인들만(좋아요 한 와인들) 추려내여 totalLikes에 담기 */
+                        state.totalLikes = state.wines.filter(wine => state.likes.includes(wine.id));
+                    }
+                }
 
             /* 우리가 만든 컴포넌트가 화면에 mount 되고 나서 */
             onMounted(async () => {
@@ -179,7 +202,8 @@
         createApp({
             setup() {
                 console.log(useWines());
-                const {loadingState, 
+                const {
+                  loadingState, 
                   isMounted, 
                   wines, 
                   pageWine, 
@@ -190,7 +214,10 @@
                   nextPage, 
                   likes, 
                   likeWine, 
-                  hateWine} = useWines();     // 객체 구조 분해 할당
+                  hateWine,
+                  toggleViewingState,
+                  totalLikes
+                } = useWines();     // 객체 구조 분해 할당
                 //const loadingState = useWines().loadingState;
 
                 return {
@@ -205,7 +232,9 @@
                   nextPage, 
                   likes, 
                   likeWine, 
-                  hateWine
+                  hateWine,
+                  toggleViewingState,
+                  totalLikes
                 }
             }
         }).mount("#app");
