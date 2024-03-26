@@ -10,6 +10,7 @@ import { RouterLink, RouterView } from 'vue-router';
       <h2>basic router</h2>
       <nav>
         <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/pathvariable">PathVariavle</RouterLink>
       </nav>
     </div>
   </header>
