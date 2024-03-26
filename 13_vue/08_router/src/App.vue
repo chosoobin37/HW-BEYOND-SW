@@ -25,21 +25,21 @@ import { RouterLink, RouterView } from 'vue-router';
     <h1>Router 사용하기</h1>
     <hr>
     <div class="wrapper">
-      <!--       
+            
         <h2>basic router</h2>
         <nav>
           <RouterLink to="/" active-class="active">Home</RouterLink>
           <RouterLink to="/pathvariable/1" active-class="active">PathVariavle</RouterLink>
           <RouterLink to="/querystring?name=조먹밥&age=3" active-class="active">QueryString</RouterLink>
         </nav>
-      -->
+    
 
-      <h2>nested router</h2>
+      <!-- <h2>nested router</h2>
       <nav>
         <RouterLink to="/" active-class="active">Home</RouterLink>
         <RouterLink to="/nested" active-class="active">중첩 인덱스</RouterLink>
         <RouterLink to="/nested/view" active-class="active">중첩 라우터</RouterLink>
-      </nav>
+      </nav> -->
     </div>
   </header>
 

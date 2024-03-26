@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-// import router from './router/01_router.js'
+import router from './router/01_router.js'
 import router2 from './router/02_nestedRoute.js'
 import App from './App.vue'
 
@@ -7,7 +7,7 @@ import App from './App.vue'
 // createApp(App).mount('#app')
 const app = createApp(App)
 
-// app.use(router)
-app.use(router2)
+app.use(router)
+// app.use(router2)
 
 app.mount('#app')
