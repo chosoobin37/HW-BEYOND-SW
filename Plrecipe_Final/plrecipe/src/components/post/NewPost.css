@@ -1,0 +1,65 @@
+/* NewPost.css */
+@font-face {
+  font-family: 'KCC-Hanbit';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2403-2@1.0/KCC-Hanbit.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'KCC-Hanbit', sans-serif;
+}
+
+.new-post-container {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+}
+
+.new-post-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-post-container form div {
+  margin-bottom: 15px;
+}
+
+.new-post-container form label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.new-post-container form input,
+.new-post-container form select,
+.new-post-container form textarea {
+  font-family: 'KCC-Hanbit';
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333;
+}
+
+.new-post-container form button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.new-post-container form button:hover {
+  background-color: #0056b3;
+}

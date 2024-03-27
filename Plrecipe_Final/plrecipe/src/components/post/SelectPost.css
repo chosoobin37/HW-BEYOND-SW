@@ -1,0 +1,157 @@
+/* SelectPost.Vue style */
+
+@font-face {
+  font-family: 'KCC-Hanbit';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2403-2@1.0/KCC-Hanbit.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'KCC-Hanbit', sans-serif;
+  margin: 0;
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100vh;
+  background: #F7F7F7;
+}
+
+#app {
+  width: 1440px;
+  /* Adjust to the width of your app */
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.sidebar>div {
+  height: 201px;
+  background-color: #684343;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 172px; /* 이 값은 div의 높이와 같아야 합니다. */
+  flex-direction: column !important;
+}
+
+.sidebar>div:hover {
+  transform: scale(1.1, 1.1);
+}
+.sidebar {
+  font-family: 'KCC-Hanbit', sans-serif;
+  font-size: 22px;
+  width: 172px;
+  height: 1000px;
+  margin-right: 28px;
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 150px;
+}
+
+.post-container {
+  width: 900px;
+  height: 1000px;
+  background: #FFF;
+  padding: 20px;
+  border: 3px solid #000000;
+  box-sizing: border-box;
+}
+
+#post-title,
+#post-writer,
+#post-content,
+#hashtag {
+  margin-bottom: 20px;
+  font-family: 'KCC-Hanbit', sans-serif;
+}
+
+#post-title {
+  font-size: 37px;
+  text-align: center;
+  color: #000000;
+}
+
+#post-writer {
+  font-size: 22.5px;
+  color: #777;
+  border-bottom: 3px solid #000000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* 이 속성으로 내부 요소들 사이에 공간을 분배합니다 */
+  border-bottom: 3px solid #000000;
+}
+
+#post-content {
+  white-space: pre-wrap; /* 줄바꿈과 공백을 유지하면서 내용을 표시 */
+  padding-top: 20px;
+  height: 365px; /* 내용에 맞춰 높이 조절 */
+  overflow-y: auto; /* 내용이 최대 높이를 초과할 경우 스크롤 생성 */
+  font-size: 20px;
+}
+
+#hashtag {
+  border-top: 3px solid #000000;
+  padding-top: 22px;
+}
+
+#hashtag span {
+  background-color: #e0e0e0;
+  padding: 5px 15px;
+  border-radius: 15px;
+  font-size: 23px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+.post-image {
+  overflow-x: auto; /* 가로 스크롤 활성화 */
+  display: flex; /* 리스트 항목들을 가로로 나열 */
+  padding-bottom: 20px; /* 스크롤바와 이미지 사이의 공간 확보 */
+}
+
+.post-image li {
+  flex: 0 0 250px; /* 가로폭을 600px로 고정 */
+  padding-right: 20px; /* 리스트 항목 간의 간격을 20px로 설정 */
+  display: flex; /* 이미지가 li 태그의 크기에 맞게 조정되도록 함 */
+  justify-content: center; /* 이미지를 가운데 정렬 */
+  align-items: center; /* 세로 방향 중앙 정렬 */
+}
+
+.post-image img {
+  width: 100%; /* 부모 요소인 li의 가로폭에 맞게 이미지를 확장 */
+  height: 100%; /* 부모 요소인 li의 높이에 맞게 이미지를 확장 */
+  object-fit: cover; /* 이미지 비율을 유지하면서, li의 크기에 맞춰 이미지를 채움 */
+}
+
+#member-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  margin-bottom: 5px;
+  margin-right: 7px;
+}
+
+#post-member-count {
+  margin-left: auto;
+  /* 이 속성으로 오른쪽 끝으로 이동합니다 */
+}
+
+::-webkit-scrollbar {
+  width: 10px;  /* 세로축 스크롤바 폭 너비 */
+  height: 10px;  /* 가로축 스크롤바 폭 너비 */
+  background: #ddd; 
+
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #666; 
+
+  border-radius: 5px;
+
+}
