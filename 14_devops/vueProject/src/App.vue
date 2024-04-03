@@ -18,7 +18,11 @@ const result = ref(0);
 
 const sendPlus = async() => {
   const response =
-    await fetch(`http://localhost:7777/plus?num1=${num1.value}&num2=${num2.value}`);
+
+  // 백엔드 도커 컨테이너로 8055포토로 만들었을 때
+    await fetch(`http://localhost:8055/plus?num1=${num1.value}&num2=${num2.value}`);
+
+    // await fetch(`http://localhost:7777/plus?num1=${num1.value}&num2=${num2.value}`);
     // await fetch(`http://localhost:5173/api/plus?num1=${num1.value}&num2=${num2.value}`);
   const data = await response.json();
   result.value = data.sum;    // {sum: 3} 형식으로 반환환
