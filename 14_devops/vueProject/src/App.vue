@@ -19,11 +19,15 @@ const result = ref(0);
 const sendPlus = async() => {
   const response =
 
-  // 백엔드 도커 컨테이너로 8055포토로 만들었을 때
-    await fetch(`http://localhost:8055/plus?num1=${num1.value}&num2=${num2.value}`);
+    // 백엔드 도커 컨테이너로 8055포토로 만들었을 때
+    // await fetch(`http://localhost:8055/plus?num1=${num1.value}&num2=${num2.value}`);
 
     // await fetch(`http://localhost:7777/plus?num1=${num1.value}&num2=${num2.value}`);
+
     // await fetch(`http://localhost:5173/api/plus?num1=${num1.value}&num2=${num2.value}`);
+
+    // 도커 컨테이너 간에 네트워크 연결 후 (5173/api가 아니라 8011/api로 변경해야 함)
+    await fetch(`http://localhost:8011/api/plus?num1=${num1.value}&num2=${num2.value}`);
   const data = await response.json();
   result.value = data.sum;    // {sum: 3} 형식으로 반환환
 }

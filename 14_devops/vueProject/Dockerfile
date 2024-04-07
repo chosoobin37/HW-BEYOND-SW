@@ -1,6 +1,6 @@
 FROM node:lts-alpine
 
-# curlㅅ 설치 (client url) -> 필수X (유사 포스트맨)
+# curl 설치 (client url) -> 필수X (유사 포스트맨)
 RUN apk add --no-cache curl
 
 WORKDIR /app
