@@ -1,0 +1,10 @@
+commit 28c48bc443a8a7c5211d32d4b71a43f9440c05c0
+tree 58348ffc2e1ab826993e5d3a60ad3de6c784f933
+parent c7e82fbf5d569ad3848737c8d9878965ad3e89ab
+author 조수빈 <angelajsb@naver.com> 2024-04-12 09:34:00 +0900
+committer 조수빈 <angelajsb@naver.com> 2024-04-12 09:34:00 +0900
+
+    pipeline test push
+
+
+:100644 100644 4ea3953a14029003ae10fdd7793aac9e8a6ed031 de02eca827075d4480218177efdab0ff2fe3b7e6 M	src/test/java/com/ohgiraffers/bootproject/controller/CalculatorControllerTests.java

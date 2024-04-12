@@ -1,0 +1,24 @@
+Started by GitHub push by chosoobin37
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/free-first-project
+The recommended git tool is: NONE
+using credential ssh-jenkins-github--key
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/free-first-project/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/chosoobin37/jenkins-boot.git # timeout=10
+Fetching upstream changes from https://github.com/chosoobin37/jenkins-boot.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.39.2'
+using GIT_SSH to set credentials 
+Verifying host key using manually-configured host key entries
+ > git fetch --tags --force --progress -- https://github.com/chosoobin37/jenkins-boot.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision 68f9a82f79ce6a400f0504462f69b6d9341e075b (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 68f9a82f79ce6a400f0504462f69b6d9341e075b # timeout=10
+Commit message: "pipeline test final"
+ > git rev-list --no-walk 3b484b91044760fd97d0b894f20d025ce6c861e9 # timeout=10
+[free-first-project] $ /bin/sh -xe /tmp/jenkins18300547221600316534.sh
++ echo hello world!
+hello world!
+Finished: SUCCESS

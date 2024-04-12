@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: boot-container
-          image: angelajsb/k8s_b_proj:latest
+          image: angelajsb/swcamp-pipe:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 7777

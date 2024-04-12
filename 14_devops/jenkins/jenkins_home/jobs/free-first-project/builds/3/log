@@ -1,0 +1,24 @@
+Started by user [8mha:////4L+LYS6eBx4tcSje+iXLCzYvJKmsqa9Q8JFYE/T0lYgKAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzOEgZu/dLi1CL9xJTczDwAawhpaMAAAAA=[0mchosoobin
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/free-first-project
+The recommended git tool is: NONE
+using credential ssh-jenkins-github--key
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/free-first-project/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/chosoobin37/jenkins-boot.git # timeout=10
+Fetching upstream changes from https://github.com/chosoobin37/jenkins-boot.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.39.2'
+using GIT_SSH to set credentials 
+Verifying host key using manually-configured host key entries
+ > git fetch --tags --force --progress -- https://github.com/chosoobin37/jenkins-boot.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision cb36ce6e553d3ababd38b6afee59dca510e5449e (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f cb36ce6e553d3ababd38b6afee59dca510e5449e # timeout=10
+Commit message: "jar add"
+ > git rev-list --no-walk cb36ce6e553d3ababd38b6afee59dca510e5449e # timeout=10
+[free-first-project] $ /bin/sh -xe /tmp/jenkins2624689804594618688.sh
++ echo hello world!
+hello world!
+Finished: SUCCESS

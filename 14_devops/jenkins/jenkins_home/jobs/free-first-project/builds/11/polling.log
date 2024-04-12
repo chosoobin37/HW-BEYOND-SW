@@ -1,0 +1,15 @@
+Started on 2024. 4. 12. 오전 12:48:17
+Started by event from 140.82.115.175 ⇒ https://7718-121-170-161-69.ngrok-free.app:8080/github-webhook/ on 금 4월 12 00:48:15 UTC 2024
+Using strategy: Default
+[poll] Last Built Revision: Revision 28c48bc443a8a7c5211d32d4b71a43f9440c05c0 (refs/remotes/origin/main)
+The recommended git tool is: NONE
+using credential ssh-jenkins-github--key
+ > git --version # timeout=10
+ > git --version # 'git version 2.39.2'
+using GIT_SSH to set credentials 
+Verifying host key using manually-configured host key entries
+ > git ls-remote -h -- https://github.com/chosoobin37/jenkins-boot.git # timeout=10
+Found 1 remote heads on https://github.com/chosoobin37/jenkins-boot.git
+[poll] Latest remote head revision on refs/heads/main is: c1ef745687844f7e703c271ba397b3e14dad34a4
+Done. Took 23 sec
+Changes found
